@@ -7,7 +7,13 @@ import sendRequest from "./send-request";
 const BASE_URL = '/api/users';
 
 export async function signUp(userData: UserDataObj) {
-  return sendRequest(BASE_URL, 'POST', userData);
+  const newObj = {
+    name: userData.name,
+    email: userData.email,
+    password: userData.password,
+    isAdmin: userData.isAdmin
+  }
+  return sendRequest(BASE_URL, 'POST', newObj);
 }
 
 export async function login(credentials: CredentialsType) {

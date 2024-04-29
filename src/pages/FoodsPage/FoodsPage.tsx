@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import FoodsList from "../../components/Foods/FoodsList/FoodsList";
 import FoodsPicture from "../../components/Foods/FoodsPicture/FoodsPicture";
 import Logo from "../../components/Logo/Logo"
-import { FoodType } from "../../types";
+import { FoodType, UserDataObj } from "../../types";
 import { Types } from "mongoose";
 import NewFoodForm from "../../components/Foods/NewFoodForm/NewFoodForm";
 import * as foodsService from "../../utilities/foods-service";
 
-export default function FoodsPage({ foods, setFoods }: { foods: any, setFoods: Function }) {
+export default function FoodsPage({ foods, setFoods, user }: { foods: any, setFoods: Function, user: UserDataObj }) {
     const [newFood, setNewFood] = useState<FoodType[]>([]);
 
     async function getFoods() {
@@ -20,6 +20,10 @@ export default function FoodsPage({ foods, setFoods }: { foods: any, setFoods: F
         setNewFood([ ...newFood, food]);
     }
 
+    async function addFoodToMealPlan(id: Types.ObjectId) {
+        await foodsService.addFoodToMealPlan(id, user);
+    }
+
     async function deleteFood(id: Types.ObjectId) {
         const updatedExercises = await foodsService.deleteFood(id);
         setFoods(updatedExercises);
@@ -27,7 +31,7 @@ export default function FoodsPage({ foods, setFoods }: { foods: any, setFoods: F
 
     useEffect(() => {
         getFoods();
-    }, []);
+    }, [newFood]);
 
     return (
         <>  
@@ -37,6 +41,7 @@ export default function FoodsPage({ foods, setFoods }: { foods: any, setFoods: F
             <NewFoodForm addNewFood={addNewFood}/>
             <FoodsList 
                 foods={foods}
+                addFoodToMealPlan={addFoodToMealPlan}
                 deleteFood={deleteFood}/>
             <FoodsPicture />
         </>

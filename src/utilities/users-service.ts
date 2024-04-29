@@ -9,7 +9,7 @@ import { UserDataObj, CredentialsType } from '../types';
 
 export async function signUp(userData: UserDataObj) {
   // Delegate the AJAX request to the users-api.js
-  // module.
+  // modulee
   const token = await usersAPI.signUp(userData);
   localStorage.setItem('token', token);
   return getUser();

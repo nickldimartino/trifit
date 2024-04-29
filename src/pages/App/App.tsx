@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import ExercisesPage from '../ExercisesPage/ExercisesPage';
@@ -41,7 +41,7 @@ export default function App() {
           <Route path="/exercises" element={<ExercisesPage exercises={exercises} setExercises={setExercises} user={user}/>} />
           <Route path="/exercises/edit/:id/:name/:type/:muscle/:grip/:width" element={<EditExercisePage editExercise={editExercise}/>} />
           <Route path="/workouts" element={<WorkoutsPage />} />
-          <Route path="/foods" element={<FoodsPage foods={foods} setFoods={setFoods}/>} />
+          <Route path="/foods" element={<FoodsPage foods={foods} setFoods={setFoods} user={user}/>} />
           <Route path="/foods/edit/:id/:name/:type/:calories/:protein/:carbohydrates/:fat" element={<EditFoodPage editFood={editFood}/>} />
           <Route path="/mealplans" element={<MealPlansPage />} />
           <Route path="/bodystats" element={<BodyStatsPage />} />

@@ -3,11 +3,11 @@ import { ExerciseType } from "../../../types";
 
 export default function ExercisesList({ 
     exercises, 
-    addExerciseToTemplate,
+    addExerciseToWorkout,
     deleteExercise 
 }: {
     exercises: ExerciseType[], 
-    addExerciseToTemplate: Function,
+    addExerciseToWorkout: Function,
     deleteExercise: Function
 }) {
     const exercisesItems = exercises.map((e: any, idx: number) => (
@@ -19,7 +19,7 @@ export default function ExercisesList({
             muscle={e.muscle}
             grip={e.grip}
             width={e.width}
-            addExerciseToTemplate={addExerciseToTemplate}
+            addExerciseToWorkout={addExerciseToWorkout}
             deleteExercise={deleteExercise}
         />
     ));

@@ -8,7 +8,7 @@ export default function ExerciseForm({
     muscle, 
     grip, 
     width,
-    addExerciseToTemplate,
+    addExerciseToWorkout,
     deleteExercise, 
 }: { 
     id: Types.ObjectId, 
@@ -17,14 +17,14 @@ export default function ExerciseForm({
     muscle: string, 
     grip: string, 
     width: string, 
-    addExerciseToTemplate: Function,
+    addExerciseToWorkout: Function,
     deleteExercise: Function,
 }) {
 
     return(
         <div>
             <p>{name} &nbsp; {type} &nbsp; {muscle} &nbsp; {grip} &nbsp; {width} &nbsp; </p>
-            <button onClick={() => addExerciseToTemplate(id)}>Add</button>
+            <button onClick={() => addExerciseToWorkout(id)}>Add</button>
             <Link to={{pathname: `/exercises/edit/${id}/${name}/${type}/${muscle}/${grip}/${width}`}}>Edit</Link>
             <button onClick={() => deleteExercise(id)}>Delete</button>
         </div>

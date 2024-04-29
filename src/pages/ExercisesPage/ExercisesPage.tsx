@@ -20,8 +20,8 @@ export default function ExercisesPage({ exercises, setExercises, user }: { exerc
         setNewExercise([ ...newExercise, exercise]);
     }
     
-    async function addExerciseToTemplate(id: Types.ObjectId) {
-        await exercisesService.addExerciseToTemplate(id, user);
+    async function addExerciseToWorkout(id: Types.ObjectId) {
+        await exercisesService.addExerciseToWorkout(id, user);
     }
 
     async function deleteExercise(id: Types.ObjectId) {
@@ -31,7 +31,7 @@ export default function ExercisesPage({ exercises, setExercises, user }: { exerc
 
     useEffect(() => {
         getExercises();
-    }, []);
+    }, [newExercise]);
 
     return (
         <>  
@@ -41,7 +41,7 @@ export default function ExercisesPage({ exercises, setExercises, user }: { exerc
             <NewExerciseForm addNewExercise={addNewExercise}/>
             <ExercisesList 
                 exercises={exercises}
-                addExerciseToTemplate={addExerciseToTemplate}
+                addExerciseToWorkout={addExerciseToWorkout}
                 deleteExercise={deleteExercise}/>
             <ExercisesPicture />
         </>

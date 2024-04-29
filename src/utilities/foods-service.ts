@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { FoodType } from "../types";
+import { FoodType, UserDataObj } from "../types";
 import sendRequest from "./send-request";
 
 const BASE_URL = "/foods";
@@ -18,4 +18,8 @@ export function editFood(food: FoodType) {
 
 export function deleteFood(id: Types.ObjectId) {
     return sendRequest(`${BASE_URL}/delete`, "POST", {id});
+}
+
+export function addFoodToMealPlan(id: Types.ObjectId, user: UserDataObj) {
+    return sendRequest(`${BASE_URL}/add`, "POST", {id, user});
 }
