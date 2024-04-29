@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
+import { ExerciseType, FoodType } from '../../types';
 // import { UserType } from "../../types";
 
 interface myProps {
@@ -11,6 +12,11 @@ interface myState {
     email: string,
     password: string,
     confirm: string,
+    isAdmin: string,
+    workouts: ExerciseType[],
+    mealPlans: FoodType[],
+    dailyCalories: number[],
+    weights: number[],
     error: string
 }
 
@@ -20,6 +26,11 @@ export default class SignUpForm extends Component<myProps, myState> {
         email: '',
         password: '',
         confirm: '',
+        isAdmin: '',
+        workouts: [],
+        mealPlans: [],
+        dailyCalories: [],
+        weights: [],
         error: ''
     }
 
@@ -37,8 +48,8 @@ export default class SignUpForm extends Component<myProps, myState> {
         try {
             // We don't want to send the 'error' or 'confirm' property,
             //  so let's make a copy of the state object, then delete them
-            const {name, email, password} = this.state;
-            const formData = {name, email, password};
+            const {name, email, password, isAdmin, workouts, mealPlans, dailyCalories, weights} = this.state;
+            const formData = {name, email, password, isAdmin, workouts, mealPlans, dailyCalories, weights};
 
             const user = await signUp(formData);
 
@@ -65,6 +76,8 @@ export default class SignUpForm extends Component<myProps, myState> {
                         <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
                         <label>Confirm</label>
                         <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+                        <label>Are you an admin?</label>
+                        <input type="text" name="isAdmin" value={this.state.isAdmin} onChange={this.handleChange} required />
                         <button type="submit" disabled={disable}>SIGN UP</button>
                     </form>
                 </div>

@@ -1,11 +1,13 @@
 import { Request, Response } from "express";
 const ExerciseSchema = require("../../models/exercise");
+const UserSchema = require("../../models/user");
 
 module.exports = {
     show,
     create,
     edit,
-    deleteExercise
+    deleteExercise,
+    addExerciseToTemplate
 }
 
 export async function show(req: Request, res: Response) {
@@ -51,6 +53,17 @@ export async function deleteExercise(req: Request, res: Response) {
         await ExerciseSchema.findOneAndDelete({_id: req.body.id});
         const exercises = await ExerciseSchema.find({});
         res.json(exercises);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
+export async function addExerciseToTemplate(req: Request, res: Response) {
+    try {
+        const exercise = await ExerciseSchema.findById(req.body.id);
+        console.log(exercise)
+        console.log(req)
+        res.json(exercise);
     } catch (err) {
         res.status(400).json(err);
     }

@@ -38,7 +38,7 @@ export default function App() {
         <NavBar user={user} setUser={setUser}/>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/exercises" element={<ExercisesPage exercises={exercises} setExercises={setExercises}/>} />
+          <Route path="/exercises" element={<ExercisesPage exercises={exercises} setExercises={setExercises} user={user}/>} />
           <Route path="/exercises/edit/:id/:name/:type/:muscle/:grip/:width" element={<EditExercisePage editExercise={editExercise}/>} />
           <Route path="/workouts" element={<WorkoutsPage />} />
           <Route path="/foods" element={<FoodsPage foods={foods} setFoods={setFoods}/>} />

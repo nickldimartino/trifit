@@ -1,6 +1,6 @@
 import express from "express";
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
-import { show, create, edit, deleteExercise } from "../../controllers/exercises/exercises";
+import { show, create, edit, deleteExercise, addExerciseToTemplate } from "../../controllers/exercises/exercises";
 
 const router = express.Router();
 
@@ -15,7 +15,10 @@ router.post("/create", ensureLoggedIn, create);
 // POST route to create an exercise
 router.post("/edit", ensureLoggedIn, edit);
 
-// DELETE route to create an exercise
+// POST route to create an exercise
 router.post("/delete", ensureLoggedIn, deleteExercise);
+
+// POST route to add an exercise to a template
+router.post("/add", ensureLoggedIn, addExerciseToTemplate);
 
 module.exports = router;

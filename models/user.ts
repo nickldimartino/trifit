@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import { ExerciseType } from "../src/types";
 const Schema = mongoose.Schema;
 
 const SALT_ROUNDS = 6;  // 6 is a reasonable value
@@ -18,6 +19,27 @@ const userSchema = new Schema({
         trim: true,
         minLength: 3,
         required: true
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
+    workouts: {
+        type: Schema.Types.ObjectId,
+        ref: "Exercise"
+    },
+    mealPlans: {
+        type: Schema.Types.ObjectId,
+        ref: "Food"
+    },
+    dailyCalories: {
+        type: [Number],
+        default: []
+    },
+    weights: {
+        type: [Number],
+        default: []
     }
 }, {
     timestamps: true,

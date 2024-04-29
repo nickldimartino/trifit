@@ -18,7 +18,7 @@ module.exports = {
   checkToken
 };
 
-export function checkToken(req: Request, res: Response) {
+export function checkToken(req: any, res: any) {
   console.log('req.user', req.user);
   res.json(req.exp);
 }
@@ -38,7 +38,9 @@ export async function login(req: Request, res: Response) {
 
 export async function create(req: Request, res: Response) {
   try {
+    console.log(req.body)
     const user = await User.create(req.body);
+    console.log(user)
     const token = createJWT(user);
     // The token is a string, but yes, we can
     // res.json a string

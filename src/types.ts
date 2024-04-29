@@ -4,6 +4,11 @@ export interface UserDataObj {
     name: string,
     email: string,
     password: string;
+    isAdmin: string,
+    workouts: ExerciseType[],
+    mealPlans: FoodType[],
+    dailyCalories: number[],
+    weights: number[]
 }
 
 export interface UserType {

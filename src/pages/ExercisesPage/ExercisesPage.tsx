@@ -4,10 +4,10 @@ import ExercisesPicture from "../../components/Exercises/ExercisesPicture/Exerci
 import Logo from "../../components/Logo/Logo";
 import NewExerciseForm from "../../components/Exercises/NewExerciseForm/NewExerciseForm";
 import * as exercisesService from "../../utilities/exercises-service";
-import { ExerciseType } from "../../types";
+import { ExerciseType, UserDataObj } from "../../types";
 import { Types } from "mongoose";
 
-export default function ExercisesPage({ exercises, setExercises }: { exercises: ExerciseType[], setExercises: Function })  { 
+export default function ExercisesPage({ exercises, setExercises, user }: { exercises: ExerciseType[], setExercises: Function, user: UserDataObj })  { 
     const [newExercise, setNewExercise] = useState<ExerciseType[]>([]);
 
     async function getExercises() {
@@ -18,6 +18,10 @@ export default function ExercisesPage({ exercises, setExercises }: { exercises: 
     async function addNewExercise(exercise: ExerciseType) {
         await exercisesService.createExerciseData(exercise);
         setNewExercise([ ...newExercise, exercise]);
+    }
+    
+    async function addExerciseToTemplate(id: Types.ObjectId) {
+        await exercisesService.addExerciseToTemplate(id, user);
     }
 
     async function deleteExercise(id: Types.ObjectId) {
@@ -37,6 +41,7 @@ export default function ExercisesPage({ exercises, setExercises }: { exercises: 
             <NewExerciseForm addNewExercise={addNewExercise}/>
             <ExercisesList 
                 exercises={exercises}
+                addExerciseToTemplate={addExerciseToTemplate}
                 deleteExercise={deleteExercise}/>
             <ExercisesPicture />
         </>
