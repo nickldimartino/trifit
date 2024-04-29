@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import ExercisesList from "../../components/ExercisesList/ExercisesList";
-import ExercisesPicture from "../../components/ExercisesPicture/ExercisesPicture";
+import ExercisesList from "../../components/Exercises/ExercisesList/ExercisesList";
+import ExercisesPicture from "../../components/Exercises/ExercisesPicture/ExercisesPicture";
 import Logo from "../../components/Logo/Logo";
-import NewExerciseForm from "../../components/NewExerciseForm/NewExerciseForm";
+import NewExerciseForm from "../../components/Exercises/NewExerciseForm/NewExerciseForm";
 import * as exercisesService from "../../utilities/exercises-service";
 import { ExerciseType } from "../../types";
 import { Types } from "mongoose";

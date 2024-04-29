@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import FoodsList from "../../components/FoodsList/FoodsList";
-import FoodsPicture from "../../components/FoodsPicture/FoodsPicture";
+import FoodsList from "../../components/Foods/FoodsList/FoodsList";
+import FoodsPicture from "../../components/Foods/FoodsPicture/FoodsPicture";
 import Logo from "../../components/Logo/Logo"
 import { FoodType } from "../../types";
 import { Types } from "mongoose";
-import NewFoodForm from "../../components/NewFoodForm/NewFoodForm";
+import NewFoodForm from "../../components/Foods/NewFoodForm/NewFoodForm";
 import * as foodsService from "../../utilities/foods-service";
 
 export default function FoodsPage({ foods, setFoods }: { foods: any, setFoods: Function }) {

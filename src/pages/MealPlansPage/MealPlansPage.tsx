@@ -1,5 +1,5 @@
 import Logo from "../../components/Logo/Logo"
-import MealPlansList from "../../components/MealPlansList/MealPlansList";
+import MealPlansList from "../../components/MealPlans/MealPlansList/MealPlansList";
 
 export default function MealPlansPage() {
     return (

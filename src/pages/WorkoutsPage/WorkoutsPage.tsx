@@ -1,5 +1,5 @@
 import Logo from "../../components/Logo/Logo";
-import WorkoutsList from "../../components/WorkoutsList/WorkoutsList";
+import WorkoutsList from "../../components/Workouts/WorkoutsList/WorkoutsList";
 
 export default function WorkoutsPage() {
     return (

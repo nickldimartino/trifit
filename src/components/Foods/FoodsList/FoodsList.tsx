@@ -1,4 +1,4 @@
-import { FoodType } from "../../types";
+import { FoodType } from "../../../types";
 import FoodForm from "../FoodForm/FoodForm";
 
 export default function FoodsList({ foods, deleteFood }: { foods: FoodType[], deleteFood: Function }) {

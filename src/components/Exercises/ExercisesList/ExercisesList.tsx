@@ -1,5 +1,5 @@
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
-import { ExerciseType } from "../../types";
+import { ExerciseType } from "../../../types";
 
 export default function ExercisesList({ 
     exercises, 
