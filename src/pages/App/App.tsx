@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import ExercisesPage from '../ExercisesPage/ExercisesPage';
 import AuthPage from '../AuthPage/AuthPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import WorkoutsPage from '../WorkoutsPage/WorkoutsPage';
 import NavBar from '../../components/NavBar/NavBar';
 import { getUser } from '../../utilities/users-service';
+import HomePage from '../HomePage/HomePage';
+import FoodsPage from '../FoodsPage/FoodsPage';
+import MealPlansPage from '../MealPlansPage/MealPlansPage';
+import BodyStatsPage from '../BodyStatsPage/BodyStatsPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -16,8 +20,12 @@ export default function App() {
       <>
         <NavBar user={user} setUser={setUser}/>
         <Routes>
-          <Route path="/orders/new" element={<NewOrderPage />} />
-          <Route path="/orders" element={<OrderHistoryPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/exercises" element={<ExercisesPage />} />
+          <Route path="/workouts" element={<WorkoutsPage />} />
+          <Route path="/foods" element={<FoodsPage />} />
+          <Route path="/mealplans" element={<MealPlansPage />} />
+          <Route path="/bodystats" element={<BodyStatsPage />} />
         </Routes>
       </>
         :

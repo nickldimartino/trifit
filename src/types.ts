@@ -20,3 +20,11 @@ export interface CredentialsType {
     email: string,
     password: string
 }
+
+export interface ExerciseType {
+    name: string,
+    type: string,
+    muscle: string,
+    grip: string,
+    width: string
+}
