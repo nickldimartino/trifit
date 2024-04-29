@@ -12,6 +12,10 @@ export function createExerciseData(exercise: ExerciseType) {
     return sendRequest(`${BASE_URL}/create`, "POST", exercise);
 }
 
+export function editExercise(exercise: ExerciseType) {
+    return sendRequest(`${BASE_URL}/edit`, "POST", exercise);
+}
+
 export function deleteExercise(id: Types.ObjectId) {
     return sendRequest(`${BASE_URL}/delete`, "POST", {id});
 }

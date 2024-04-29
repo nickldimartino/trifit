@@ -1,7 +1,13 @@
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
 import { ExerciseType } from "../../types";
 
-export default function ExercisesList({ exercises, deleteExercise }: {exercises: ExerciseType[], deleteExercise: Function}) {
+export default function ExercisesList({ 
+    exercises, 
+    deleteExercise 
+}: {
+    exercises: ExerciseType[], 
+    deleteExercise: Function
+}) {
     const exercisesItems = exercises.map((e: any, idx: number) => (
         <ExerciseForm 
             id={e._id}

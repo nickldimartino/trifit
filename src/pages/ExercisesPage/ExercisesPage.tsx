@@ -7,8 +7,7 @@ import * as exercisesService from "../../utilities/exercises-service";
 import { ExerciseType } from "../../types";
 import { Types } from "mongoose";
 
-export default function ExercisesPage()  { 
-    const [exercises, setExercises] = useState([]);
+export default function ExercisesPage({ exercises, setExercises }: { exercises: ExerciseType[], setExercises: Function })  { 
     const [newExercise, setNewExercise] = useState<ExerciseType[]>([]);
 
     async function getExercises() {
@@ -19,10 +18,6 @@ export default function ExercisesPage()  {
     async function addNewExercise(exercise: ExerciseType) {
         await exercisesService.createExerciseData(exercise);
         setNewExercise([ ...newExercise, exercise]);
-    }
-
-    async function editExercise() {
-        
     }
 
     async function deleteExercise(id: Types.ObjectId) {
@@ -40,7 +35,9 @@ export default function ExercisesPage()  {
             <h1>Exercises Page</h1>
             <div>Filter</div>
             <NewExerciseForm addNewExercise={addNewExercise}/>
-            <ExercisesList exercises={exercises} deleteExercise={deleteExercise}/>
+            <ExercisesList 
+                exercises={exercises}
+                deleteExercise={deleteExercise}/>
             <ExercisesPicture />
         </>
     );
