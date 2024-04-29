@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 import { ExerciseType } from "../types";
 import sendRequest from "./send-request";
 
@@ -9,4 +10,8 @@ export function getExerciseData() {
 
 export function createExerciseData(exercise: ExerciseType) {
     return sendRequest(`${BASE_URL}/create`, "POST", exercise);
+}
+
+export function deleteExercise(id: Types.ObjectId) {
+    return sendRequest(`${BASE_URL}/delete`, "POST", {id});
 }

@@ -26,8 +26,7 @@ export default async function sendRequest(url: string, method = 'GET', payload: 
         // options.headers = options.headers || {};
         options.headers.Authorization = `Bearer ${token}`;
     }
-    console.log(options)
-    // console.log(token)
+
     const res = await fetch(url, options);
     // if res.ok is false then something went wrong
     if (res.ok) return res.json();

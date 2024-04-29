@@ -1,4 +1,4 @@
-import { ObjectId } from "mongodb";
+import { Types } from "mongoose";
 
 export interface UserDataObj {
     name: string,
@@ -10,7 +10,7 @@ export interface UserType {
     name: string,
     email: string,
     password: string,
-    _id: ObjectId,
+    _id: Types.ObjectId,
     createdAt: Date,
     updatedAt: Date,
     __v: number
@@ -22,6 +22,7 @@ export interface CredentialsType {
 }
 
 export interface ExerciseType {
+    id: Types.ObjectId,
     name: string,
     type: string,
     muscle: string,

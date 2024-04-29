@@ -5,6 +5,7 @@ import Logo from "../../components/Logo/Logo";
 import NewExerciseForm from "../../components/NewExerciseForm/NewExerciseForm";
 import * as exercisesService from "../../utilities/exercises-service";
 import { ExerciseType } from "../../types";
+import { Types } from "mongoose";
 
 export default function ExercisesPage()  { 
     const [exercises, setExercises] = useState([]);
@@ -12,14 +13,21 @@ export default function ExercisesPage()  {
 
     async function getExercises() {
         let newExerciseSet = await exercisesService.getExerciseData();
-        console.log("hi")
-        console.log(newExerciseSet)
         setExercises(newExerciseSet);
     }
     
     async function addNewExercise(exercise: ExerciseType) {
         await exercisesService.createExerciseData(exercise);
         setNewExercise([ ...newExercise, exercise]);
+    }
+
+    async function editExercise() {
+        
+    }
+
+    async function deleteExercise(id: Types.ObjectId) {
+        const updatedExercises = await exercisesService.deleteExercise(id);
+        setExercises(updatedExercises);
     }
 
     useEffect(() => {
@@ -32,7 +40,7 @@ export default function ExercisesPage()  {
             <h1>Exercises Page</h1>
             <div>Filter</div>
             <NewExerciseForm addNewExercise={addNewExercise}/>
-            <ExercisesList exercises={exercises}/>
+            <ExercisesList exercises={exercises} deleteExercise={deleteExercise}/>
             <ExercisesPicture />
         </>
     );

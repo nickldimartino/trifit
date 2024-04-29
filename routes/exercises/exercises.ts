@@ -1,6 +1,6 @@
 import express from "express";
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
-import { show, create } from "../../controllers/exercises/exercises";
+import { show, create, deleteExercise } from "../../controllers/exercises/exercises";
 
 const router = express.Router();
 
@@ -11,5 +11,8 @@ router.get("/show", ensureLoggedIn, show);
 
 // POST route to create an exercise
 router.post("/create", ensureLoggedIn, create);
+
+// DELETE route to create an exercise
+router.post("/delete", ensureLoggedIn, deleteExercise);
 
 module.exports = router;

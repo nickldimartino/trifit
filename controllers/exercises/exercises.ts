@@ -3,7 +3,8 @@ const ExerciseSchema = require("../../models/exercise");
 
 module.exports = {
     show,
-    create
+    create,
+    deleteExercise
 }
 
 export async function show(req: Request, res: Response) {
@@ -19,6 +20,16 @@ export async function create(req: Request, res: Response) {
     try {
         await ExerciseSchema.create(req.body);
         res.json(req.body);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
+export async function deleteExercise(req: Request, res: Response) {
+    try {
+        await ExerciseSchema.findOneAndDelete({_id: req.body.id});
+        const exercises = await ExerciseSchema.find({});
+        res.json(exercises);
     } catch (err) {
         res.status(400).json(err);
     }
