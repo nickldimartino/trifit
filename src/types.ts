@@ -29,3 +29,13 @@ export interface ExerciseType {
     grip: string,
     width: string
 }
+
+export interface FoodType {
+    id: Types.ObjectId,
+    name: string,
+    type: string,
+    calories: number,
+    protein: number,
+    carbohydrates: number,
+    fat: number
+}
