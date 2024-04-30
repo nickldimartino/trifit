@@ -22,6 +22,7 @@ import EditMealPlanPage from '../MealPlans/EditMealPlanPage/EditMealPlanPage';
 import AddExerciseToWorkout from '../Workouts/AddExerciseToWorkoutPage/AddExerciseToWorkoutPage';
 import { Types } from "mongoose";
 import AddFoodToMealPlan from '../MealPlans/AddFoodToMealPlanPage/AddFoodToMealPlan';
+import WorkoutDetailsPage from "../Workouts/WorkoutDetailsPage/WorkoutDetailsPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -92,6 +93,7 @@ export default function App() {
           <Route path="/workouts" element={<WorkoutsPage workouts={workouts} setWorkouts={setWorkouts} user={user} editWorkout={editWorkout} addExerciseToWorkout={addExerciseToWorkout} deleteWorkout={deleteWorkout}/>} />
           <Route path="/workouts/edit/:id/:name/" element={<EditWorkoutPage editWorkout={editWorkout}/>} />
           <Route path="/workouts/display/:id/" element={<AddExerciseToWorkout workouts={workouts} deleteWorkout={deleteWorkout} addExerciseToWorkout={addExerciseToWorkout}/>} />
+          <Route path="/workouts/:id" element={<WorkoutDetailsPage exercises={exercises} workouts={workouts}/>}/>
           <Route path="/foods" element={<FoodsPage foods={foods} setFoods={setFoods} user={user} addFoodToMealPlan={addFoodToMealPlan}/>} />
           <Route path="/foods/edit/:id/:name/:type/:calories/:protein/:carbohydrates/:fat" element={<EditFoodPage editFood={editFood}/>} />
           <Route path="/mealplans" element={<MealPlansPage mealPlans={mealPlans} setMealPlans={setMealPlans} user={user} editMealPlan={editMealPlan} addFoodToMealPlan={addFoodToMealPlan} deleteMealPlan={deleteMealPlan}/>} />

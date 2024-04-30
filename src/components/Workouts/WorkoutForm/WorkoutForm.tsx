@@ -21,6 +21,7 @@ export default function WorkoutForm({
     return(
         <div>
             <p>{name}</p>
+            <Link to={{pathname: `/workouts/${id}`}}>Workout Details</Link>
             <button onClick={() => addExerciseToWorkout(id, exerciseId)}>Add</button>
             <Link to={{pathname: `/workouts/edit/${id}/${name}/`}}>Edit</Link>
             <button onClick={() => deleteWorkout(id)}>Delete</button>
