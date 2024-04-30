@@ -2,6 +2,14 @@ import { Request, Response } from "express";
 const WorkoutSchema = require("../../models/workout");
 const UserSchema = require("../../models/user");
 
+declare global {
+    namespace Express {
+        export interface Request {
+            user?: Record<string, any> | null | undefined
+        }
+    }
+}
+
 module.exports = {
     show,
     create,
@@ -11,8 +19,8 @@ module.exports = {
 
 export async function show(req: Request, res: Response) {
     try {
-        let workouts = await WorkoutSchema.find({});
-        res.json(workouts);
+        const user = await UserSchema.findById(req.user?._id).populate("workouts");
+        res.json(user.workouts);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -20,7 +28,15 @@ export async function show(req: Request, res: Response) {
 
 export async function create(req: Request, res: Response) {
     try {
-        await WorkoutSchema.create(req.body);
+        const workout = await WorkoutSchema.create(req.body);
+
+        const user = await UserSchema.findById(req.user?._id);
+
+        if (user && !user.workouts.includes(workout._id)) {
+            user.workouts.push(workout._id);
+            await user.save();
+        }
+
         res.json(req.body);
     } catch (err) {
         res.status(400).json(err);
@@ -46,8 +62,11 @@ export async function edit(req: Request, res: Response) {
 
 export async function deleteWorkout(req: Request, res: Response) {
     try {
-        await WorkoutSchema.findOneAndDelete({_id: req.body.id});
+        const workout = await WorkoutSchema.findOneAndDelete({ _id: req.body.id });
         const workouts = await WorkoutSchema.find({});
+        const user = await UserSchema.findById(req.user?._id);
+        user.workouts.remove(workout._id);
+        await user.save();
         res.json(workouts);
     } catch (err) {
         res.status(400).json(err);
