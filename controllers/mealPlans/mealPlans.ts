@@ -16,7 +16,8 @@ module.exports = {
     create,
     edit,
     deleteMealPlan,
-    addFoodToMealPlan
+    addFoodToMealPlan,
+    removeFoodFromMealPlan
 }
 
 export async function show(req: Request, res: Response) {
@@ -81,6 +82,21 @@ export async function addFoodToMealPlan(req: Request, res: Response) {
         const mealPlan = await MealPlanSchema.findById(req.body.id);
 
         mealPlan.foods.push(food);
+
+        await mealPlan.save();
+
+        res.json(mealPlan);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
+export async function removeFoodFromMealPlan(req: Request, res: Response) {
+    try {
+        const food = await FoodSchema.findById(req.body.exerciseId);
+        const mealPlan = await MealPlanSchema.findById(req.body.id);
+
+        mealPlan.exercises.remove(food);
 
         await mealPlan.save();
 

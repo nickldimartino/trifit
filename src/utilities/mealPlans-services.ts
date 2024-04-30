@@ -23,3 +23,7 @@ export function deleteMealPlan(id: Types.ObjectId) {
 export function addFoodToMealPlan(id: Types.ObjectId, foodId: Types.ObjectId) {
     return sendRequest(`${BASE_URL}/add`, "POST", {id, foodId});
 }
+
+export function removeFoodFromMealPlan(id: any, foodId: Types.ObjectId) {
+    return sendRequest(`${BASE_URL}/remove`, "POST", {id, foodId});
+}

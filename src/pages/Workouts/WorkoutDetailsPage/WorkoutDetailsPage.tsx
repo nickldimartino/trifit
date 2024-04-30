@@ -28,7 +28,7 @@ export default function WorkoutDetailsPage({ exercises, workouts }: { exercises:
     async function removeExerciseFromWorkout(exerciseId: Types.ObjectId) {
         await workoutsService.removeExerciseFromWorkout(id, exerciseId);
         navigate("/workouts");
-      }
+    }
 
     const exercisesItems = thisWorkoutsExercises.map((e: any, idx: number) => (
         <ExerciseForm 

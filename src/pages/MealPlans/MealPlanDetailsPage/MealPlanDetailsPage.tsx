@@ -1,13 +1,14 @@
 import { FoodType } from "../../../types";
-import { useParams } from "react-router-dom";
-import ExerciseForm from "../../../components/Exercises/ExerciseForm/ExerciseForm";
+import { useNavigate, useParams } from "react-router-dom";
 import { Types } from "mongoose";
 import FoodForm from "../../../components/Foods/FoodForm/FoodForm";
+import * as mealPlansService from "../../../utilities/mealPlans-services";
 
 export default function MealPlanDetailsPage({ foods, mealPlans }: { foods: FoodType[], mealPlans: any }) {
     const { id } = useParams();
     let thisMealPlan;
     let thisMealPlanFoods: FoodType[] = [];
+    const navigate = useNavigate();
 
     for (let w = 0; w < mealPlans.length; w++) {
         if (mealPlans[w]._id === id) {
@@ -24,6 +25,11 @@ export default function MealPlanDetailsPage({ foods, mealPlans }: { foods: FoodT
         })
     });
 
+    async function removeExerciseFromWorkout(foodId: Types.ObjectId) {
+        await mealPlansService.removeFoodFromMealPlan(id, foodId);
+        navigate("/mealPlans");
+    }
+
     const foodItems = thisMealPlanFoods.map((f: any, idx: number) => (
         <FoodForm 
             id={f._id}
@@ -34,7 +40,7 @@ export default function MealPlanDetailsPage({ foods, mealPlans }: { foods: FoodT
             protein={f.protein}
             carbohydrates={f.carbohydrates}
             fat={f.fat}
-            deleteFood={()=>{}}
+            deleteFood={removeExerciseFromWorkout}
             addFoodToMealPlan={()=>{}}
         />
     ));
