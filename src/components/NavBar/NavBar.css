@@ -1,0 +1,26 @@
+.navbar-home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.LinkElem {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: all .05s ease-in-out;
+}
+
+.LinkElem:hover {
+    color: #EA5455;
+}
+
+h1 {
+    color: #FFD460;
+}

@@ -39,11 +39,16 @@ export default function FoodsPage({ foods, setFoods, user }: { foods: any, setFo
             <h1>Food Page Page</h1>
             <div>Filter</div>
             <NewFoodForm addNewFood={addNewFood}/>
-            <FoodsList 
-                foods={foods}
-                addFoodToMealPlan={addFoodToMealPlan}
-                deleteFood={deleteFood}/>
-            <FoodsPicture />
+            <div className="list-picture">
+                <div>
+                    <FoodsList 
+                        foods={foods}
+                        addFoodToMealPlan={addFoodToMealPlan}
+                        deleteFood={deleteFood}
+                    />
+                </div>
+                <FoodsPicture />
+            </div>
         </>
     );
 }

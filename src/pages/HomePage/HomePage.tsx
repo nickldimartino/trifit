@@ -1,7 +1,11 @@
-export default function HomePage() {
+import Logo from "../../components/Logo/Logo";
+import { UserDataObj } from "../../types";
+
+export default function HomePage({ user }: { user: UserDataObj }) {
     return (
         <>
-            <h1>Home Page</h1>
+            <Logo />
+            <h1>Welcome {user.name}!</h1>
         </>
     );
 }

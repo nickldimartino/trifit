@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { UserType } from "../../types";
 import * as userService from '../../utilities/users-service';
+import "./NavBar.css";
 
-export default function NavBar({user, setUser}: {user: UserType, setUser: any}) {
+export default function NavBar({user, setUser, isActive}: {user: UserType, setUser: any, isActive: boolean}) {
     function handleLogOut() {
         // Delegate to the users-service
         userService.logOut();
@@ -11,22 +12,20 @@ export default function NavBar({user, setUser}: {user: UserType, setUser: any}) 
       }
 
     return (
-        <nav>
-            <Link to="/">Home Page</Link>
-            &nbsp; | &nbsp;
-            <Link to="/exercises">Exercises Page</Link>
-            &nbsp; | &nbsp;
-            <Link to="/workouts">Workouts Page</Link>
-            &nbsp; | &nbsp;
-            <Link to="/foods">Foods Page</Link>
-            &nbsp; | &nbsp;
-            <Link to="/mealplans">Meal Plans Page</Link>
-            &nbsp; | &nbsp;
-            <Link to="/bodystats">Body Stats Page</Link>
-            &nbsp; | &nbsp;
-            <span>{user.name}</span>
-            &nbsp; | &nbsp;
-            <Link to="" onClick={handleLogOut}>Log Out</Link>
+        <nav className={ isActive ? "navbar-home-page" : "navbar" }>
+            <Link to="/" className="LinkElem">Home Page</Link>
+            &nbsp; &nbsp;
+            <Link to="/exercises" className="LinkElem">Exercises</Link>
+            &nbsp; &nbsp;
+            <Link to="/workouts" className="LinkElem">Your Workouts</Link>
+            &nbsp; &nbsp;
+            <Link to="/foods" className="LinkElem">Foods</Link>
+            &nbsp; &nbsp;
+            <Link to="/mealplans" className="LinkElem">Your Meal Plans</Link>
+            &nbsp; &nbsp;
+            <Link to="/bodystats" className="LinkElem">Your Body</Link>
+            &nbsp; &nbsp;
+            <Link to="" onClick={handleLogOut} className="LinkElem">Log Out</Link>
         </nav>
     );
 }

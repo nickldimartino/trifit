@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import ExercisesPage from '../ExercisesPage/ExercisesPage';
 import AuthPage from '../AuthPage/AuthPage';
@@ -20,6 +20,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [exercises, setExercises] = useState([]);
   const [foods, setFoods] = useState([]);
+  const location = useLocation();
 
   async function editExercise(exercise: ExerciseType) {
     const newExercisesSet = await exercisesService.editExercise(exercise);
@@ -31,13 +32,21 @@ export default function App() {
     setFoods(newFoodSet);
   }
 
+  const isActive = location.pathname === "/";
+
   return (
     <main className="App">
       { user ?
       <>
-        <NavBar user={user} setUser={setUser}/>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage user={user}/>} />
+        </Routes>
+        <NavBar
+          user={user} 
+          setUser={setUser}
+          isActive={isActive}
+        />
+        <Routes>
           <Route path="/exercises" element={<ExercisesPage exercises={exercises} setExercises={setExercises} user={user}/>} />
           <Route path="/exercises/edit/:id/:name/:type/:muscle/:grip/:width" element={<EditExercisePage editExercise={editExercise}/>} />
           <Route path="/workouts" element={<WorkoutsPage />} />

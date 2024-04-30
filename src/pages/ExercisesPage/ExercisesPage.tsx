@@ -39,11 +39,16 @@ export default function ExercisesPage({ exercises, setExercises, user }: { exerc
             <h1>Exercises Page</h1>
             <div>Filter</div>
             <NewExerciseForm addNewExercise={addNewExercise}/>
-            <ExercisesList 
-                exercises={exercises}
-                addExerciseToWorkout={addExerciseToWorkout}
-                deleteExercise={deleteExercise}/>
-            <ExercisesPicture />
+            <div className="list-picture">
+                <div>
+                    <ExercisesList 
+                        exercises={exercises}
+                        addExerciseToWorkout={addExerciseToWorkout}
+                        deleteExercise={deleteExercise}
+                    />
+                </div>
+                <ExercisesPicture />
+            </div>
         </>
     );
 }
