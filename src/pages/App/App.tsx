@@ -89,6 +89,7 @@ export default function App() {
           isActive={isActive}
         />
         <Routes>
+        {/* <Route path="/" element={<HomePage user={user}/>} /> */}
           <Route path="/exercises" element={<ExercisesPage exercises={exercises} setExercises={setExercises} user={user} addExerciseToWorkout={addExerciseToWorkout}/>} />
           <Route path="/exercises/edit/:id/:name/:type/:muscle/:grip/:width" element={<EditExercisePage editExercise={editExercise}/>} />
           <Route path="/workouts" element={<WorkoutsPage workouts={workouts} setWorkouts={setWorkouts} user={user} editWorkout={editWorkout} addExerciseToWorkout={addExerciseToWorkout} deleteWorkout={deleteWorkout}/>} />

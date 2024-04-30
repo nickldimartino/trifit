@@ -93,10 +93,10 @@ export async function addFoodToMealPlan(req: Request, res: Response) {
 
 export async function removeFoodFromMealPlan(req: Request, res: Response) {
     try {
-        const food = await FoodSchema.findById(req.body.exerciseId);
+        const food = await FoodSchema.findById(req.body.foodId);
         const mealPlan = await MealPlanSchema.findById(req.body.id);
-
-        mealPlan.exercises.remove(food);
+        
+        mealPlan.foods.remove(food);
 
         await mealPlan.save();
 
