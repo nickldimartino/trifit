@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 
-export interface UserDataObj {
+export interface UserDataType {
     name: string,
     email: string,
     password: string;
@@ -43,4 +43,20 @@ export interface FoodType {
     protein: number,
     carbohydrates: number,
     fat: number
+}
+
+export interface WorkoutType {
+    id: Types.ObjectId,
+    name: string,
+    exercises: ExerciseType[]
+}
+
+export interface MealPlanType {
+    id: Types.ObjectId,
+    name: string,
+    foods: FoodType[],
+    totalCalories: number,
+    totalProtein: number,
+    totalCarbohydrates: number,
+    totalFat: number
 }

@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+import { ExerciseType } from "../src/types";
 const Schema = mongoose.Schema;
 
-const ExerciseSchema = new Schema({
+const ExerciseSchema = new Schema<ExerciseType>({
     name: {
         type: String,
         required: true

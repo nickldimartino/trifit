@@ -38,9 +38,7 @@ export async function login(req: Request, res: Response) {
 
 export async function create(req: Request, res: Response) {
   try {
-    console.log(req.body)
     const user = await User.create(req.body);
-    console.log(user)
     const token = createJWT(user);
     // The token is a string, but yes, we can
     // res.json a string

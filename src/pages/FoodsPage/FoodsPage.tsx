@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import FoodsList from "../../components/Foods/FoodsList/FoodsList";
 import FoodsPicture from "../../components/Foods/FoodsPicture/FoodsPicture";
 import Logo from "../../components/Logo/Logo"
-import { FoodType, UserDataObj } from "../../types";
+import { FoodType, UserDataType } from "../../types";
 import { Types } from "mongoose";
 import NewFoodForm from "../../components/Foods/NewFoodForm/NewFoodForm";
 import * as foodsService from "../../utilities/foods-service";
 
-export default function FoodsPage({ foods, setFoods, user }: { foods: any, setFoods: Function, user: UserDataObj }) {
+export default function FoodsPage({ foods, setFoods, user }: { foods: any, setFoods: Function, user: UserDataType }) {
     const [newFood, setNewFood] = useState<FoodType[]>([]);
 
     async function getFoods() {

@@ -5,9 +5,9 @@
 
 // Import all named exports
 import * as usersAPI from './users-api';
-import { UserDataObj, CredentialsType } from '../types';
+import { UserDataType, CredentialsType } from '../types';
 
-export async function signUp(userData: UserDataObj) {
+export async function signUp(userData: UserDataType) {
   // Delegate the AJAX request to the users-api.js
   // modulee
   const token = await usersAPI.signUp(userData);

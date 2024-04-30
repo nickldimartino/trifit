@@ -4,10 +4,10 @@ import ExercisesPicture from "../../components/Exercises/ExercisesPicture/Exerci
 import Logo from "../../components/Logo/Logo";
 import NewExerciseForm from "../../components/Exercises/NewExerciseForm/NewExerciseForm";
 import * as exercisesService from "../../utilities/exercises-service";
-import { ExerciseType, UserDataObj } from "../../types";
+import { ExerciseType, UserDataType } from "../../types";
 import { Types } from "mongoose";
 
-export default function ExercisesPage({ exercises, setExercises, user }: { exercises: ExerciseType[], setExercises: Function, user: UserDataObj })  { 
+export default function ExercisesPage({ exercises, setExercises, user }: { exercises: ExerciseType[], setExercises: Function, user: UserDataType })  { 
     const [newExercise, setNewExercise] = useState<ExerciseType[]>([]);
 
     async function getExercises() {

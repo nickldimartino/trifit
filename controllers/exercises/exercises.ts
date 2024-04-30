@@ -62,7 +62,6 @@ export async function addExerciseToWorkout(req: Request, res: Response) {
     try {
         const exercise = await ExerciseSchema.findById(req.body.id);
         const user = await UserSchema.findById(req.body.user._id);
-
         res.json(exercise);
     } catch (err) {
         res.status(400).json(err);

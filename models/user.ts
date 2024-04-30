@@ -1,12 +1,15 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import { ExerciseType } from "../src/types";
+import { UserDataType } from "../src/types";
 const Schema = mongoose.Schema;
 
 const SALT_ROUNDS = 6;  // 6 is a reasonable value
 
-const userSchema = new Schema({
-    name: { type: String, required: true },
+const userSchema = new Schema<UserDataType>({
+    name: { 
+        type: String, 
+        required: true 
+    },
     email: {
         type: String,
         unique: true,
@@ -22,17 +25,19 @@ const userSchema = new Schema({
     },
     isAdmin: {
         type: String,
-        default: false,
         required: true,
+        default: "false",
     },
-    workouts: {
+    workouts: [{
         type: Schema.Types.ObjectId,
-        ref: "Exercise"
-    },
-    mealPlans: {
+        ref: "WorkoutSchema",
+        default: []
+    }],
+    mealPlans: [{
         type: Schema.Types.ObjectId,
-        ref: "Food"
-    },
+        ref: "MealPlanSchema",
+        default: []
+    }],
     dailyCalories: {
         type: [Number],
         default: []

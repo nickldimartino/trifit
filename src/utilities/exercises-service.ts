@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { ExerciseType, UserDataObj } from "../types";
+import { ExerciseType, UserDataType } from "../types";
 import sendRequest from "./send-request";
 
 const BASE_URL = "/exercises";
@@ -20,6 +20,6 @@ export function deleteExercise(id: Types.ObjectId) {
     return sendRequest(`${BASE_URL}/delete`, "POST", {id});
 }
 
-export function addExerciseToWorkout(id: Types.ObjectId, user: UserDataObj) {
+export function addExerciseToWorkout(id: Types.ObjectId, user: UserDataType) {
     return sendRequest(`${BASE_URL}/add`, "POST", {id, user});
 }

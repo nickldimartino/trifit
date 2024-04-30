@@ -1,7 +1,7 @@
 import Logo from "../../components/Logo/Logo";
-import { UserDataObj } from "../../types";
+import { UserDataType } from "../../types";
 
-export default function HomePage({ user }: { user: UserDataObj }) {
+export default function HomePage({ user }: { user: UserDataType }) {
     return (
         <>
             <Logo />
