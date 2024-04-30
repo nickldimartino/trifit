@@ -7,7 +7,7 @@ import { Types } from "mongoose";
 import NewFoodForm from "../../components/Foods/NewFoodForm/NewFoodForm";
 import * as foodsService from "../../utilities/foods-service";
 
-export default function FoodsPage({ foods, setFoods, user }: { foods: any, setFoods: Function, user: UserDataType }) {
+export default function FoodsPage({ foods, setFoods, user, addFoodToMealPlan }: { foods: any, setFoods: Function, user: UserDataType, addFoodToMealPlan: Function }) {
     const [newFood, setNewFood] = useState<FoodType[]>([]);
 
     async function getFoods() {
@@ -18,10 +18,6 @@ export default function FoodsPage({ foods, setFoods, user }: { foods: any, setFo
     async function addNewFood(food: FoodType) {
         await foodsService.createFoodData(food);
         setNewFood([ ...newFood, food]);
-    }
-
-    async function addFoodToMealPlan(id: Types.ObjectId) {
-        await foodsService.addFoodToMealPlan(id, user);
     }
 
     async function deleteFood(id: Types.ObjectId) {

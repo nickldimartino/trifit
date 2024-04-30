@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 const MealPlanSchema = require("../../models/mealPlan");
 const UserSchema = require("../../models/user");
+const FoodSchema = require("../../models/food");
 
 declare global {
     namespace Express {
@@ -14,7 +15,8 @@ module.exports = {
     show,
     create,
     edit,
-    deleteMealPlan
+    deleteMealPlan,
+    addFoodToMealPlan
 }
 
 export async function show(req: Request, res: Response) {
@@ -68,6 +70,21 @@ export async function deleteMealPlan(req: Request, res: Response) {
         user.mealPlans.remove(mealPlan._id);
         await user.save();
         res.json(mealPlans);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
+export async function addFoodToMealPlan(req: Request, res: Response) {
+    try {
+        const food = await FoodSchema.findById(req.body.foodId);
+        const mealPlan = await MealPlanSchema.findById(req.body.id);
+
+        mealPlan.foods.push(food);
+
+        await mealPlan.save();
+
+        res.json(mealPlan);
     } catch (err) {
         res.status(400).json(err);
     }

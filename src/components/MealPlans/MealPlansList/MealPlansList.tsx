@@ -1,7 +1,8 @@
 import { MealPlanType } from "../../../types";
 import MealPlanForm from "../MealPlanForm/MealPlanForm";
+import { Types } from "mongoose";
 
-export default function MealPlanList({ mealPlans, deleteMealPlan }: { mealPlans: MealPlanType[], deleteMealPlan: Function }) {
+export default function MealPlanList({ mealPlans, deleteMealPlan, addFoodToMealPlan }: { mealPlans: MealPlanType[], deleteMealPlan: Function, addFoodToMealPlan: Function }) {
     const mealPlanItems = mealPlans.map((m: any, idx: number) => (
         <MealPlanForm 
             id={m._id}
@@ -13,6 +14,8 @@ export default function MealPlanList({ mealPlans, deleteMealPlan }: { mealPlans:
             totalCarbohydrates={m.totalCarbohydrates}
             totalFat={m.totalFat}
             deleteMealPlan={deleteMealPlan}
+            addFoodToMealPlan={addFoodToMealPlan}
+            foodId={new Types.ObjectId("123456789101112131415161")}
         />
     ));
 

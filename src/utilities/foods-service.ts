@@ -19,7 +19,3 @@ export function editFood(food: FoodType) {
 export function deleteFood(id: Types.ObjectId) {
     return sendRequest(`${BASE_URL}/delete`, "POST", {id});
 }
-
-export function addFoodToMealPlan(id: Types.ObjectId, user: UserDataType) {
-    return sendRequest(`${BASE_URL}/add`, "POST", {id, user});
-}

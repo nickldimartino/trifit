@@ -20,6 +20,6 @@ export function deleteWorkout(id: Types.ObjectId) {
     return sendRequest(`${BASE_URL}/delete`, "POST", {id});
 }
 
-export function addExerciseToWorkout(id: Types.ObjectId, exerciseId: Types.ObjectId, user: UserDataType) {
-    return sendRequest(`${BASE_URL}/add`, "POST", {id, exerciseId, user});
+export function addExerciseToWorkout(id: Types.ObjectId, exerciseId: Types.ObjectId) {
+    return sendRequest(`${BASE_URL}/add`, "POST", {id, exerciseId});
 }

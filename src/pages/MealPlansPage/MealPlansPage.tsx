@@ -6,7 +6,7 @@ import { Types } from "mongoose";
 import NewMealPlanForm from "../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
 import MealPlanList from "../../components/MealPlans/MealPlansList/MealPlansList";
 
-export default function MealPlanPage({ mealPlans, setMealPlans, editMealPlan, user }: { mealPlans: any, setMealPlans: Function, editMealPlan: Function, user: MealPlanType }) {
+export default function MealPlanPage({ mealPlans, setMealPlans, editMealPlan, user, addFoodToMealPlan, deleteMealPlan }: { mealPlans: any, setMealPlans: Function, editMealPlan: Function, user: MealPlanType, addFoodToMealPlan: Function, deleteMealPlan: Function }) {
     const [newMealPlan, setNewMealPlan] = useState<MealPlanType[]>([]);
 
     async function getMealPlans() {
@@ -19,11 +19,6 @@ export default function MealPlanPage({ mealPlans, setMealPlans, editMealPlan, us
         setNewMealPlan([ ...newMealPlan, mealPlan]);
     }
 
-    async function deleteMealPlan(id: Types.ObjectId) {
-        const updatedMealPlans = await mealPlansServices.deleteMealPlan(id);
-        setMealPlans(updatedMealPlans);
-    }
-
     useEffect(() => {
         getMealPlans();
     }, [newMealPlan]);
@@ -34,7 +29,7 @@ export default function MealPlanPage({ mealPlans, setMealPlans, editMealPlan, us
             <h1>Meal Plans Page</h1>
             <div>Filter</div>
             <NewMealPlanForm addNewMealPlan={addNewMealPlan}/>
-            <MealPlanList mealPlans={mealPlans} deleteMealPlan={deleteMealPlan}/>
+            <MealPlanList mealPlans={mealPlans} deleteMealPlan={deleteMealPlan} addFoodToMealPlan={addFoodToMealPlan}/>
         </>
     );
 }

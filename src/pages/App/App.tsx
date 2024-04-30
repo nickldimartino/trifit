@@ -21,6 +21,7 @@ import EditWorkoutPage from '../EditWorkoutPage/EditWorkoutPage';
 import EditMealPlanPage from '../EditMealPlanPage/EditMealPlanPage';
 import AddExerciseToWorkout from '../AddExerciseToWorkoutPage/AddExerciseToWorkoutPage';
 import { Types } from "mongoose";
+import AddFoodToMealPlan from '../AddFoodToMealPlanPage/AddFoodToMealPlan';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -54,11 +55,21 @@ export default function App() {
   async function deleteWorkout(id: Types.ObjectId) {
     const updatedWorkouts = await workoutsService.deleteWorkout(id);
     setWorkouts(updatedWorkouts);
+  }
+
+  async function deleteMealPlan(id: Types.ObjectId) {
+    const updatedMealPlans = await mealPlansService.deleteMealPlan(id);
+    setMealPlans(updatedMealPlans);
 }
 
   async function addExerciseToWorkout(id: Types.ObjectId, exerciseId: Types.ObjectId) {
-    await workoutsService.addExerciseToWorkout(id, exerciseId, user);
+    await workoutsService.addExerciseToWorkout(id, exerciseId);
     navigate("/exercises");
+  }
+  
+  async function addFoodToMealPlan(id: Types.ObjectId, foodId: Types.ObjectId) {
+    await mealPlansService.addFoodToMealPlan(id, foodId);
+    navigate("/mealplans");
   } 
 
   const isActive = location.pathname === "/";
@@ -76,15 +87,16 @@ export default function App() {
           isActive={isActive}
         />
         <Routes>
-          <Route path="/exercises" element={<ExercisesPage exercises={exercises} setExercises={setExercises} user={user}/>} />
+          <Route path="/exercises" element={<ExercisesPage exercises={exercises} setExercises={setExercises} user={user} addExerciseToWorkout={addExerciseToWorkout}/>} />
           <Route path="/exercises/edit/:id/:name/:type/:muscle/:grip/:width" element={<EditExercisePage editExercise={editExercise}/>} />
           <Route path="/workouts" element={<WorkoutsPage workouts={workouts} setWorkouts={setWorkouts} user={user} editWorkout={editWorkout} addExerciseToWorkout={addExerciseToWorkout} deleteWorkout={deleteWorkout}/>} />
           <Route path="/workouts/edit/:id/:name/" element={<EditWorkoutPage editWorkout={editWorkout}/>} />
           <Route path="/workouts/display/:id/" element={<AddExerciseToWorkout workouts={workouts} deleteWorkout={deleteWorkout} addExerciseToWorkout={addExerciseToWorkout}/>} />
-          <Route path="/foods" element={<FoodsPage foods={foods} setFoods={setFoods} user={user}/>} />
+          <Route path="/foods" element={<FoodsPage foods={foods} setFoods={setFoods} user={user} addFoodToMealPlan={addFoodToMealPlan}/>} />
           <Route path="/foods/edit/:id/:name/:type/:calories/:protein/:carbohydrates/:fat" element={<EditFoodPage editFood={editFood}/>} />
-          <Route path="/mealplans" element={<MealPlansPage mealPlans={mealPlans} setMealPlans={setMealPlans} user={user} editMealPlan={editMealPlan}/>} />
+          <Route path="/mealplans" element={<MealPlansPage mealPlans={mealPlans} setMealPlans={setMealPlans} user={user} editMealPlan={editMealPlan} addFoodToMealPlan={addFoodToMealPlan} deleteMealPlan={deleteMealPlan}/>} />
           <Route path="/mealplans/edit/:id/:name/:totalCalories/:totalProtein/:totalCarbohydrates/:totalFat" element={<EditMealPlanPage editMealPlan={editMealPlan}/>} />
+          <Route path="/mealplans/display/:id/" element={<AddFoodToMealPlan mealPlans={mealPlans} deleteMealPlan={deleteMealPlan} addFoodToMealPlan={addFoodToMealPlan}/>} />
           <Route path="/bodystats" element={<BodyStatsPage />} />
         </Routes>
       </>

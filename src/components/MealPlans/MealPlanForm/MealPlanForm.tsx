@@ -10,7 +10,9 @@ export default function MealPlanForm({
     totalProtein,
     totalCarbohydrates,
     totalFat,
-    deleteMealPlan
+    deleteMealPlan,
+    addFoodToMealPlan,
+    foodId
 }: { 
     id: Types.ObjectId, 
     name: string, 
@@ -20,11 +22,14 @@ export default function MealPlanForm({
     totalCarbohydrates: number,
     totalFat: number,
     deleteMealPlan: Function,
+    addFoodToMealPlan: Function,
+    foodId: Types.ObjectId
 }) {
 
     return(
         <div>
             <p>{name} &nbsp; {totalCalories} &nbsp; {totalProtein} &nbsp; {totalCarbohydrates} &nbsp; {totalFat} &nbsp;</p>
+            <button onClick={() => addFoodToMealPlan(id, foodId)}>Add</button>
             <Link to={{pathname: `/mealplans/edit/${id}/${name}/${totalCalories}/${totalProtein}/${totalCarbohydrates}/${totalFat}`}}>Edit</Link>
             <button onClick={() => deleteMealPlan(id)}>Delete</button>
         </div>

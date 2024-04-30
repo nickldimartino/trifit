@@ -7,7 +7,7 @@ import * as exercisesService from "../../utilities/exercises-service";
 import { ExerciseType, UserDataType } from "../../types";
 import { Types } from "mongoose";
 
-export default function ExercisesPage({ exercises, setExercises, user }: { exercises: ExerciseType[], setExercises: Function, user: UserDataType })  { 
+export default function ExercisesPage({ exercises, setExercises, user, addExerciseToWorkout }: { exercises: ExerciseType[], setExercises: Function, user: UserDataType, addExerciseToWorkout: Function })  { 
     const [newExercise, setNewExercise] = useState<ExerciseType[]>([]);
 
     async function getExercises() {
@@ -18,10 +18,6 @@ export default function ExercisesPage({ exercises, setExercises, user }: { exerc
     async function addNewExercise(exercise: ExerciseType) {
         await exercisesService.createExerciseData(exercise);
         setNewExercise([ ...newExercise, exercise]);
-    }
-    
-    async function addExerciseToWorkout(id: Types.ObjectId) {
-        await exercisesService.addExerciseToWorkout(id, user);
     }
 
     async function deleteExercise(id: Types.ObjectId) {

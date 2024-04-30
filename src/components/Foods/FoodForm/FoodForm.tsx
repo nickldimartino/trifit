@@ -26,7 +26,7 @@ export default function FoodForm({
     return(
         <div>
             <p>{name} &nbsp; {type} &nbsp; {calories} &nbsp; {protein} &nbsp; {carbohydrates} &nbsp; {fat}</p>
-            <button onClick={() => addFoodToMealPlan(id)}>Add</button>
+            <Link to={{pathname: `/mealplans/display/${id}`}}>Add to Meal Plan</Link> &nbsp;
             <Link to={{pathname: `/foods/edit/${id}/${name}/${type}/${calories}/${protein}/${carbohydrates}/${fat}`}}>Edit</Link>
             <button onClick={() => deleteFood(id)}>Delete</button>
         </div>
