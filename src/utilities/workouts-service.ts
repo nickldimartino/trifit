@@ -12,8 +12,8 @@ export function createWorkoutData(workout: WorkoutType) {
     return sendRequest(`${BASE_URL}/create`, "POST", workout);
 }
 
-export function editWorkout(exercise: WorkoutType) {
-    return sendRequest(`${BASE_URL}/edit`, "POST", exercise);
+export function editWorkout(workout: WorkoutType) {
+    return sendRequest(`${BASE_URL}/edit`, "POST", workout);
 }
 
 export function deleteWorkout(id: Types.ObjectId) {

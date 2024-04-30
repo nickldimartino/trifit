@@ -1,4 +1,4 @@
-import { FoodType, WorkoutType } from "../../../types";
+import { WorkoutType } from "../../../types";
 import WorkoutForm from "../WorkoutForm/WorkoutForm";
 
 export default function WorkoutList({ workouts, deleteWorkout }: { workouts: WorkoutType[], deleteWorkout: Function }) {

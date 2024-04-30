@@ -1,13 +1,40 @@
 import Logo from "../../components/Logo/Logo"
-import MealPlansList from "../../components/MealPlans/MealPlansList/MealPlansList";
+import { useState, useEffect } from "react";
+import { MealPlanType } from "../../types";
+import * as mealPlansServices from "../../utilities/mealPlans-services";
+import { Types } from "mongoose";
+import NewMealPlanForm from "../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
+import MealPlanList from "../../components/MealPlans/MealPlansList/MealPlansList";
 
-export default function MealPlansPage() {
+export default function MealPlanPage({ mealPlans, setMealPlans, editMealPlan, user }: { mealPlans: any, setMealPlans: Function, editMealPlan: Function, user: MealPlanType }) {
+    const [newMealPlan, setNewMealPlan] = useState<MealPlanType[]>([]);
+
+    async function getMealPlans() {
+        let newMealPlanSet = await mealPlansServices.getMealPlansData();
+        setMealPlans(newMealPlanSet);
+    }
+
+    async function addNewMealPlan(mealPlan: MealPlanType) {
+        await mealPlansServices.createMealPlanData(mealPlan);
+        setNewMealPlan([ ...newMealPlan, mealPlan]);
+    }
+
+    async function deleteMealPlan(id: Types.ObjectId) {
+        const updatedMealPlans = await mealPlansServices.deleteMealPlan(id);
+        setMealPlans(updatedMealPlans);
+    }
+
+    useEffect(() => {
+        getMealPlans();
+    }, [newMealPlan]);
+
     return (
         <>  
             <Logo />
             <h1>Meal Plans Page</h1>
             <div>Filter</div>
-            <MealPlansList />
+            <NewMealPlanForm addNewMealPlan={addNewMealPlan}/>
+            <MealPlanList mealPlans={mealPlans} deleteMealPlan={deleteMealPlan}/>
         </>
     );
 }
