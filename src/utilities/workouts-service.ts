@@ -23,3 +23,7 @@ export function deleteWorkout(id: Types.ObjectId) {
 export function addExerciseToWorkout(id: Types.ObjectId, exerciseId: Types.ObjectId) {
     return sendRequest(`${BASE_URL}/add`, "POST", {id, exerciseId});
 }
+
+export function removeExerciseFromWorkout(id: any, exerciseId: Types.ObjectId) {
+    return sendRequest(`${BASE_URL}/remove`, "POST", {id, exerciseId});
+}

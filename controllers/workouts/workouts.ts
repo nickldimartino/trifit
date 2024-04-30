@@ -16,7 +16,8 @@ module.exports = {
     create,
     edit,
     deleteWorkout,
-    addExerciseToWorkout
+    addExerciseToWorkout,
+    removeExerciseFromWorkout
 }
 
 export async function show(req: Request, res: Response) {
@@ -85,6 +86,21 @@ export async function addExerciseToWorkout(req: Request, res: Response) {
         await workout.save();
 
         res.json(exercise);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
+export async function removeExerciseFromWorkout(req: Request, res: Response) {
+    try {
+        const exercise = await ExerciseSchema.findById(req.body.exerciseId);
+        const workout = await WorkoutSchema.findById(req.body.id);
+
+        workout.exercises.remove(exercise);
+
+        await workout.save();
+
+        res.json(workout);
     } catch (err) {
         res.status(400).json(err);
     }
