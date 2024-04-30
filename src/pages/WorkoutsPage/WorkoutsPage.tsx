@@ -4,9 +4,8 @@ import { UserDataType, WorkoutType } from "../../types";
 import { useState, useEffect } from "react";
 import * as workoutsService from "../../utilities/workouts-service";
 import NewWorkoutForm from "../../components/Workouts/NewWorkoutForm/NewWorkoutForm";
-import { Types } from "mongoose";
 
-export default function WorkoutsPage({ workouts, setWorkouts, editWorkout, user }: { workouts: any, setWorkouts: Function, editWorkout: Function, user: UserDataType }) {
+export default function WorkoutsPage({ workouts, setWorkouts, editWorkout, user, addExerciseToWorkout, deleteWorkout }: { workouts: any, setWorkouts: Function, editWorkout: Function, user: UserDataType, addExerciseToWorkout: Function, deleteWorkout: Function }) {
     const [newWorkout, setNewWorkout] = useState<WorkoutType[]>([]);
 
     async function getWorkouts() {
@@ -19,11 +18,6 @@ export default function WorkoutsPage({ workouts, setWorkouts, editWorkout, user 
         setNewWorkout([ ...newWorkout, workout]);
     }
 
-    async function deleteWorkout(id: Types.ObjectId) {
-        const updatedWorkouts = await workoutsService.deleteWorkout(id);
-        setWorkouts(updatedWorkouts);
-    }
-
     useEffect(() => {
         getWorkouts();
     }, [newWorkout]);
@@ -34,7 +28,7 @@ export default function WorkoutsPage({ workouts, setWorkouts, editWorkout, user 
             <h1>Workouts Page</h1>
             <div>Filter</div>
             <NewWorkoutForm addNewWorkout={addNewWorkout}/>
-            <WorkoutsList workouts={workouts} deleteWorkout={deleteWorkout}/>
+            <WorkoutsList workouts={workouts} deleteWorkout={deleteWorkout} addExerciseToWorkout={addExerciseToWorkout}/>
         </>
     );
 }

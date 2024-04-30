@@ -6,17 +6,22 @@ export default function WorkoutForm({
     id, 
     name, 
     exercises,
-    deleteWorkout
+    addExerciseToWorkout,
+    deleteWorkout,
+    exerciseId
 }: { 
     id: Types.ObjectId, 
     name: string, 
-    exercises: WorkoutType[]
+    exercises: WorkoutType[],
+    addExerciseToWorkout: Function,
     deleteWorkout: Function,
+    exerciseId: Types.ObjectId
 }) {
-
+    
     return(
         <div>
             <p>{name}</p>
+            <button onClick={() => addExerciseToWorkout(id, exerciseId)}>Add</button>
             <Link to={{pathname: `/workouts/edit/${id}/${name}/`}}>Edit</Link>
             <button onClick={() => deleteWorkout(id)}>Delete</button>
         </div>

@@ -6,8 +6,7 @@ module.exports = {
     show,
     create,
     edit,
-    deleteExercise,
-    addExerciseToWorkout
+    deleteExercise
 }
 
 export async function show(req: Request, res: Response) {
@@ -53,16 +52,6 @@ export async function deleteExercise(req: Request, res: Response) {
         await ExerciseSchema.findOneAndDelete({_id: req.body.id});
         const exercises = await ExerciseSchema.find({});
         res.json(exercises);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-}
-
-export async function addExerciseToWorkout(req: Request, res: Response) {
-    try {
-        const exercise = await ExerciseSchema.findById(req.body.id);
-        const user = await UserSchema.findById(req.body.user._id);
-        res.json(exercise);
     } catch (err) {
         res.status(400).json(err);
     }
