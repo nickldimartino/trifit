@@ -1,5 +1,5 @@
-import WorkoutForm from "../../components/Workouts/WorkoutForm/WorkoutForm";
-import { WorkoutType } from "../../types";
+import WorkoutForm from "../../../components/Workouts/WorkoutForm/WorkoutForm";
+import { WorkoutType } from "../../../types";
 import { useParams } from "react-router-dom";
 import { Types } from "mongoose";
 

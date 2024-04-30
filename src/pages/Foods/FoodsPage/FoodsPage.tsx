@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import FoodsList from "../../components/Foods/FoodsList/FoodsList";
-import FoodsPicture from "../../components/Foods/FoodsPicture/FoodsPicture";
-import Logo from "../../components/Logo/Logo"
-import { FoodType, UserDataType } from "../../types";
+import FoodsList from "../../../components/Foods/FoodsList/FoodsList";
+import FoodsPicture from "../../../components/Foods/FoodsPicture/FoodsPicture";
+import Logo from "../../../components/Logo/Logo"
+import { FoodType, UserDataType } from "../../../types";
 import { Types } from "mongoose";
-import NewFoodForm from "../../components/Foods/NewFoodForm/NewFoodForm";
-import * as foodsService from "../../utilities/foods-service";
+import NewFoodForm from "../../../components/Foods/NewFoodForm/NewFoodForm";
+import * as foodsService from "../../../utilities/foods-service";
 
 export default function FoodsPage({ foods, setFoods, user, addFoodToMealPlan }: { foods: any, setFoods: Function, user: UserDataType, addFoodToMealPlan: Function }) {
     const [newFood, setNewFood] = useState<FoodType[]>([]);

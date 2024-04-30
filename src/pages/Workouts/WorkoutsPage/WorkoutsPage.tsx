@@ -1,9 +1,9 @@
-import Logo from "../../components/Logo/Logo";
-import WorkoutsList from "../../components/Workouts/WorkoutsList/WorkoutsList";
-import { UserDataType, WorkoutType } from "../../types";
+import Logo from "../../../components/Logo/Logo";
+import WorkoutsList from "../../../components/Workouts/WorkoutsList/WorkoutsList";
+import { UserDataType, WorkoutType } from "../../../types";
 import { useState, useEffect } from "react";
-import * as workoutsService from "../../utilities/workouts-service";
-import NewWorkoutForm from "../../components/Workouts/NewWorkoutForm/NewWorkoutForm";
+import * as workoutsService from "../../../utilities/workouts-service";
+import NewWorkoutForm from "../../../components/Workouts/NewWorkoutForm/NewWorkoutForm";
 
 export default function WorkoutsPage({ workouts, setWorkouts, editWorkout, user, addExerciseToWorkout, deleteWorkout }: { workouts: any, setWorkouts: Function, editWorkout: Function, user: UserDataType, addExerciseToWorkout: Function, deleteWorkout: Function }) {
     const [newWorkout, setNewWorkout] = useState<WorkoutType[]>([]);

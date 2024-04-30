@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ExerciseType } from "../../types";
+import { ExerciseType } from "../../../types";
 import { Types } from "mongoose";
 
 export default function EditExercisePage({ editExercise }: { editExercise: Function }) {

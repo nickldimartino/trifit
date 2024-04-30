@@ -1,10 +1,10 @@
-import Logo from "../../components/Logo/Logo"
+import Logo from "../../../components/Logo/Logo"
 import { useState, useEffect } from "react";
-import { MealPlanType } from "../../types";
-import * as mealPlansServices from "../../utilities/mealPlans-services";
+import { MealPlanType } from "../../../types";
+import * as mealPlansServices from "../../../utilities/mealPlans-services";
 import { Types } from "mongoose";
-import NewMealPlanForm from "../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
-import MealPlanList from "../../components/MealPlans/MealPlansList/MealPlansList";
+import NewMealPlanForm from "../../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
+import MealPlanList from "../../../components/MealPlans/MealPlansList/MealPlansList";
 
 export default function MealPlanPage({ mealPlans, setMealPlans, editMealPlan, user, addFoodToMealPlan, deleteMealPlan }: { mealPlans: any, setMealPlans: Function, editMealPlan: Function, user: MealPlanType, addFoodToMealPlan: Function, deleteMealPlan: Function }) {
     const [newMealPlan, setNewMealPlan] = useState<MealPlanType[]>([]);

@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { MealPlanType } from "../../types";
+import { MealPlanType } from "../../../types";
 import { Types } from "mongoose";
 
 export default function EditMealPlanPage({ editMealPlan }: { editMealPlan: Function }) {

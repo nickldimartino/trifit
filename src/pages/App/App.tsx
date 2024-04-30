@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
-import ExercisesPage from '../ExercisesPage/ExercisesPage';
+import ExercisesPage from '../Exercises/ExercisesPage/ExercisesPage';
 import AuthPage from '../AuthPage/AuthPage';
-import WorkoutsPage from '../WorkoutsPage/WorkoutsPage';
+import WorkoutsPage from '../Workouts/WorkoutsPage/WorkoutsPage';
 import NavBar from '../../components/NavBar/NavBar';
 import { getUser } from '../../utilities/users-service';
 import HomePage from '../HomePage/HomePage';
-import FoodsPage from '../FoodsPage/FoodsPage';
-import MealPlansPage from '../MealPlansPage/MealPlansPage';
+import FoodsPage from '../Foods/FoodsPage/FoodsPage';
+import MealPlansPage from '../MealPlans/MealPlansPage/MealPlansPage';
 import BodyStatsPage from '../BodyStatsPage/BodyStatsPage';
-import EditExercisePage from '../EditExercisePage/EditExercisePage';
-import EditFoodPage from '../EditFoodPage/EditFoodPage';
+import EditExercisePage from '../Exercises/EditExercisePage/EditExercisePage';
+import EditFoodPage from '../Foods/EditFoodPage/EditFoodPage';
 import { ExerciseType, FoodType, MealPlanType, WorkoutType } from '../../types';
 import * as exercisesService from "../../utilities/exercises-service";
 import * as foodsService from "../../utilities/foods-service";
 import * as workoutsService from "../../utilities/workouts-service";
 import * as mealPlansService from "../../utilities/mealPlans-services";
-import EditWorkoutPage from '../EditWorkoutPage/EditWorkoutPage';
-import EditMealPlanPage from '../EditMealPlanPage/EditMealPlanPage';
-import AddExerciseToWorkout from '../AddExerciseToWorkoutPage/AddExerciseToWorkoutPage';
+import EditWorkoutPage from '../Workouts/EditWorkoutPage/EditWorkoutPage';
+import EditMealPlanPage from '../MealPlans/EditMealPlanPage/EditMealPlanPage';
+import AddExerciseToWorkout from '../Workouts/AddExerciseToWorkoutPage/AddExerciseToWorkoutPage';
 import { Types } from "mongoose";
-import AddFoodToMealPlan from '../AddFoodToMealPlanPage/AddFoodToMealPlan';
+import AddFoodToMealPlan from '../MealPlans/AddFoodToMealPlanPage/AddFoodToMealPlan';
 
 export default function App() {
   const [user, setUser] = useState(getUser());

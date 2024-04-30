@@ -1,7 +1,7 @@
-import { MealPlanType } from "../../types";
+import { MealPlanType } from "../../../types";
 import { useParams } from "react-router-dom";
 import { Types } from "mongoose";
-import MealPlanForm from "../../components/MealPlans/MealPlanForm/MealPlanForm";
+import MealPlanForm from "../../../components/MealPlans/MealPlanForm/MealPlanForm";
 
 export default function AddFoodToMealPlan({ mealPlans, deleteMealPlan, addFoodToMealPlan }: { mealPlans: MealPlanType[], deleteMealPlan: Function, addFoodToMealPlan: Function }) {
     const { id } = useParams();

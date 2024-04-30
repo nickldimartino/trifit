@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { FoodType } from "../../types";
+import { FoodType } from "../../../types";
 import { Types } from "mongoose";
 
 export default function EditFoodPage({ editFood }: { editFood: Function }) {
