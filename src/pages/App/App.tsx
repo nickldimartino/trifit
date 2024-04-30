@@ -23,6 +23,7 @@ import AddExerciseToWorkout from '../Workouts/AddExerciseToWorkoutPage/AddExerci
 import { Types } from "mongoose";
 import AddFoodToMealPlan from '../MealPlans/AddFoodToMealPlanPage/AddFoodToMealPlan';
 import WorkoutDetailsPage from "../Workouts/WorkoutDetailsPage/WorkoutDetailsPage";
+import MealPlanDetailsPage from '../MealPlans/MealPlanDetailsPage/MealPlanDetailsPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -99,6 +100,7 @@ export default function App() {
           <Route path="/mealplans" element={<MealPlansPage mealPlans={mealPlans} setMealPlans={setMealPlans} user={user} editMealPlan={editMealPlan} addFoodToMealPlan={addFoodToMealPlan} deleteMealPlan={deleteMealPlan}/>} />
           <Route path="/mealplans/edit/:id/:name/:totalCalories/:totalProtein/:totalCarbohydrates/:totalFat" element={<EditMealPlanPage editMealPlan={editMealPlan}/>} />
           <Route path="/mealplans/display/:id/" element={<AddFoodToMealPlan mealPlans={mealPlans} deleteMealPlan={deleteMealPlan} addFoodToMealPlan={addFoodToMealPlan}/>} />
+          <Route path="/mealplans/:id" element={<MealPlanDetailsPage foods={foods} mealPlans={mealPlans}/>}/>
           <Route path="/bodystats" element={<BodyStatsPage />} />
         </Routes>
       </>

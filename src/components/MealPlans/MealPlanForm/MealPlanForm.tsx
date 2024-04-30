@@ -29,6 +29,7 @@ export default function MealPlanForm({
     return(
         <div>
             <p>{name} &nbsp; {totalCalories} &nbsp; {totalProtein} &nbsp; {totalCarbohydrates} &nbsp; {totalFat} &nbsp;</p>
+            <Link to={{pathname: `/mealplans/${id}`}}>Meal Plan Details</Link>
             <button onClick={() => addFoodToMealPlan(id, foodId)}>Add</button>
             <Link to={{pathname: `/mealplans/edit/${id}/${name}/${totalCalories}/${totalProtein}/${totalCarbohydrates}/${totalFat}`}}>Edit</Link>
             <button onClick={() => deleteMealPlan(id)}>Delete</button>
