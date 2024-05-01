@@ -1,7 +1,10 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useParams, useNavigate } from "react-router-dom";
+// External
 import { Types } from "mongoose";
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+// Types
 import { WorkoutType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

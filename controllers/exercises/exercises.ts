@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Request, Response } from "express";
 
+// Internal
 const ExerciseSchema = require("../../models/exercise");
 
 /*----------------------------------- Module Exports -----------------------------------*/

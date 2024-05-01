@@ -1,11 +1,15 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useState, useEffect } from "react";
-import Logo from "../../../components/Logo/Logo";
-import WorkoutsList from "../../../components/Workouts/WorkoutsList/WorkoutsList";
-import { UserDataType, WorkoutType } from "../../../types";
-import * as workoutsService from "../../../utilities/workouts-service";
-import NewWorkoutForm from "../../../components/Workouts/NewWorkoutForm/NewWorkoutForm";
+// External
+import { useEffect, useState } from "react";
 
+// Internal
+import Logo from "../../../components/Logo/Logo";
+import NewWorkoutForm from "../../../components/Workouts/NewWorkoutForm/NewWorkoutForm";
+import WorkoutsList from "../../../components/Workouts/WorkoutsList/WorkoutsList";
+import * as workoutsService from "../../../utilities/workouts-service";
+
+// Types
+import { UserDataType, WorkoutType } from "../../../types";
 /*------------------------------------- Functions --------------------------------------*/
 export default function WorkoutsPage({
   workouts,

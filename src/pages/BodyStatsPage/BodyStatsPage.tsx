@@ -1,5 +1,6 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useState, useEffect } from "react";
+// External
+import { useEffect, useState } from "react";
 import { Scatter } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -11,9 +12,11 @@ import {
   Tooltip,
 } from "chart.js";
 
+// Internal
 import NewBodyStatForm from "../../components/BodyStats/NewBodyStatForm";
 import * as bodyStatsServices from "../../utilities/bodyStats-service";
 
+// Types
 import { BodyStatType, UserDataType } from "../../types";
 
 // Register the ChartJS elements

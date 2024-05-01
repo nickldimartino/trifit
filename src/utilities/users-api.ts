@@ -1,6 +1,9 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { UserDataType, CredentialsType } from "../types";
+// Internal
 import sendRequest from "./send-request";
+
+// Types
+import { UserDataType, CredentialsType } from "../types";
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const BASE_URL = "/api/users";

@@ -1,7 +1,9 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { FoodType, UserDataType } from "../../../types";
-
+// Internal
 import FoodForm from "../FoodForm/FoodForm";
+
+// Types
+import { FoodType, UserDataType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function FoodsList({

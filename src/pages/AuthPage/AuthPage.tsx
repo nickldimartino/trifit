@@ -1,10 +1,13 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { useState } from "react";
 
+// Internal
 import LoginForm from "../../components/LoginForm/LoginForm";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import Logo from "../../components/Logo/Logo";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
+// Types
 import { UserType } from "../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

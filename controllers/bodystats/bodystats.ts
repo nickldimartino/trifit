@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Request, Response } from "express";
 
+// Internal
 const BodyStatSchema = require("../../models/bodyStat");
 const UserSchema = require("../../models/user");
 

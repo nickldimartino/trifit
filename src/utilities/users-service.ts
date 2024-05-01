@@ -1,6 +1,9 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// Internal
 import * as usersAPI from "./users-api";
-import { UserDataType, CredentialsType } from "../types";
+
+// Types
+import { CredentialsType, UserDataType } from "../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 // Sign up a user

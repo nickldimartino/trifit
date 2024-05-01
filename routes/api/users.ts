@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import express from "express";
 
+// Internal
 import { create, login, checkToken } from "../../controllers/api/users";
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 

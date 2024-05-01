@@ -1,13 +1,16 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useEffect, useState } from "react";
+// External
 import { Types } from "mongoose";
+import { useEffect, useState } from "react";
 
+// Internal
 import ExercisesList from "../../../components/Exercises/ExercisesList/ExercisesList";
 import ExercisesPicture from "../../../components/Exercises/ExercisesPicture/ExercisesPicture";
 import Logo from "../../../components/Logo/Logo";
 import NewExerciseForm from "../../../components/Exercises/NewExerciseForm/NewExerciseForm";
 import * as exercisesService from "../../../utilities/exercises-service";
 
+// Types
 import { ExerciseType, UserDataType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

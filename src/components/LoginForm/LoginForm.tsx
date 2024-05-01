@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import React, { useState } from "react";
 
+// Internal
 import * as usersService from "../../utilities/users-service";
 
 /*------------------------------------- Functions --------------------------------------*/

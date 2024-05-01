@@ -1,9 +1,11 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Request, Response } from "express";
 
+// Internal
 const ExerciseSchema = require("../../models/exercise");
-const WorkoutSchema = require("../../models/workout");
 const UserSchema = require("../../models/user");
+const WorkoutSchema = require("../../models/workout");
 
 /*----------------------------------- Type Declaration ---------------------------------*/
 declare global {

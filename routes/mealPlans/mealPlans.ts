@@ -1,7 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import express from "express";
 
-import { ensureLoggedIn } from "../../config/ensureLoggedIn";
+// Internal
 import {
   create,
   read,
@@ -10,6 +11,7 @@ import {
   addFoodToMealPlan,
   removeFoodFromMealPlan,
 } from "../../controllers/mealPlans/mealPlans";
+import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const router = express.Router();

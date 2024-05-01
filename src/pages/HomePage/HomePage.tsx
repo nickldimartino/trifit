@@ -1,5 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// Internal
 import Logo from "../../components/Logo/Logo";
+
+// Types
 import { UserDataType } from "../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

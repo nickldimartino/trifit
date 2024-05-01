@@ -1,7 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import express from "express";
 
-import { ensureLoggedIn } from "../../config/ensureLoggedIn";
+// Internal
 import {
   create,
   read,
@@ -10,6 +11,7 @@ import {
   addExerciseToWorkout,
   removeExerciseFromWorkout,
 } from "../../controllers/workouts/workouts";
+import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const router = express.Router();

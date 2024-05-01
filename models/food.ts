@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import mongoose from "mongoose";
 
+// Types
 import { FoodType } from "../src/types";
 
 /*-------------------------------- Variable Declarations -------------------------------*/

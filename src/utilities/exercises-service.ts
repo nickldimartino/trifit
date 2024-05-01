@@ -1,8 +1,12 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Types } from "mongoose";
 
-import { ExerciseType } from "../types";
+// Internal
 import sendRequest from "./send-request";
+
+// Types
+import { ExerciseType } from "../types";
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const BASE_URL = "/exercises";

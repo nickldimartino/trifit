@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import mongoose from "mongoose";
 
+// Types
 import { MealPlanType } from "../src/types";
 
 /*-------------------------------- Variable Declarations -------------------------------*/

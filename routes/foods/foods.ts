@@ -1,13 +1,15 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import express from "express";
 
-import { ensureLoggedIn } from "../../config/ensureLoggedIn";
+// Internal
 import {
   create,
   read,
   update,
   deleteFood,
 } from "../../controllers/foods/foods";
+import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const router = express.Router();

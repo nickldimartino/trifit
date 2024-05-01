@@ -1,33 +1,35 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
+import { Types } from "mongoose";
 import { useState } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { Types } from "mongoose";
 
+// Internal
 import "./App.css";
-import ExercisesPage from "../Exercises/ExercisesPage/ExercisesPage";
-import AuthPage from "../AuthPage/AuthPage";
-import WorkoutsPage from "../Workouts/WorkoutsPage/WorkoutsPage";
-import NavBar from "../../components/NavBar/NavBar";
-import HomePage from "../HomePage/HomePage";
-import FoodsPage from "../Foods/FoodsPage/FoodsPage";
-import MealPlansPage from "../MealPlans/MealPlansPage/MealPlansPage";
-import BodyStatsPage from "../BodyStatsPage/BodyStatsPage";
-import EditExercisePage from "../Exercises/EditExercisePage/EditExercisePage";
-import EditFoodPage from "../Foods/EditFoodPage/EditFoodPage";
-import EditWorkoutPage from "../Workouts/EditWorkoutPage/EditWorkoutPage";
-import EditMealPlanPage from "../MealPlans/EditMealPlanPage/EditMealPlanPage";
 import AddExerciseToWorkout from "../Workouts/AddExerciseToWorkoutPage/AddExerciseToWorkoutPage";
 import AddFoodToMealPlan from "../MealPlans/AddFoodToMealPlanPage/AddFoodToMealPlan";
-import WorkoutDetailsPage from "../Workouts/WorkoutDetailsPage/WorkoutDetailsPage";
+import AuthPage from "../AuthPage/AuthPage";
+import BodyStatsPage from "../BodyStatsPage/BodyStatsPage";
+import ExercisesPage from "../Exercises/ExercisesPage/ExercisesPage";
+import EditExercisePage from "../Exercises/EditExercisePage/EditExercisePage";
+import EditFoodPage from "../Foods/EditFoodPage/EditFoodPage";
+import EditMealPlanPage from "../MealPlans/EditMealPlanPage/EditMealPlanPage";
+import EditWorkoutPage from "../Workouts/EditWorkoutPage/EditWorkoutPage";
+import FoodsPage from "../Foods/FoodsPage/FoodsPage";
+import HomePage from "../HomePage/HomePage";
 import MealPlanDetailsPage from "../MealPlans/MealPlanDetailsPage/MealPlanDetailsPage";
-
-import { getUser } from "../../utilities/users-service";
+import MealPlansPage from "../MealPlans/MealPlansPage/MealPlansPage";
+import NavBar from "../../components/NavBar/NavBar";
+import WorkoutDetailsPage from "../Workouts/WorkoutDetailsPage/WorkoutDetailsPage";
+import WorkoutsPage from "../Workouts/WorkoutsPage/WorkoutsPage";
 import * as exercisesService from "../../utilities/exercises-service";
 import * as foodsService from "../../utilities/foods-service";
 import * as workoutsService from "../../utilities/workouts-service";
 import * as mealPlansService from "../../utilities/mealPlans-services";
+import { getUser } from "../../utilities/users-service";
 
-import { ExerciseType, FoodType, MealPlanType, WorkoutType } from "../../types";
+// Types
+import { FoodType, ExerciseType, MealPlanType, WorkoutType } from "../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function App() {

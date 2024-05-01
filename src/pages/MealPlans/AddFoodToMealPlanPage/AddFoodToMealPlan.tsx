@@ -1,8 +1,13 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useParams } from "react-router-dom";
+// External
 import { Types } from "mongoose";
-import { MealPlanType } from "../../../types";
+import { useParams } from "react-router-dom";
+
+// Internal
 import MealPlanForm from "../../../components/MealPlans/MealPlanForm/MealPlanForm";
+
+// Types
+import { MealPlanType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function AddFoodToMealPlan({

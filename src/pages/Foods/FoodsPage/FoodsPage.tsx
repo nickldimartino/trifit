@@ -1,13 +1,16 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useState, useEffect } from "react";
+// External
 import { Types } from "mongoose";
+import { useEffect, useState } from "react";
 
+// Internal
+import Logo from "../../../components/Logo/Logo";
 import FoodsList from "../../../components/Foods/FoodsList/FoodsList";
 import FoodsPicture from "../../../components/Foods/FoodsPicture/FoodsPicture";
-import Logo from "../../../components/Logo/Logo";
 import NewFoodForm from "../../../components/Foods/NewFoodForm/NewFoodForm";
 import * as foodsService from "../../../utilities/foods-service";
 
+// Types
 import { FoodType, UserDataType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

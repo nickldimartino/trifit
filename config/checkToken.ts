@@ -1,5 +1,6 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { Request, Response, NextFunction } from "express";
+// External
+import { NextFunction, Request, Response } from "express";
 const jwt = require("jsonwebtoken");
 
 /*----------------------------------- Type Declaration ---------------------------------*/

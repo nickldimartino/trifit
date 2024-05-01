@@ -1,7 +1,12 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Types } from "mongoose";
-import { WorkoutType } from "../../../types";
+
+// Internal
 import WorkoutForm from "../WorkoutForm/WorkoutForm";
+
+// Types
+import { WorkoutType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function WorkoutList({

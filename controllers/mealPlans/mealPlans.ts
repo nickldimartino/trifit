@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Request, Response } from "express";
 
+// Internal
 const FoodSchema = require("../../models/food");
 const MealPlanSchema = require("../../models/mealPlan");
 const UserSchema = require("../../models/user");

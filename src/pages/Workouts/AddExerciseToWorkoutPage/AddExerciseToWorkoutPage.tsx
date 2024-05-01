@@ -1,8 +1,12 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useParams } from "react-router-dom";
+// External
 import { Types } from "mongoose";
+import { useParams } from "react-router-dom";
 
+// Internal
 import WorkoutForm from "../../../components/Workouts/WorkoutForm/WorkoutForm";
+
+// Types
 import { WorkoutType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

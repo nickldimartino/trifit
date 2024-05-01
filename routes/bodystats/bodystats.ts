@@ -1,8 +1,10 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import express from "express";
 
-import { ensureLoggedIn } from "../../config/ensureLoggedIn";
+// Internal
 import { create, read } from "../../controllers/bodystats/bodystats";
+import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const router = express.Router();

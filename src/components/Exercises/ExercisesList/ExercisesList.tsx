@@ -1,6 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// Internal
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
 
+// Types
 import { ExerciseType, UserDataType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

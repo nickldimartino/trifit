@@ -1,9 +1,14 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Types } from "mongoose";
 import { useNavigate, useParams } from "react-router-dom";
-import { ExerciseType, UserDataType } from "../../../types";
+
+// Internal
 import ExerciseForm from "../../../components/Exercises/ExerciseForm/ExerciseForm";
 import * as workoutsService from "../../../utilities/workouts-service";
+
+// Types
+import { ExerciseType, UserDataType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function WorkoutDetailsPage({

@@ -1,6 +1,11 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import React, { Component } from "react";
+
+// Internal
 import { signUp } from "../../utilities/users-service";
+
+// Types
 import { BodyStatType, ExerciseType, FoodType } from "../../types";
 
 /*---------------------------------- Type Declarations ---------------------------------*/

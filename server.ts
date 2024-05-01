@@ -1,8 +1,9 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import express, { Request, Response } from "express";
-import favicon from "serve-favicon";
 import logger from "morgan";
 import path from "path";
+import favicon from "serve-favicon";
 
 // Allow use of the .env file
 require("dotenv").config();

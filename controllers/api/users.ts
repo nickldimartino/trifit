@@ -1,10 +1,14 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
+import bcrypt from "bcrypt";
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
 
-import { UserType } from "../../src/types";
+// Internal
 const User = require("../../models/user");
+
+// Types
+import { UserType } from "../../src/types";
 
 /*----------------------------------- Type Declaration ---------------------------------*/
 declare global {

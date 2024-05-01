@@ -1,6 +1,9 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Types } from "mongoose";
 import { Link, useLocation } from "react-router-dom";
+
+// Types
 import { WorkoutType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

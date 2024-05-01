@@ -1,8 +1,12 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Types } from "mongoose";
 
-import { MealPlanType } from "../types";
+// Internal
 import sendRequest from "./send-request";
+
+// Types
+import { MealPlanType } from "../types";
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const BASE_URL = "/mealplans";

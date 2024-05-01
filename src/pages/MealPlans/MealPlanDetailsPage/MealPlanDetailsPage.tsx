@@ -1,10 +1,14 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useNavigate, useParams } from "react-router-dom";
+// External
 import { Types } from "mongoose";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { FoodType, UserDataType } from "../../../types";
+// Internal
 import FoodForm from "../../../components/Foods/FoodForm/FoodForm";
 import * as mealPlansService from "../../../utilities/mealPlans-services";
+
+// Types
+import { FoodType, UserDataType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function MealPlanDetailsPage({

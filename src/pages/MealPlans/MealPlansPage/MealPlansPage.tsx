@@ -1,10 +1,15 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { useState, useEffect } from "react";
+// External
+import { useEffect, useState } from "react";
+
+// Internal
 import Logo from "../../../components/Logo/Logo";
-import { MealPlanType } from "../../../types";
-import * as mealPlansServices from "../../../utilities/mealPlans-services";
-import NewMealPlanForm from "../../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
 import MealPlanList from "../../../components/MealPlans/MealPlansList/MealPlansList";
+import NewMealPlanForm from "../../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
+import * as mealPlansServices from "../../../utilities/mealPlans-services";
+
+// Types
+import { MealPlanType } from "../../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function MealPlanPage({

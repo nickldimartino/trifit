@@ -1,7 +1,9 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import mongoose from "mongoose";
+// External
 import bcrypt from "bcrypt";
+import mongoose from "mongoose";
 
+// Types
 import { UserDataType } from "../src/types";
 
 /*-------------------------------- Variable Declarations -------------------------------*/

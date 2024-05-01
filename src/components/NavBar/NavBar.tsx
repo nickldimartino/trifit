@@ -1,9 +1,12 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Link, useLocation } from "react-router-dom";
 
-import * as userService from "../../utilities/users-service";
+// Internal
 import "./NavBar.css";
+import * as userService from "../../utilities/users-service";
 
+// Types
 import { UserType } from "../../types";
 
 /*------------------------------------- Functions --------------------------------------*/

@@ -1,6 +1,10 @@
 /*----------------------------------- Module Imports -----------------------------------*/
-import { BodyStatType } from "../types";
+// Internal
 import sendRequest from "./send-request";
+
+// Types
+import { BodyStatType } from "../types";
+
 
 /*--------------------------------- Variable Declarations ------------------------------*/
 const BASE_URL = "/bodystats";

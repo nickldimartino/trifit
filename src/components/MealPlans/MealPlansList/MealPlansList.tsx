@@ -1,8 +1,13 @@
 /*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { Types } from "mongoose";
 
-import { MealPlanType } from "../../../types";
+// Internal
 import MealPlanForm from "../MealPlanForm/MealPlanForm";
+
+// Types
+import { MealPlanType } from "../../../types";
+
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function MealPlanList({
