@@ -52,6 +52,9 @@ export async function edit(req: Request, res: Response) {
 
     mealPlan.name = req.body.name;
     mealPlan.foods = req.body.foods;
+    mealPlan.totalCalories = req.body.totalCalories;
+    mealPlan.totalProtein = req.body.totalProtein;
+    mealPlan.totalFat = req.body.totalFat;
 
     await mealPlan.save();
 
