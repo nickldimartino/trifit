@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# <h1 align="center">TriFit</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### <h3 align="center"><a href="">Heroku Link Coming Soon...</a></h3>
 
-## Available Scripts
+<div align="center">
+ <a href="https://www.linkedin.com/in/nicholas-dimartino/" target="_blank">
+      <img src="https://img.shields.io/badge/-linkedin.com/in/nicholasdimartino-blue?style=flat&logo=Linkedin&logoColor=white">
+ </a> 
+ <a href="mailto:nick.l.dimartino@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/-nick.l.dimartino@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white">
+ </a>
+</div>
 
-In the project directory, you can run:
+## 📝 Description
+Description
 
-### `npm start`
+## 🖼️ Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<details>
+ <summary> 📊 App Navigation</summary>
+ 
+ | Description | Screenshot |
+ |------------ | ------------|
+ | <h3 align="center">Sign Up</h3> | <img src="" width="500">
+ | <h3 align="center">Home Page</h3> | <img src="" width="500">
+ 
+</details>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💻 Technologies Used
 
-### `npm test`
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)
+![TS-NODE](https://img.shields.io/badge/ts--node-3178C6?style=for-the-badge&logo=ts-node&logoColor=white)
+![Node](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
+![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
+![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
+![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white)
+![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚛️ Getting Started
+### 📲 Instructions
 
-### `npm run build`
+<details>
+<summary>How to Navigate the App</summary>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Game is set for two players. Click the "Computer Player" button if you wish to play against to the computer.
+ 
+2. Place your boats using the rules in the top-left of the screen.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Take turns guessing the other player's ships.  The first person to hit all other their opponent's boats (17 squares) wins!  Select "New Game" to play again.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. The theme of the game, audio, and board switch delay can be modified.
+</details>
 
-### `npm run eject`
+### 🔗 Links
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<details>
+<summary>Heroku Link</summary>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<a href="">Coming soon...</a>
+</details>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<details>
+<summary>Trello Board</summary>
 
-## Learn More
+<a href="https://trello.com/b/8ONPeZBF/trifit">https://trello.com/b/8ONPeZBF/trifit</a>
+</details>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ⏭️ Next Steps
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [ ] Find and fix possible bugs
+- [ ] Refactor code
