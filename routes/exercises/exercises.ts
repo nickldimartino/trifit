@@ -1,6 +1,11 @@
 import express from "express";
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
-import { show, create, edit, deleteExercise } from "../../controllers/exercises/exercises";
+import {
+  show,
+  create,
+  edit,
+  deleteExercise,
+} from "../../controllers/exercises/exercises";
 
 const router = express.Router();
 

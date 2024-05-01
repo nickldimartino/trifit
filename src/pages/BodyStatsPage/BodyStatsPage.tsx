@@ -10,6 +10,8 @@ import {
 } from "chart.js";
 import { BodyStatType, UserDataType } from "../../types";
 import NewBodyStatForm from "../../components/BodyStats/NewBodyStatForm";
+import { useState, useEffect } from "react";
+import * as bodyStatsServices from "../../utilities/bodyStats-service";
 
 ChartJS.register(
   LineElement,
@@ -21,6 +23,7 @@ ChartJS.register(
 );
 
 export default function BodyStatsPage({ user }: { user: UserDataType }) {
+  const [newBodyStats, setNewBodyStats] = useState<BodyStatType[]>([]);
   const data = {
     labels: ["Mon", "Tue", "Wed"],
     datasets: [
@@ -42,7 +45,7 @@ export default function BodyStatsPage({ user }: { user: UserDataType }) {
     scales: {
       x: {
         min: 0,
-        max: 4
+        max: 4,
       },
       y: {
         min: 0,
@@ -51,17 +54,29 @@ export default function BodyStatsPage({ user }: { user: UserDataType }) {
     },
   };
 
-  async function addBodyStat(bodyStat: BodyStatType) {
-    
+  async function getBodyStats() {
+    let newBodyStatSet = await bodyStatsServices.getBodyStatData();
+    setNewBodyStats(newBodyStatSet);
   }
+
+  async function addBodyStat(bodyStat: BodyStatType) {
+    await bodyStatsServices.createBodyStatData(bodyStat);
+    setNewBodyStats([...newBodyStats, bodyStat]);
+  }
+
+  useEffect(() => {
+    getBodyStats();
+  }, [newBodyStats]);
 
   return (
     <>
       <h1>Body Stats Page</h1>
-      <div style={{ width: "600px", height: "300px", backgroundColor: "white" }}>
+      <div
+        style={{ width: "600px", height: "300px", backgroundColor: "white" }}
+      >
         <Line data={data} options={options}></Line>
       </div>
-      <NewBodyStatForm addBodyStat={addBodyStat} user={user}/>
+      <NewBodyStatForm addBodyStat={addBodyStat} user={user} />
     </>
   );
 }
