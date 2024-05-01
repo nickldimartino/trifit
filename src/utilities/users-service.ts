@@ -1,12 +1,9 @@
-// Serice modules hold the code that implements
-// "business"/application logic
-// Service methods often depend upon or use
-// methods in the API modules
-
-// Import all named exports
+/*----------------------------------- Module Imports -----------------------------------*/
 import * as usersAPI from "./users-api";
 import { UserDataType, CredentialsType } from "../types";
 
+/*------------------------------------- Functions --------------------------------------*/
+// Sign up a user
 export async function signUp(userData: UserDataType) {
   // Delegate the AJAX request to the users-api.js
   // modulee
@@ -16,6 +13,7 @@ export async function signUp(userData: UserDataType) {
   return getUser();
 }
 
+// Log in a user
 export async function login(credentials: CredentialsType) {
   // Delegate the AJAX request to the users-api.js
   // module.
@@ -24,6 +22,7 @@ export async function login(credentials: CredentialsType) {
   return getUser();
 }
 
+// Get a token
 export function getToken() {
   // getItem will return null if the key does not exist
   const token = localStorage.getItem("token");
@@ -38,15 +37,18 @@ export function getToken() {
   return token;
 }
 
+// Get the user
 export function getUser() {
   const token = getToken();
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
 
+// Log out the user
 export function logOut() {
   localStorage.removeItem("token");
 }
 
+// Check the token
 export function checkToken() {
   // We can't forget how to use .then with promises
   return usersAPI.checkToken().then((dateStr) => new Date(dateStr));

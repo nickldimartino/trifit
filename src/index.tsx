@@ -1,15 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './pages/App/App';
-import { BrowserRouter as Router } from 'react-router-dom';
+/*----------------------------------- Module Imports -----------------------------------*/
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
 
+import "./index.css";
+import App from "./pages/App/App";
+
+/*---------------------------------- Root HTML Element ---------------------------------*/
+// Create the root element
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
+// Render the root element
 root.render(
   <React.StrictMode>
-    <Router><App /></Router>
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 
