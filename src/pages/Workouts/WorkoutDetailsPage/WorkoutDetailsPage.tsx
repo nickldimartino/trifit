@@ -1,10 +1,10 @@
-import { ExerciseType } from "../../../types";
+import { ExerciseType, UserDataType } from "../../../types";
 import { useNavigate, useParams } from "react-router-dom";
 import ExerciseForm from "../../../components/Exercises/ExerciseForm/ExerciseForm";
 import { Types } from "mongoose";
 import * as workoutsService from "../../../utilities/workouts-service";
 
-export default function WorkoutDetailsPage({ exercises, workouts }: { exercises: ExerciseType[], workouts: any }) {
+export default function WorkoutDetailsPage({ exercises, workouts, user }: { exercises: ExerciseType[], workouts: any, user: UserDataType }) {
     const { id } = useParams();
     let thisWorkout;
     let thisWorkoutsExercises: ExerciseType[] = [];
@@ -41,6 +41,7 @@ export default function WorkoutDetailsPage({ exercises, workouts }: { exercises:
             width={e.width}
             addExerciseToWorkout={()=>{}}
             deleteExercise={removeExerciseFromWorkout}
+            user={user}
         />
     ));
 

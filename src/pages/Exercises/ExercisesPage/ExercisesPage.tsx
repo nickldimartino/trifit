@@ -44,13 +44,18 @@ export default function ExercisesPage({
       <Logo />
       <h1>Exercises Page</h1>
       <div>Filter</div>
-      <NewExerciseForm addNewExercise={addNewExercise} />
+      { user.isAdmin === "true" ?
+        <NewExerciseForm addNewExercise={addNewExercise} />
+        :
+        <hr />
+      }
       <div className="list-picture">
         <div>
           <ExercisesList
             exercises={exercises}
             addExerciseToWorkout={addExerciseToWorkout}
             deleteExercise={deleteExercise}
+            user={user}
           />
         </div>
         <ExercisesPicture />

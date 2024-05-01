@@ -88,7 +88,6 @@ export default function App() {
           </Routes>
           <NavBar user={user} setUser={setUser} isActive={isActive} />
           <Routes>
-            {/* <Route path="/" element={<HomePage user={user}/>} /> */}
             <Route
               path="/exercises"
               element={
@@ -134,7 +133,11 @@ export default function App() {
             <Route
               path="/workouts/:id"
               element={
-                <WorkoutDetailsPage exercises={exercises} workouts={workouts} />
+                <WorkoutDetailsPage
+                  exercises={exercises}
+                  workouts={workouts}
+                  user={user}
+                />
               }
             />
             <Route
@@ -182,7 +185,11 @@ export default function App() {
             <Route
               path="/mealplans/:id"
               element={
-                <MealPlanDetailsPage foods={foods} mealPlans={mealPlans} />
+                <MealPlanDetailsPage
+                  foods={foods}
+                  mealPlans={mealPlans}
+                  user={user}
+                />
               }
             />
             <Route path="/bodystats" element={<BodyStatsPage user={user} />} />

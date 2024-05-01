@@ -1,10 +1,10 @@
-import { FoodType } from "../../../types";
+import { FoodType, UserDataType } from "../../../types";
 import { useNavigate, useParams } from "react-router-dom";
 import { Types } from "mongoose";
 import FoodForm from "../../../components/Foods/FoodForm/FoodForm";
 import * as mealPlansService from "../../../utilities/mealPlans-services";
 
-export default function MealPlanDetailsPage({ foods, mealPlans }: { foods: FoodType[], mealPlans: any }) {
+export default function MealPlanDetailsPage({ foods, mealPlans, user }: { foods: FoodType[], mealPlans: any, user: UserDataType }) {
     const { id } = useParams();
     let thisMealPlan;
     let thisMealPlanFoods: FoodType[] = [];
@@ -42,6 +42,7 @@ export default function MealPlanDetailsPage({ foods, mealPlans }: { foods: FoodT
             fat={f.fat}
             deleteFood={removeExerciseFromWorkout}
             addFoodToMealPlan={()=>{}}
+            user={user}
         />
     ));
 

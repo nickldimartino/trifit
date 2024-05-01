@@ -44,15 +44,6 @@ export default function NewMealPlanForm({ addNewMealPlan }: { addNewMealPlan: Fu
                     />
                 </label>
                 <label>
-                    Foods
-                    <input 
-                        name="foods"
-                        type="text"
-                        onChange={handleOnChange}
-                        value={newMealPlan.foods}
-                    />
-                </label>
-                <label>
                     Total Calories
                     <input 
                         name="totalCalories"

@@ -1,7 +1,7 @@
-import { FoodType } from "../../../types";
+import { FoodType, UserDataType } from "../../../types";
 import FoodForm from "../FoodForm/FoodForm";
 
-export default function FoodsList({ foods, deleteFood, addFoodToMealPlan }: { foods: FoodType[], deleteFood: Function, addFoodToMealPlan: Function }) {
+export default function FoodsList({ foods, deleteFood, addFoodToMealPlan, user }: { foods: FoodType[], deleteFood: Function, addFoodToMealPlan: Function, user: UserDataType }) {
     const foodItems = foods.map((f: any, idx: number) => (
         <FoodForm 
             id={f._id}
@@ -14,12 +14,13 @@ export default function FoodsList({ foods, deleteFood, addFoodToMealPlan }: { fo
             fat={f.fat}
             deleteFood={deleteFood}
             addFoodToMealPlan={addFoodToMealPlan}
+            user={user}
         />
     ));
 
     return (
         <>  
-            <h1>Exercises List</h1>
+            <h1>Foods List</h1>
             {foodItems}
         </>
     );

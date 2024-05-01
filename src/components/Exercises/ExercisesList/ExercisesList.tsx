@@ -1,14 +1,16 @@
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
-import { ExerciseType } from "../../../types";
+import { ExerciseType, UserDataType } from "../../../types";
 
 export default function ExercisesList({ 
     exercises, 
     addExerciseToWorkout,
-    deleteExercise 
+    deleteExercise,
+    user
 }: {
     exercises: ExerciseType[], 
     addExerciseToWorkout: Function,
-    deleteExercise: Function
+    deleteExercise: Function,
+    user: UserDataType
 }) {
     const exercisesItems = exercises.map((e: any, idx: number) => (
         <ExerciseForm 
@@ -21,6 +23,7 @@ export default function ExercisesList({
             width={e.width}
             addExerciseToWorkout={addExerciseToWorkout}
             deleteExercise={deleteExercise}
+            user={user}
         />
     ));
 

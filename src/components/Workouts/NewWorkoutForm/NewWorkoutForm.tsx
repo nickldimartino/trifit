@@ -42,15 +42,6 @@ export default function NewWorkoutForm({
             required
           />
         </label>
-        <label>
-          Exercises
-          <input
-            name="exercises"
-            type="text"
-            onChange={handleOnChange}
-            value={newWorkout.exercises}
-          />
-        </label>
         <button type="submit">Add Food</button>
       </form>
     </>
