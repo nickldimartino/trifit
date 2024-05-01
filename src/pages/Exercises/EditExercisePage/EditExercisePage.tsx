@@ -1,14 +1,19 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ExerciseType } from "../../../types";
 import { Types } from "mongoose";
+import { ExerciseType } from "../../../types";
 
+/*------------------------------------- Functions --------------------------------------*/
 export default function EditExercisePage({
   editExercise,
 }: {
   editExercise: Function;
 }) {
+  // save the params in the URL path
   const { id, name, type, muscle, grip, width } = useParams();
+
+  // new exercise state
   const [newExercise, setNewExercise] = useState({
     name: "",
     type: "",
@@ -16,11 +21,16 @@ export default function EditExercisePage({
     grip: "",
     width: "",
   });
+
+  // save the navigation
   const navigate = useNavigate();
 
+  // handles the form submission to edit an exercise
   function handleEditExercise(evt: React.ChangeEvent<any>) {
+    // prevent the page from rerendering
     evt.preventDefault();
 
+    // create a new object with the information to edit the exercise
     const edittedExerciseData: ExerciseType = {
       id: new Types.ObjectId(id),
       name: newExercise.name,
@@ -30,19 +40,26 @@ export default function EditExercisePage({
       width: newExercise.width,
     };
 
+    // edit the exercise
     editExercise(edittedExerciseData);
 
+    // navigate to the exercises page
     navigate("/exercises");
   }
 
+  // handles the keystrokes for the input elements
   function handleOnChange(evt: React.ChangeEvent<any>) {
+    // save each keystroke in the state
     const newExerciseData = {
       ...newExercise,
       [evt.target.name]: evt.target.value,
     };
+
+    // set the state with the  new keystrokes
     setNewExercise(newExerciseData);
   }
 
+  // render the Edit Exercise Page
   return (
     <>
       <h1>Edit Exercise Page</h1>

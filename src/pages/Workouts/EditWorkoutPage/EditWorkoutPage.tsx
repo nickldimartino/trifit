@@ -1,60 +1,84 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { useParams, useNavigate } from "react-router-dom";
+import { Types } from "mongoose";
 import { useState } from "react";
 import { WorkoutType } from "../../../types";
-import { Types } from "mongoose";
 
-export default function EditWorkoutPage({ editWorkout }: { editWorkout: Function }) {
-    const { id, name } = useParams();
-    const [newWorkout, setNewWorkout] = useState({
-        name: "",
-        exercises: []
-    });
-    const navigate = useNavigate();
+/*------------------------------------- Functions --------------------------------------*/
+export default function EditWorkoutPage({
+  editWorkout,
+}: {
+  editWorkout: Function;
+}) {
+  // save the URL path id ane and name parameters
+  const { id, name } = useParams();
 
-    function handleEditWorkout(evt: React.ChangeEvent<any>) {
-        evt.preventDefault();
+  // save the path navigation
+  const navigate = useNavigate();
 
-        const edittedWorkoutData: WorkoutType = {
-            id: new Types.ObjectId(id),
-            name: newWorkout.name,
-            exercises: newWorkout.exercises
-        }
+  // new workout state
+  const [newWorkout, setNewWorkout] = useState({
+    name: "",
+    exercises: [],
+  });
 
-        editWorkout(edittedWorkoutData);
-        
-        navigate("/workouts");
-    }
+  // handles the form submission to edit a workout
+  function handleEditWorkout(evt: React.ChangeEvent<any>) {
+    // prevents the page from rerendering
+    evt.preventDefault();
 
-    function handleOnChange(evt: React.ChangeEvent<any>) {
-        const newWorkoutData = { ...newWorkout, [evt.target.name]: evt.target.value }
-        setNewWorkout(newWorkoutData);
-    }
+    // create an object of the workout to edit
+    const edittedWorkoutData: WorkoutType = {
+      id: new Types.ObjectId(id),
+      name: newWorkout.name,
+      exercises: newWorkout.exercises,
+    };
 
-    return (
-        <>
-            <h1>Edit Workout Page</h1>
-            <form onSubmit={handleEditWorkout}>
-                <label>
-                    Name
-                    <input 
-                        name="name"
-                        type="text"
-                        onChange={handleOnChange}
-                        value={newWorkout.name}
-                        placeholder={name}
-                    />
-                </label>
-                <label>
-                    Exercises
-                    <input 
-                        name="exercises"
-                        type="text"
-                        onChange={handleOnChange}
-                        value={newWorkout.exercises}
-                    />
-                </label>
-                <button type="submit">Confirm Edit</button>
-            </form>
-        </>
-    );
+    // edit the workout
+    editWorkout(edittedWorkoutData);
+
+    // navigate to the workouts page
+    navigate("/workouts");
+  }
+
+  // handles the key strokes for the input elements
+  function handleOnChange(evt: React.ChangeEvent<any>) {
+    // saves each keystroke in the new workout state
+    const newWorkoutData = {
+      ...newWorkout,
+      [evt.target.name]: evt.target.value,
+    };
+
+    // sets the state to the new keystrokes
+    setNewWorkout(newWorkoutData);
+  }
+
+  // render the Edit Workout Page
+  return (
+    <>
+      <h1>Edit Workout Page</h1>
+      <form onSubmit={handleEditWorkout}>
+        <label>
+          Name
+          <input
+            name="name"
+            type="text"
+            onChange={handleOnChange}
+            value={newWorkout.name}
+            placeholder={name}
+          />
+        </label>
+        <label>
+          Exercises
+          <input
+            name="exercises"
+            type="text"
+            onChange={handleOnChange}
+            value={newWorkout.exercises}
+          />
+        </label>
+        <button type="submit">Confirm Edit</button>
+      </form>
+    </>
+  );
 }

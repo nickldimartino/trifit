@@ -1,3 +1,5 @@
+/*----------------------------------- Module Imports -----------------------------------*/
+import { useState, useEffect } from "react";
 import { Scatter } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -8,11 +10,13 @@ import {
   Legend,
   Tooltip,
 } from "chart.js";
-import { BodyStatType, UserDataType } from "../../types";
+
 import NewBodyStatForm from "../../components/BodyStats/NewBodyStatForm";
-import { useState, useEffect } from "react";
 import * as bodyStatsServices from "../../utilities/bodyStats-service";
 
+import { BodyStatType, UserDataType } from "../../types";
+
+// Register the ChartJS elements
 ChartJS.register(
   LineElement,
   CategoryScale,
@@ -22,19 +26,27 @@ ChartJS.register(
   Tooltip
 );
 
-export default function BodyStatsPage({ user }: { user: UserDataType }) {
+/*------------------------------------- Functions --------------------------------------*/
+export default function BodyStatsPage() {
+  // body stats state
   const [bodyStats, setBodyStats] = useState([]);
+
+  // new body stats state
   const [newBodyStats, setNewBodyStats] = useState<BodyStatType[]>([]);
+
+  // object to save the scatterplot data
   let scatter: Object[] = [];
 
+  // map through the body stats and push each one as x,y coords to the scatterplot data
   bodyStats.forEach((b: any) => {
     let obj = {
       x: b.calories,
-      y: b.weight
-    }
+      y: b.weight,
+    };
     scatter.push(obj);
   });
 
+  // data for the chart
   let data = {
     datasets: [
       {
@@ -47,6 +59,7 @@ export default function BodyStatsPage({ user }: { user: UserDataType }) {
     ],
   };
 
+  // options for the chart
   let options: any = {
     plugins: {
       legend: true,
@@ -63,20 +76,30 @@ export default function BodyStatsPage({ user }: { user: UserDataType }) {
     },
   };
 
+  // get the body stats
   async function getBodyStats() {
+    // get the body stats from the database
     let newBodyStatSet = await bodyStatsServices.getBodyStatData();
+
+    // set the body stats state to the retrieved body stats
     setBodyStats(newBodyStatSet);
   }
 
+  // add a body stat
   async function addBodyStat(bodyStat: BodyStatType) {
+    // add the body stat to the database
     await bodyStatsServices.createBodyStatData(bodyStat);
+
+    // set the body stats state with the new body stat
     setNewBodyStats([...newBodyStats, bodyStat]);
   }
 
+  // render the page once on a state change
   useEffect(() => {
     getBodyStats();
   }, [newBodyStats]);
 
+  // render the Body Stats Page
   return (
     <>
       <h1>Body Stats Page</h1>
