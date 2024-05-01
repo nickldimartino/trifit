@@ -85,7 +85,7 @@ export default function BodyStatsPage({ user }: { user: UserDataType }) {
       >
         <Scatter data={data} options={options}></Scatter>
       </div>
-      <NewBodyStatForm addBodyStat={addBodyStat} user={user} />
+      <NewBodyStatForm addBodyStat={addBodyStat} />
     </>
   );
 }

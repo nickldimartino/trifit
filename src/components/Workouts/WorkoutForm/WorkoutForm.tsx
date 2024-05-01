@@ -1,8 +1,9 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { Types } from "mongoose";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { WorkoutType } from "../../../types";
-import { useLocation } from "react-router-dom";
 
+/*------------------------------------- Functions --------------------------------------*/
 export default function WorkoutForm({
   id,
   name,
@@ -18,9 +19,11 @@ export default function WorkoutForm({
   deleteWorkout: Function;
   exerciseId: Types.ObjectId;
 }) {
+  // get the current URL path and set a flag to rendering elements
   const location = useLocation();
   const isWorkoutPage = location.pathname === "/workouts" ? true : false;
 
+  // render the Workout Form
   return (
     <div>
       <p>{name}</p>
@@ -35,14 +38,12 @@ export default function WorkoutForm({
       &nbsp; &nbsp;
       {isWorkoutPage ? (
         <>
-        <Link to={{ pathname: `/workouts/edit/${id}/${name}/` }}>Edit</Link>
-        <button onClick={() => deleteWorkout(id)}>Delete</button>
+          <Link to={{ pathname: `/workouts/edit/${id}/${name}/` }}>Edit</Link>
+          <button onClick={() => deleteWorkout(id)}>Delete</button>
         </>
-        
       ) : (
         <></>
       )}
-      
     </div>
   );
 }

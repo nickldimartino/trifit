@@ -1,8 +1,11 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { Types } from "mongoose";
 import { Link } from "react-router-dom";
-import { MealPlanType } from "../../../types";
 import { useLocation } from "react-router-dom";
 
+import { MealPlanType } from "../../../types";
+
+/*------------------------------------- Functions --------------------------------------*/
 export default function MealPlanForm({
   id,
   name,
@@ -26,9 +29,11 @@ export default function MealPlanForm({
   addFoodToMealPlan: Function;
   foodId: Types.ObjectId;
 }) {
+  // get the current URL path and set a flag to determine the location for element rendering
   const location = useLocation();
   const isMealPlanPage = location.pathname === "/mealplans" ? true : false;
 
+  // render the Meal Plan Form
   return (
     <div>
       <p>
@@ -45,13 +50,13 @@ export default function MealPlanForm({
       {isMealPlanPage ? (
         <>
           <Link
-        to={{
-          pathname: `/mealplans/edit/${id}/${name}/${totalCalories}/${totalProtein}/${totalCarbohydrates}/${totalFat}`,
-        }}
-      >
-        Edit
-      </Link>
-      <button onClick={() => deleteMealPlan(id)}>Delete</button>
+            to={{
+              pathname: `/mealplans/edit/${id}/${name}/${totalCalories}/${totalProtein}/${totalCarbohydrates}/${totalFat}`,
+            }}
+          >
+            Edit
+          </Link>
+          <button onClick={() => deleteMealPlan(id)}>Delete</button>
         </>
       ) : (
         <></>

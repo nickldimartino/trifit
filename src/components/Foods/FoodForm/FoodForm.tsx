@@ -1,7 +1,10 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { Types } from "mongoose";
 import { Link } from "react-router-dom";
+
 import { UserDataType } from "../../../types";
 
+/*------------------------------------- Functions --------------------------------------*/
 export default function FoodForm({
   id,
   name,
@@ -12,19 +15,20 @@ export default function FoodForm({
   fat,
   deleteFood,
   addFoodToMealPlan,
-  user
+  user,
 }: {
   id: Types.ObjectId;
-  name: string,
-  type: string,
-  calories: number,
-  protein: number,
-  carbohydrates: number,
-  fat: number,
-  deleteFood: Function,
-  addFoodToMealPlan: Function,
-  user: UserDataType
+  name: string;
+  type: string;
+  calories: number;
+  protein: number;
+  carbohydrates: number;
+  fat: number;
+  deleteFood: Function;
+  addFoodToMealPlan: Function;
+  user: UserDataType;
 }) {
+  // renders the Food Form
   return (
     <div>
       <p>

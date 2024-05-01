@@ -1,7 +1,9 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import React, { Component } from "react";
 import { signUp } from "../../utilities/users-service";
 import { BodyStatType, ExerciseType, FoodType } from "../../types";
 
+/*---------------------------------- Type Declarations ---------------------------------*/
 interface myProps {
   setUser: any;
 }
@@ -18,7 +20,9 @@ interface myState {
   error: string;
 }
 
+/*------------------------------------- Functions --------------------------------------*/
 export default class SignUpForm extends Component<myProps, myState> {
+  // state variables
   state = {
     name: "",
     email: "",
@@ -31,14 +35,7 @@ export default class SignUpForm extends Component<myProps, myState> {
     error: "",
   };
 
-  handleChange = (evt: React.ChangeEvent<any>) => {
-    this.setState({
-      ...this.state,
-      [evt.target.name]: evt.target.value,
-      error: "",
-    });
-  };
-
+  // handle the form submission for the Signup Form
   handleSubmit = async (evt: React.ChangeEvent<any>) => {
     // Prevent form from being submitted to the server
     evt.preventDefault();
@@ -66,6 +63,16 @@ export default class SignUpForm extends Component<myProps, myState> {
     }
   };
 
+  // handle the key strokes for the user input
+  handleChange = (evt: React.ChangeEvent<any>) => {
+    // set the state variables to the usr input
+    this.setState({
+      ...this.state,
+      [evt.target.name]: evt.target.value,
+      error: "",
+    });
+  };
+  // render the Sign Up Form
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (

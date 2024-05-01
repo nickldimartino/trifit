@@ -1,7 +1,10 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { Types } from "mongoose";
 import { Link } from "react-router-dom";
+
 import { UserDataType } from "../../../types";
 
+/*------------------------------------- Functions --------------------------------------*/
 export default function ExerciseForm({
   id,
   name,
@@ -23,6 +26,7 @@ export default function ExerciseForm({
   deleteExercise: Function;
   user: UserDataType;
 }) {
+  // render the Exercise Form
   return (
     <div>
       <p>
