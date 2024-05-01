@@ -7,8 +7,7 @@ export interface UserDataType {
     isAdmin: string,
     workouts: ExerciseType[],
     mealPlans: FoodType[],
-    dailyCalories: number[],
-    weights: number[]
+    bodyStats: BodyStatType[]
 }
 
 export interface UserType {
@@ -59,4 +58,11 @@ export interface MealPlanType {
     totalProtein: number,
     totalCarbohydrates: number,
     totalFat: number
+}
+
+export interface BodyStatType {
+    calories: number,
+    weight: number,
+    date: string,
+    user: Types.ObjectId
 }

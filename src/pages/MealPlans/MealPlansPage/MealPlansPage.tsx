@@ -2,7 +2,6 @@ import Logo from "../../../components/Logo/Logo"
 import { useState, useEffect } from "react";
 import { MealPlanType } from "../../../types";
 import * as mealPlansServices from "../../../utilities/mealPlans-services";
-import { Types } from "mongoose";
 import NewMealPlanForm from "../../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
 import MealPlanList from "../../../components/MealPlans/MealPlansList/MealPlansList";
 

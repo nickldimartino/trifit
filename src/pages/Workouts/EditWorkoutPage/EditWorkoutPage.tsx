@@ -4,7 +4,7 @@ import { WorkoutType } from "../../../types";
 import { Types } from "mongoose";
 
 export default function EditWorkoutPage({ editWorkout }: { editWorkout: Function }) {
-    const { id, name, exercises } = useParams();
+    const { id, name } = useParams();
     const [newWorkout, setNewWorkout] = useState({
         name: "",
         exercises: []

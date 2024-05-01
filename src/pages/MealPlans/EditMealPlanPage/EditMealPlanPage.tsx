@@ -4,7 +4,7 @@ import { MealPlanType } from "../../../types";
 import { Types } from "mongoose";
 
 export default function EditMealPlanPage({ editMealPlan }: { editMealPlan: Function }) {
-    const { id, name, foods } = useParams();
+    const { id } = useParams();
     const [newMealPlan, setNewMealPlan] = useState({
         name: "",
         foods: [],

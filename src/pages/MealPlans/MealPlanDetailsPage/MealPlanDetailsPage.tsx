@@ -19,7 +19,7 @@ export default function MealPlanDetailsPage({ foods, mealPlans }: { foods: FoodT
 
     thisMealPlan.foods.forEach((e: Types.ObjectId) => {
         foods.forEach((w: any) => {
-            if (e == w._id) {
+            if (e === w._id) {
                 thisMealPlanFoods.push(w);
             }
         })

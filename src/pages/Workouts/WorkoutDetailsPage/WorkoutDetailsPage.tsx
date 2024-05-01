@@ -19,7 +19,7 @@ export default function WorkoutDetailsPage({ exercises, workouts }: { exercises:
 
     thisWorkout.exercises.forEach((e: Types.ObjectId) => {
         exercises.forEach((w: any) => {
-            if (e == w._id) {
+            if (e === w._id) {
                 thisWorkoutsExercises.push(w);
             }
         })

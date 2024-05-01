@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { UserDataType, WorkoutType } from "../types";
+import { WorkoutType } from "../types";
 import sendRequest from "./send-request";
 
 const BASE_URL = "/workouts";

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { UserType } from "../../src/types";
 import bcrypt from "bcrypt";
-const User = require('../../models/user');
+const User = require("../../models/user");
 
 declare global {
   namespace NodeJS {
@@ -15,11 +15,11 @@ declare global {
 module.exports = {
   create,
   login,
-  checkToken
+  checkToken,
 };
 
 export function checkToken(req: any, res: any) {
-  console.log('req.user', req.user);
+  console.log("req.user", req.user);
   res.json(req.exp);
 }
 
@@ -32,7 +32,7 @@ export async function login(req: Request, res: Response) {
     const token = createJWT(user);
     res.json(token);
   } catch (err) {
-    res.status(400).json('Bad Credentials');
+    res.status(400).json("Bad Credentials");
   }
 }
 
@@ -54,6 +54,6 @@ function createJWT(user: UserType) {
     // extra data for the payload
     { user },
     process.env.SECRET,
-    { expiresIn: '24h' }
+    { expiresIn: "24h" }
   );
 }

@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { FoodType, UserDataType } from "../types";
+import { FoodType } from "../types";
 import sendRequest from "./send-request";
 
 const BASE_URL = "/foods";

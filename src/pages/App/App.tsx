@@ -102,7 +102,7 @@ export default function App() {
           <Route path="/mealplans/edit/:id/:name/:totalCalories/:totalProtein/:totalCarbohydrates/:totalFat" element={<EditMealPlanPage editMealPlan={editMealPlan}/>} />
           <Route path="/mealplans/display/:id/" element={<AddFoodToMealPlan mealPlans={mealPlans} deleteMealPlan={deleteMealPlan} addFoodToMealPlan={addFoodToMealPlan}/>} />
           <Route path="/mealplans/:id" element={<MealPlanDetailsPage foods={foods} mealPlans={mealPlans}/>}/>
-          <Route path="/bodystats" element={<BodyStatsPage />} />
+          <Route path="/bodystats" element={<BodyStatsPage user={user}/>} />
         </Routes>
       </>
         :
