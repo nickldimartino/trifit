@@ -62,6 +62,5 @@ export interface MealPlanType {
 
 export interface BodyStatType {
     calories: number,
-    weight: number,
-    user: Types.ObjectId
+    weight: number
 }

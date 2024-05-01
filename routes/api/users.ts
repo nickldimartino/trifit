@@ -1,15 +1,22 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import express from "express";
-const router = express.Router();
+
 import { create, login, checkToken } from "../../controllers/api/users";
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 
-// POST /api/users
-router.post('/', create);
+/*--------------------------------- Variable Declarations ------------------------------*/
+const router = express.Router();
 
-// POST /api/users/login (login a user)
-router.post('/login', login);
+/*---------------------------------------- Routes --------------------------------------*/
+// all routes start with /api/users
+// POST route to create a user
+router.post("/", create);
 
-// GET /api/users/check-token
-router.get('/check-token', ensureLoggedIn, checkToken);
+// POST route to login a user
+router.post("/login", login);
 
+// GET route to check the user token
+router.get("/check-token", ensureLoggedIn, checkToken);
+
+/*----------------------------------- Module Exports -----------------------------------*/
 module.exports = router;

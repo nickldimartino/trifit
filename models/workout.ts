@@ -1,20 +1,31 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import mongoose from "mongoose";
+
 import { WorkoutType } from "../src/types";
+
+/*-------------------------------- Variable Declarations -------------------------------*/
 const Schema = mongoose.Schema;
 
-const WorkoutSchema = new Schema<WorkoutType>({
+/*----------------------------------- Schema -----------------------------------*/
+const WorkoutSchema = new Schema<WorkoutType>(
+  {
     name: {
-        type: String,
-        required: true,
-        default: "New Workout"
+      type: String,
+      required: true,
+      default: "New Workout",
     },
-    exercises: [{
+    exercises: [
+      {
         type: Schema.Types.ObjectId,
         ref: "Exercise",
-        default: []
-    }]
-}, {
-    timestamps: true
-});
+        default: [],
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
 
+/*----------------------------------- Module Exports -----------------------------------*/
 module.exports = mongoose.model("WorkoutSchema", WorkoutSchema);

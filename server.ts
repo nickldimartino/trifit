@@ -1,13 +1,19 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import express, { Request, Response } from "express";
-import path from "path";
 import favicon from "serve-favicon";
 import logger from "morgan";
+import path from "path";
+
+// Allow use of the .env file
 require("dotenv").config();
+
 // Connect to the database
 require("./config/database");
 
+/*--------------------------------- Variable Declarations ------------------------------*/
 const app = express();
 
+/*--------------------------------------- Middleware -----------------------------------*/
 app.use(logger("dev"));
 app.use(express.json());
 
@@ -28,7 +34,7 @@ app.listen(port, function () {
   console.log(`Express app running on port ${port}`);
 });
 
-// Put API routes here, before the "catch all" route
+/*---------------------------------------- Routes --------------------------------------*/
 app.use("/api/users", require("./routes/api/users"));
 app.use("/exercises", require("./routes/exercises/exercises"));
 app.use("/foods", require("./routes/foods/foods"));

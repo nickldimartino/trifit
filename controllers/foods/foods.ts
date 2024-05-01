@@ -1,71 +1,83 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { Request, Response } from "express";
+
 const FoodSchema = require("../../models/food");
 const UserSchema = require("../../models/user");
 
+/*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-    show,
-    create,
-    edit,
-    deleteExercise,
-    addFoodToMealPlan
-}
+  show,
+  create,
+  edit,
+  deleteFood,
+};
 
+/*------------------------------------- Functions --------------------------------------*/
+// Get all of the foods in the database
 export async function show(req: Request, res: Response) {
-    try {
-        let foods = await FoodSchema.find({});
-        res.json(foods);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    // find all the foods in the database
+    let foods = await FoodSchema.find({});
+
+    // respond with all of the foods
+    res.json(foods);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Create a new food in the database
 export async function create(req: Request, res: Response) {
-    try {
-        await FoodSchema.create(req.body);
-        res.json(req.body);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    // create a food from the received information
+    const food = await FoodSchema.create(req.body);
+
+    // respond with the created food
+    res.json(food);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Edit the received food in the database
 export async function edit(req: Request, res: Response) {
-    try {
-        const food = await FoodSchema.findById(req.body.id);
+  try {
+    // find the food in the database
+    const food = await FoodSchema.findById(req.body.id);
 
-        food.name = req.body.name;
-        food.type = req.body.type;
-        food.calories = req.body.calories;
-        food.protein = req.body.protein;
-        food.carbohydrates = req.body.carbohydrates;
-        food.fat = req.body.fat;
+    // update the database food information with the received inforamtion
+    food.name = req.body.name;
+    food.type = req.body.type;
+    food.calories = req.body.calories;
+    food.protein = req.body.protein;
+    food.carbohydrates = req.body.carbohydrates;
+    food.fat = req.body.fat;
 
-        await food.save();
+    // save the food
+    await food.save();
 
-        const foods = await FoodSchema.find({});
+    // find all the foods in the database
+    const foods = await FoodSchema.find({});
 
-        res.json(foods);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // respond with all of the foods
+    res.json(foods);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
-export async function deleteExercise(req: Request, res: Response) {
-    try {
-        await FoodSchema.findOneAndDelete({_id: req.body.id});
-        const foods = await FoodSchema.find({});
-        res.json(foods);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-}
+// Delete a food from the database
+export async function deleteFood(req: Request, res: Response) {
+  try {
+    // find the received food in the database and delete it
+    await FoodSchema.findOneAndDelete({ _id: req.body.id });
 
-export async function addFoodToMealPlan(req: Request, res: Response) {
-    try {
-        const food = await FoodSchema.findById(req.body.id);
-        const user = await UserSchema.findById(req.body.user._id);
+    // find all the foods in the database
+    const foods = await FoodSchema.find({});
 
-        res.json(food);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // respond with all of the foods in the database
+    res.json(foods);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }

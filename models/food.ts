@@ -1,38 +1,47 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import mongoose from "mongoose";
+
 import { FoodType } from "../src/types";
+
+/*-------------------------------- Variable Declarations -------------------------------*/
 const Schema = mongoose.Schema;
 
-const FoodSchema = new Schema<FoodType>({
+/*----------------------------------- Schema -----------------------------------*/
+const FoodSchema = new Schema<FoodType>(
+  {
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     type: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     calories: {
-        type: Number,
-        required: true,
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
     protein: {
-        type: Number,
-        required: true,
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
     carbohydrates: {
-        type: Number,
-        required: true,
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
     fat: {
-        type: Number,
-        required: true,
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
-}, {
-    timestamps: true
-});
+  },
+  {
+    timestamps: true,
+  }
+);
 
+/*----------------------------------- Module Exports -----------------------------------*/
 module.exports = mongoose.model("FoodSchema", FoodSchema);

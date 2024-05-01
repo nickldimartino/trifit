@@ -1,11 +1,15 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+
 import { UserDataType } from "../src/types";
+
+/*-------------------------------- Variable Declarations -------------------------------*/
 const Schema = mongoose.Schema;
+const SALT_ROUNDS = 6;
 
-const SALT_ROUNDS = 6; // 6 is a reasonable value
-
-const userSchema = new Schema<UserDataType>(
+/*-------------------------------------- Schema ----------------------------------------*/
+const UserSchema = new Schema<UserDataType>(
   {
     name: {
       type: String,
@@ -63,7 +67,9 @@ const userSchema = new Schema<UserDataType>(
   }
 );
 
-userSchema.pre("save", async function (next) {
+/*---------------------------------- Schema Functions ----------------------------------*/
+// Save the user password
+UserSchema.pre("save", async function (next) {
   // 'this' is the user doc
   if (!this.isModified("password")) return next();
   // update the password with the computed hash
@@ -71,4 +77,5 @@ userSchema.pre("save", async function (next) {
   return next();
 });
 
-module.exports = mongoose.model("User", userSchema);
+/*----------------------------------- Module Exports -----------------------------------*/
+module.exports = mongoose.model("UserSchema", UserSchema);

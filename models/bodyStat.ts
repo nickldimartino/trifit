@@ -1,24 +1,29 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import mongoose from "mongoose";
+
 import { BodyStatType } from "../src/types";
+
+/*-------------------------------- Variable Declarations -------------------------------*/
 const Schema = mongoose.Schema;
 
-const BodyStatSchema = new Schema<BodyStatType>({
+/*----------------------------------- Schema -----------------------------------*/
+const BodyStatSchema = new Schema<BodyStatType>(
+  {
     calories: {
-        type: Number,
-        required: true,
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
     weight: {
-        type: Number,
-        required: true,
-        default: 0
+      type: Number,
+      required: true,
+      default: 0,
     },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-    }
-}, {
-    timestamps: true
-});
+  },
+  {
+    timestamps: true,
+  }
+);
 
+/*----------------------------------- Module Exports -----------------------------------*/
 module.exports = mongoose.model("BodyStatSchema", BodyStatSchema);

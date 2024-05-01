@@ -1,58 +1,81 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { Request, Response } from "express";
+
 const ExerciseSchema = require("../../models/exercise");
-const UserSchema = require("../../models/user");
 
+/*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-    show,
-    create,
-    edit,
-    deleteExercise
-}
+  show,
+  create,
+  edit,
+  deleteExercise,
+};
 
+/*------------------------------------- Functions --------------------------------------*/
+// Get all the exercises from the database
 export async function show(req: Request, res: Response) {
-    try {
-        let exercises = await ExerciseSchema.find({});
-        res.json(exercises);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    // find all the exercises in the database
+    let exercises = await ExerciseSchema.find({});
+
+    // respond with all of the exercises
+    res.json(exercises);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Create a new exercise in the database
 export async function create(req: Request, res: Response) {
-    try {
-        await ExerciseSchema.create(req.body);
-        res.json(req.body);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    // create the exercise in the database
+    const exercise = await ExerciseSchema.create(req.body);
+
+    // respond with the created exercise
+    res.json(exercise);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Edit the received exercise
 export async function edit(req: Request, res: Response) {
-    try {
-        const exercise = await ExerciseSchema.findById(req.body.id);
+  try {
+    // find the received exercise in the database
+    const exercise = await ExerciseSchema.findById(req.body.id);
 
-        exercise.name = req.body.name;
-        exercise.type = req.body.type;
-        exercise.muscle = req.body.muscle;
-        exercise.grip = req.body.grip;
-        exercise.width = req.body.width;
+    // update the database information with the received information
+    exercise.name = req.body.name;
+    exercise.type = req.body.type;
+    exercise.muscle = req.body.muscle;
+    exercise.grip = req.body.grip;
+    exercise.width = req.body.width;
 
-        await exercise.save();
+    // save the updated exercise
+    await exercise.save();
 
-        const exercises = await ExerciseSchema.find({});
+    // get all of the exercises in the database
+    const exercises = await ExerciseSchema.find({});
 
-        res.json(exercises);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // respond with all of the exercises
+    res.json(exercises);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Delete an exercise from the database
 export async function deleteExercise(req: Request, res: Response) {
-    try {
-        await ExerciseSchema.findOneAndDelete({_id: req.body.id});
-        const exercises = await ExerciseSchema.find({});
-        res.json(exercises);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    // find the received exercise in the database and delete it
+    await ExerciseSchema.findOneAndDelete({ _id: req.body.id });
+
+    // get all of the database exercises
+    const exercises = await ExerciseSchema.find({});
+
+    // respond with all of the exercises
+    res.json(exercises);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }

@@ -1,107 +1,153 @@
+/*----------------------------------- Module Imports -----------------------------------*/
 import { Request, Response } from "express";
+
+const ExerciseSchema = require("../../models/exercise");
 const WorkoutSchema = require("../../models/workout");
 const UserSchema = require("../../models/user");
-const ExerciseSchema = require("../../models/exercise");
 
+/*----------------------------------- Type Declaration ---------------------------------*/
 declare global {
-    namespace Express {
-        export interface Request {
-            user?: Record<string, any> | null | undefined
-        }
+  namespace Express {
+    export interface Request {
+      user?: Record<string, any> | null | undefined;
     }
+  }
 }
 
+/*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-    show,
-    create,
-    edit,
-    deleteWorkout,
-    addExerciseToWorkout,
-    removeExerciseFromWorkout
-}
+  show,
+  create,
+  edit,
+  deleteWorkout,
+  addExerciseToWorkout,
+  removeExerciseFromWorkout,
+};
 
+/*------------------------------------- Functions --------------------------------------*/
+// Get all of the current user's workouts
 export async function show(req: Request, res: Response) {
-    try {
-        const user = await UserSchema.findById(req.user?._id).populate("workouts");
-        res.json(user.workouts);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    // find the current user in the database
+    const user = await UserSchema.findById(req.user?._id).populate("workouts");
+
+    // respond with the user's workouts
+    res.json(user.workouts);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Create a new workout in the database
 export async function create(req: Request, res: Response) {
-    try {
-        const workout = await WorkoutSchema.create(req.body);
+  try {
+    // create a workout in the database from the received information
+    const workout = await WorkoutSchema.create(req.body);
 
-        const user = await UserSchema.findById(req.user?._id);
+    // find the current user in the database
+    const user = await UserSchema.findById(req.user?._id);
 
-        if (user && !user.workouts.includes(workout._id)) {
-            user.workouts.push(workout._id);
-            await user.save();
-        }
-
-        res.json(req.body);
-    } catch (err) {
-        res.status(400).json(err);
+    // if a user exists and the user does not already have the workout,
+    // add it and save the user
+    if (user && !user.workouts.includes(workout._id)) {
+      user.workouts.push(workout._id);
+      await user.save();
     }
+
+    // respond with the created meal plan
+    res.json(workout);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Edit the received workout's information in the database
 export async function edit(req: Request, res: Response) {
-    try {
-        const workout = await WorkoutSchema.findById(req.body.id);
+  try {
+    // find the workout in the database
+    const workout = await WorkoutSchema.findById(req.body.id);
 
-        workout.name = req.body.name;
-        workout.exercsises = req.body.exercsises;
+    // update the workout's information from the received information
+    workout.name = req.body.name;
 
-        await workout.save();
+    // save the workout
+    await workout.save();
 
-        const workouts = await WorkoutSchema.find({});
+    // find all the workout in the database
+    const workouts = await WorkoutSchema.find({});
 
-        res.json(workouts);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // respond with the workouts
+    res.json(workouts);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Delete a workout from the database
 export async function deleteWorkout(req: Request, res: Response) {
-    try {
-        const workout = await WorkoutSchema.findOneAndDelete({ _id: req.body.id });
-        const workouts = await WorkoutSchema.find({});
-        const user = await UserSchema.findById(req.user?._id);
-        user.workouts.remove(workout._id);
-        await user.save();
-        res.json(workouts);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    // find the workout in the database and delete it
+    const workout = await WorkoutSchema.findOneAndDelete({ _id: req.body.id });
+
+    // find all the workout in the database
+    const workouts = await WorkoutSchema.find({});
+
+    // find the current user in the database
+    const user = await UserSchema.findById(req.user?._id);
+
+    // remove the deleted workout from the user's meal plans
+    user.workouts.remove(workout._id);
+
+    // save the user
+    await user.save();
+
+    // respond with the workout
+    res.json(workouts);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Add an exercise to a workout
 export async function addExerciseToWorkout(req: Request, res: Response) {
-    try {
-        const exercise = await ExerciseSchema.findById(req.body.exerciseId);
-        const workout = await WorkoutSchema.findById(req.body.id);
+  try {
+    // find the received exercise data in the database
+    const exercise = await ExerciseSchema.findById(req.body.exerciseId);
 
-        workout.exercises.push(exercise);
+    // find the received meal plan in the database
+    const workout = await WorkoutSchema.findById(req.body.id);
 
-        await workout.save();
+    // add the exercise to the workout
+    workout.exercises.push(exercise);
 
-        res.json(exercise);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // save the workout
+    await workout.save();
+
+    // respond with the exercise
+    res.json(exercise);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
+// Remove an exercise from a workout
 export async function removeExerciseFromWorkout(req: Request, res: Response) {
-    try {
-        const exercise = await ExerciseSchema.findById(req.body.exerciseId);
-        const workout = await WorkoutSchema.findById(req.body.id);
+  try {
+    // find the received exercise data in the database
+    const exercise = await ExerciseSchema.findById(req.body.exerciseId);
 
-        workout.exercises.remove(exercise);
+    // find the received workout in the database
+    const workout = await WorkoutSchema.findById(req.body.id);
 
-        await workout.save();
+    // remove the exercise from the workout
+    workout.exercises.remove(exercise);
 
-        res.json(workout);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+    // save the workout
+    await workout.save();
+
+    // respond with the workout
+    res.json(workout);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
