@@ -7,44 +7,54 @@ import * as exercisesService from "../../../utilities/exercises-service";
 import { ExerciseType, UserDataType } from "../../../types";
 import { Types } from "mongoose";
 
-export default function ExercisesPage({ exercises, setExercises, user, addExerciseToWorkout }: { exercises: ExerciseType[], setExercises: Function, user: UserDataType, addExerciseToWorkout: Function })  { 
-    const [newExercise, setNewExercise] = useState<ExerciseType[]>([]);
+export default function ExercisesPage({
+  exercises,
+  setExercises,
+  user,
+  addExerciseToWorkout,
+}: {
+  exercises: ExerciseType[];
+  setExercises: Function;
+  user: UserDataType;
+  addExerciseToWorkout: Function;
+}) {
+  const [newExercise, setNewExercise] = useState<ExerciseType[]>([]);
 
-    async function getExercises() {
-        let newExerciseSet = await exercisesService.getExerciseData();
-        setExercises(newExerciseSet);
-    }
-    
-    async function addNewExercise(exercise: ExerciseType) {
-        await exercisesService.createExerciseData(exercise);
-        setNewExercise([ ...newExercise, exercise]);
-    }
+  async function getExercises() {
+    let newExerciseSet = await exercisesService.getExerciseData();
+    setExercises(newExerciseSet);
+  }
 
-    async function deleteExercise(id: Types.ObjectId) {
-        const updatedExercises = await exercisesService.deleteExercise(id);
-        setExercises(updatedExercises);
-    }
+  async function addNewExercise(exercise: ExerciseType) {
+    await exercisesService.createExerciseData(exercise);
+    setNewExercise([...newExercise, exercise]);
+  }
 
-    useEffect(() => {
-        getExercises();
-    }, [newExercise]);
+  async function deleteExercise(id: Types.ObjectId) {
+    const updatedExercises = await exercisesService.deleteExercise(id);
+    setExercises(updatedExercises);
+  }
 
-    return (
-        <>  
-            <Logo />
-            <h1>Exercises Page</h1>
-            <div>Filter</div>
-            <NewExerciseForm addNewExercise={addNewExercise}/>
-            <div className="list-picture">
-                <div>
-                    <ExercisesList 
-                        exercises={exercises}
-                        addExerciseToWorkout={addExerciseToWorkout}
-                        deleteExercise={deleteExercise}
-                    />
-                </div>
-                <ExercisesPicture />
-            </div>
-        </>
-    );
+  useEffect(() => {
+    getExercises();
+  }, [newExercise]);
+
+  return (
+    <>
+      <Logo />
+      <h1>Exercises Page</h1>
+      <div>Filter</div>
+      <NewExerciseForm addNewExercise={addNewExercise} />
+      <div className="list-picture">
+        <div>
+          <ExercisesList
+            exercises={exercises}
+            addExerciseToWorkout={addExerciseToWorkout}
+            deleteExercise={deleteExercise}
+          />
+        </div>
+        <ExercisesPicture />
+      </div>
+    </>
+  );
 }

@@ -17,8 +17,8 @@ module.exports = {
 
 export async function show(req: Request, res: Response) {
   try {
-    let bodystats = await BodyStatSchema.find({});
-    res.json(bodystats);
+    const user = await UserSchema.findById(req.user?._id).populate("bodyStats");
+    res.json(user.bodyStats);
   } catch (err) {
     res.status(400).json(err);
   }

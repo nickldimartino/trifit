@@ -13,11 +13,6 @@ const BodyStatSchema = new Schema<BodyStatType>({
         required: true,
         default: 0
     },
-    date: {
-        type: String,
-        required: true,
-        default: "01/01/2000"
-    },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User"

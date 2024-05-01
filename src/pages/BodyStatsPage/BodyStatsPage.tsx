@@ -1,4 +1,4 @@
-import { Line } from "react-chartjs-2";
+import { Scatter } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -23,40 +23,49 @@ ChartJS.register(
 );
 
 export default function BodyStatsPage({ user }: { user: UserDataType }) {
+  const [bodyStats, setBodyStats] = useState([]);
   const [newBodyStats, setNewBodyStats] = useState<BodyStatType[]>([]);
-  const data = {
-    labels: ["Mon", "Tue", "Wed"],
+  let scatter: Object[] = [];
+
+  bodyStats.forEach((b: any) => {
+    let obj = {
+      x: b.calories,
+      y: b.weight
+    }
+    scatter.push(obj);
+  });
+
+  let data = {
     datasets: [
       {
-        labels: "Sales of the Week",
-        data: [3, 6, 9],
+        labels: "Weight Over Time",
+        data: scatter,
         backgroundColor: "#EA5455",
         borderColor: "black",
         pointBorderColor: "black",
-        fill: true,
       },
     ],
   };
 
-  const options: any = {
+  let options: any = {
     plugins: {
       legend: true,
     },
     scales: {
       x: {
         min: 0,
-        max: 4,
+        max: 4000,
       },
       y: {
-        min: 0,
-        max: 10,
+        min: 100,
+        max: 250,
       },
     },
   };
 
   async function getBodyStats() {
     let newBodyStatSet = await bodyStatsServices.getBodyStatData();
-    setNewBodyStats(newBodyStatSet);
+    setBodyStats(newBodyStatSet);
   }
 
   async function addBodyStat(bodyStat: BodyStatType) {
@@ -74,7 +83,7 @@ export default function BodyStatsPage({ user }: { user: UserDataType }) {
       <div
         style={{ width: "600px", height: "300px", backgroundColor: "white" }}
       >
-        <Line data={data} options={options}></Line>
+        <Scatter data={data} options={options}></Scatter>
       </div>
       <NewBodyStatForm addBodyStat={addBodyStat} user={user} />
     </>

@@ -4,8 +4,7 @@ import { UserDataType } from "../../types";
 export default function NewBodyStatForm({ addBodyStat, user }: { addBodyStat: Function, user: UserDataType }) {
   const [newBodyStat, setNewBodyStat] = useState({
     calories: 0,
-    weight: 0,
-    date: "",
+    weight: 0
   });
 
   function handleAddBodyStat(evt: React.ChangeEvent<any>) {
@@ -13,8 +12,7 @@ export default function NewBodyStatForm({ addBodyStat, user }: { addBodyStat: Fu
     addBodyStat(newBodyStat);
     setNewBodyStat({
       calories: 0,
-      weight: 0,
-      date: "",
+      weight: 0
     });
   }
 
@@ -48,16 +46,6 @@ export default function NewBodyStatForm({ addBodyStat, user }: { addBodyStat: Fu
             type="text"
             onChange={handleOnChange}
             value={newBodyStat.weight}
-            required
-          />
-        </label>
-        <label>
-          Today's Date (MM/DD/YYYY)
-          <input
-            name="date"
-            type="text"
-            onChange={handleOnChange}
-            value={newBodyStat.date}
             required
           />
         </label>
