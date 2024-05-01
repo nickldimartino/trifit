@@ -3,9 +3,9 @@ import express from "express";
 
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 import {
-  show,
   create,
-  edit,
+  read,
+  update,
   deleteMealPlan,
   addFoodToMealPlan,
   removeFoodFromMealPlan,
@@ -16,14 +16,14 @@ const router = express.Router();
 
 /*---------------------------------------- Routes --------------------------------------*/
 // all routes start with /mealplans
-// GET route to display all mealplans
-router.get("/show", ensureLoggedIn, show);
-
 // POST route to create a meal plan
 router.post("/create", ensureLoggedIn, create);
 
+// GET route to display all mealplans
+router.get("/read", ensureLoggedIn, read);
+
 // POST route to edit a meal plan
-router.post("/edit", ensureLoggedIn, edit);
+router.post("/update", ensureLoggedIn, update);
 
 // POST route to delete a meal plan
 router.post("/delete", ensureLoggedIn, deleteMealPlan);

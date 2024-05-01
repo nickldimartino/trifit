@@ -2,30 +2,16 @@
 import { Request, Response } from "express";
 
 const FoodSchema = require("../../models/food");
-const UserSchema = require("../../models/user");
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-  show,
   create,
-  edit,
+  read,
+  update,
   deleteFood,
 };
 
 /*------------------------------------- Functions --------------------------------------*/
-// Get all of the foods in the database
-export async function show(req: Request, res: Response) {
-  try {
-    // find all the foods in the database
-    let foods = await FoodSchema.find({});
-
-    // respond with all of the foods
-    res.json(foods);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-}
-
 // Create a new food in the database
 export async function create(req: Request, res: Response) {
   try {
@@ -39,8 +25,21 @@ export async function create(req: Request, res: Response) {
   }
 }
 
+// Get all of the foods in the database
+export async function read(req: Request, res: Response) {
+  try {
+    // find all the foods in the database
+    let foods = await FoodSchema.find({});
+
+    // respond with all of the foods
+    res.json(foods);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
+
 // Edit the received food in the database
-export async function edit(req: Request, res: Response) {
+export async function update(req: Request, res: Response) {
   try {
     // find the food in the database
     const food = await FoodSchema.findById(req.body.id);

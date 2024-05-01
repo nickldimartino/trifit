@@ -16,28 +16,15 @@ declare global {
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-  show,
   create,
-  edit,
+  read,
+  update,
   deleteMealPlan,
   addFoodToMealPlan,
   removeFoodFromMealPlan,
 };
 
 /*------------------------------------- Functions --------------------------------------*/
-// Get all of the current user's meal plans
-export async function show(req: Request, res: Response) {
-  try {
-    // find the current user in the database
-    const user = await UserSchema.findById(req.user?._id).populate("mealPlans");
-
-    // respond with the user's meal plans
-    res.json(user.mealPlans);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-}
-
 // Create a new meal plan in the database
 export async function create(req: Request, res: Response) {
   try {
@@ -61,8 +48,21 @@ export async function create(req: Request, res: Response) {
   }
 }
 
+// Get all of the current user's meal plans
+export async function read(req: Request, res: Response) {
+  try {
+    // find the current user in the database
+    const user = await UserSchema.findById(req.user?._id).populate("mealPlans");
+
+    // respond with the user's meal plans
+    res.json(user.mealPlans);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
+
 // Edit the received meal plan's information in the database
-export async function edit(req: Request, res: Response) {
+export async function update(req: Request, res: Response) {
   try {
     // find the meal plan in the database
     const mealPlan = await MealPlanSchema.findById(req.body.id);

@@ -16,28 +16,15 @@ declare global {
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-  show,
   create,
-  edit,
+  read,
+  update,
   deleteWorkout,
   addExerciseToWorkout,
   removeExerciseFromWorkout,
 };
 
 /*------------------------------------- Functions --------------------------------------*/
-// Get all of the current user's workouts
-export async function show(req: Request, res: Response) {
-  try {
-    // find the current user in the database
-    const user = await UserSchema.findById(req.user?._id).populate("workouts");
-
-    // respond with the user's workouts
-    res.json(user.workouts);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-}
-
 // Create a new workout in the database
 export async function create(req: Request, res: Response) {
   try {
@@ -61,8 +48,21 @@ export async function create(req: Request, res: Response) {
   }
 }
 
+// Get all of the current user's workouts
+export async function read(req: Request, res: Response) {
+  try {
+    // find the current user in the database
+    const user = await UserSchema.findById(req.user?._id).populate("workouts");
+
+    // respond with the user's workouts
+    res.json(user.workouts);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
+
 // Edit the received workout's information in the database
-export async function edit(req: Request, res: Response) {
+export async function update(req: Request, res: Response) {
   try {
     // find the workout in the database
     const workout = await WorkoutSchema.findById(req.body.id);

@@ -4,16 +4,16 @@ import sendRequest from "./send-request";
 
 const BASE_URL = "/mealplans";
 
-export function getMealPlansData() {
-    return sendRequest(`${BASE_URL}/show`, "GET", null); 
-}
-
 export function createMealPlanData(mealPlan: MealPlanType) {
     return sendRequest(`${BASE_URL}/create`, "POST", mealPlan);
 }
 
+export function getMealPlansData() {
+    return sendRequest(`${BASE_URL}/read`, "GET", null); 
+}
+
 export function editMealPlan(mealPlan: MealPlanType) {
-    return sendRequest(`${BASE_URL}/edit`, "POST", mealPlan);
+    return sendRequest(`${BASE_URL}/update`, "POST", mealPlan);
 }
 
 export function deleteMealPlan(id: Types.ObjectId) {

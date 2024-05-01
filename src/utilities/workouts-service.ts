@@ -4,16 +4,16 @@ import sendRequest from "./send-request";
 
 const BASE_URL = "/workouts";
 
-export function getWorkoutsData() {
-    return sendRequest(`${BASE_URL}/show`, "GET", null); 
-}
-
 export function createWorkoutData(workout: WorkoutType) {
     return sendRequest(`${BASE_URL}/create`, "POST", workout);
 }
 
+export function getWorkoutsData() {
+    return sendRequest(`${BASE_URL}/read`, "GET", null); 
+}
+
 export function editWorkout(workout: WorkoutType) {
-    return sendRequest(`${BASE_URL}/edit`, "POST", workout);
+    return sendRequest(`${BASE_URL}/update`, "POST", workout);
 }
 
 export function deleteWorkout(id: Types.ObjectId) {

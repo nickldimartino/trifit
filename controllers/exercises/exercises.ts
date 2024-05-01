@@ -5,26 +5,13 @@ const ExerciseSchema = require("../../models/exercise");
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-  show,
   create,
-  edit,
+  read,
+  update,
   deleteExercise,
 };
 
 /*------------------------------------- Functions --------------------------------------*/
-// Get all the exercises from the database
-export async function show(req: Request, res: Response) {
-  try {
-    // find all the exercises in the database
-    let exercises = await ExerciseSchema.find({});
-
-    // respond with all of the exercises
-    res.json(exercises);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-}
-
 // Create a new exercise in the database
 export async function create(req: Request, res: Response) {
   try {
@@ -38,8 +25,21 @@ export async function create(req: Request, res: Response) {
   }
 }
 
+// Get all the exercises from the database
+export async function read(req: Request, res: Response) {
+  try {
+    // find all the exercises in the database
+    let exercises = await ExerciseSchema.find({});
+
+    // respond with all of the exercises
+    res.json(exercises);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
+
 // Edit the received exercise
-export async function edit(req: Request, res: Response) {
+export async function update(req: Request, res: Response) {
   try {
     // find the received exercise in the database
     const exercise = await ExerciseSchema.findById(req.body.id);

@@ -3,9 +3,9 @@ import express from "express";
 
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 import {
-  show,
   create,
-  edit,
+  read,
+  update,
   deleteWorkout,
   addExerciseToWorkout,
   removeExerciseFromWorkout,
@@ -16,14 +16,14 @@ const router = express.Router();
 
 /*---------------------------------------- Routes --------------------------------------*/
 // all routes start with /workouts
-// GET route to display all workouts
-router.get("/show", ensureLoggedIn, show);
-
 // POST route to create a workout
 router.post("/create", ensureLoggedIn, create);
 
-// POST route to edit a workout
-router.post("/edit", ensureLoggedIn, edit);
+// GET route to read all workouts
+router.get("/read", ensureLoggedIn, read);
+
+// POST route to update a workout
+router.post("/update", ensureLoggedIn, update);
 
 // POST route to delete a workout
 router.post("/delete", ensureLoggedIn, deleteWorkout);

@@ -15,24 +15,11 @@ declare global {
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
-  show,
   create,
+  read,
 };
 
 /*------------------------------------- Functions --------------------------------------*/
-// Retrieve all the body stats for the current user
-export async function show(req: Request, res: Response) {
-  try {
-    // get the current user in the database
-    const user = await UserSchema.findById(req.user?._id).populate("bodyStats");
-
-    // respond with the user's body stats
-    res.json(user.bodyStats);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-}
-
 // Create a body stat for the current user
 export async function create(req: Request, res: Response) {
   try {
@@ -50,6 +37,19 @@ export async function create(req: Request, res: Response) {
 
     // respond with the created body stat
     res.json(bodyStat);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
+
+// Retrieve all the body stats for the current user
+export async function read(req: Request, res: Response) {
+  try {
+    // get the current user in the database
+    const user = await UserSchema.findById(req.user?._id).populate("bodyStats");
+
+    // respond with the user's body stats
+    res.json(user.bodyStats);
   } catch (err) {
     res.status(400).json(err);
   }

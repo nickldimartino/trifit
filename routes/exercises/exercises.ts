@@ -3,9 +3,9 @@ import express from "express";
 
 import { ensureLoggedIn } from "../../config/ensureLoggedIn";
 import {
-  show,
   create,
-  edit,
+  read,
+  update,
   deleteExercise,
 } from "../../controllers/exercises/exercises";
 
@@ -14,14 +14,14 @@ const router = express.Router();
 
 /*---------------------------------------- Routes --------------------------------------*/
 // all routes start with /exercises
-// GET route to show the exercises
-router.get("/show", ensureLoggedIn, show);
-
 // POST route to create an exercise
 router.post("/create", ensureLoggedIn, create);
 
+// GET route to show the exercises
+router.get("/read", ensureLoggedIn, read);
+
 // POST route to edit an exercise
-router.post("/edit", ensureLoggedIn, edit);
+router.post("/update", ensureLoggedIn, update);
 
 // POST route to delete an exercise
 router.post("/delete", ensureLoggedIn, deleteExercise);
