@@ -57,27 +57,33 @@ export default function MealPlanDetailsPage({
   }
 
   // map the foods in the meal plan to their own Food Form
-  const foodItems: JSX.Element[] = thisMealPlanFoods.map((f: any, idx: number) => (
-    <FoodForm
-      id={f._id}
-      key={idx}
-      name={f.name}
-      type={f.type}
-      calories={f.calories}
-      protein={f.protein}
-      carbohydrates={f.carbohydrates}
-      fat={f.fat}
-      deleteFood={removeFoodFromMealPlan}
-      addFoodToMealPlan={() => {}}
-      user={user}
-    />
-  ));
+  const foodItems: JSX.Element[] = thisMealPlanFoods.map(
+    (f: any, idx: number) => (
+      <FoodForm
+        id={f._id}
+        key={idx}
+        name={f.name}
+        type={f.type}
+        calories={f.calories}
+        protein={f.protein}
+        carbohydrates={f.carbohydrates}
+        fat={f.fat}
+        deleteFood={removeFoodFromMealPlan}
+        addFoodToMealPlan={() => {}}
+        user={user}
+      />
+    )
+  );
 
   // renders the Meal Plan Details Page
   return (
     <>
       <h1>Meal Plan Details Page</h1>
-      <h3>{thisMealPlan.name}</h3>
+      <h3>
+        {thisMealPlan.name} | {thisMealPlan.totalCalories} |{" "}
+        {thisMealPlan.totalProtein} | {thisMealPlan.totalCarbohydrates} |{" "}
+        {thisMealPlan.totalFat}
+      </h3>
       {foodItems}
     </>
   );
