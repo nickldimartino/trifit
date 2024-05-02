@@ -69,6 +69,7 @@ export default function EditWorkoutPage({
             onChange={handleOnChange}
             value={newWorkout.name}
             placeholder={name}
+            required
             autoComplete="off"
           />
         </label>

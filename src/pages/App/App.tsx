@@ -115,7 +115,7 @@ export default function App() {
     await mealPlansService.addFoodToMealPlan(id, foodId);
 
     // navigate to the mealplans page
-    navigate("/mealplans");
+    navigate("/foods");
   }
 
   // save the current URL to a flag for conditional rendering

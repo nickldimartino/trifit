@@ -120,7 +120,7 @@ export async function addExerciseToWorkout(req: Request, res: Response) {
     const workout = await WorkoutSchema.findById(req.body.id);
 
     // add the exercise to the workout
-    workout.exercises.push(exercise);
+    if (!workout.exercises.includes(exercise._id)) workout.exercises.push(exercise);
 
     // save the workout
     await workout.save();

@@ -42,19 +42,25 @@ export default function FoodForm({
         {carbohydrates} &nbsp; {fat}
       </p>
       &nbsp;
-      {user.isAdmin === "true" && isFoodsPage ? (
+      {isFoodsPage ? (
         <>
           <Link to={{ pathname: `/mealplans/display/${id}` }}>
             Add to Meal Plan
           </Link>{" "}
-          <Link
-            to={{
-              pathname: `/foods/edit/${id}/${name}/${type}/${calories}/${protein}/${carbohydrates}/${fat}`,
-            }}
-          >
-            Edit
-          </Link>
-          <button onClick={() => deleteFood(id)}>Delete</button>
+          {user.isAdmin === "true" ? (
+            <>
+              <Link
+                to={{
+                  pathname: `/foods/edit/${id}/${name}/${type}/${calories}/${protein}/${carbohydrates}/${fat}`,
+                }}
+              >
+                Edit
+              </Link>
+              <button onClick={() => deleteFood(id)}>Delete</button>
+            </>
+          ) : (
+            <></>
+          )}
         </>
       ) : user.isAdmin === "true" && !isFoodsPage ? (
         <>

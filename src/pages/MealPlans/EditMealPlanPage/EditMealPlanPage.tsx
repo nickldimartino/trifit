@@ -121,7 +121,7 @@ export default function EditMealPlanPage({
             autoComplete="off"
           />
         </label>
-        <button type="submit">Edit Meal Plan</button>
+        <button type="submit">Confirm Edit</button>
       </form>
     </>
   );
