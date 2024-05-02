@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 // Internal
 import "./NavBar.css";
 import * as userService from "../../utilities/users-service";
+import Logo from "../Logo/Logo";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function NavBar({
@@ -30,9 +31,7 @@ export default function NavBar({
   return (
     <nav className={isActive ? "navbar-home-page" : "navbar"}>
       {!isHome ? (
-        <Link to="/" className="LinkElem">
-          Home Page
-        </Link>
+        <Logo />
       ) : (
         <></>
       )}

@@ -66,7 +66,6 @@ export default function FoodsPage({
   // render the New Food Form and the Food List
   return (
     <>
-      <Logo />
       <h1>Food Page Page</h1>
       <div>Filter</div>
       {user.isAdmin === "true" ? (

@@ -66,7 +66,6 @@ export default function ExercisesPage({
   // render the Exercises Page
   return (
     <>
-      <Logo />
       <h1>Exercises Page</h1>
       <div>Filter</div>
       {user.isAdmin === "true" ? (

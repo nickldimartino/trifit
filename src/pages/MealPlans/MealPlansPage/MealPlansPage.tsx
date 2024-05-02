@@ -58,7 +58,6 @@ export default function MealPlanPage({
   // render the New Meal Plan Form and Meal Plan list
   return (
     <>
-      <Logo />
       <h1>Meal Plans Page</h1>
       <div>Filter</div>
       <NewMealPlanForm addNewMealPlan={addNewMealPlan} />

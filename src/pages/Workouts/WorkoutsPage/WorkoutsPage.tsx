@@ -58,7 +58,6 @@ export default function WorkoutsPage({
   // render the New Workout Form and Workout List
   return (
     <>
-      <Logo />
       <h1>Workouts Page</h1>
       <div>Filter</div>
       <NewWorkoutForm addNewWorkout={addNewWorkout} />
