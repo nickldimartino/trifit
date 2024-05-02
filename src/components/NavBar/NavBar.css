@@ -1,26 +1,14 @@
-.navbar-home-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-around;
-}
-
 .LinkElem {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5em;
-    transition: all .05s ease-in-out;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: all 0.05s ease-in-out;
+  width: 30vw;
 }
 
 .LinkElem:hover {
-    color: #EA5455;
-}
-
-h1 {
-    color: #FFD460;
+  color: #fdba74;
+  background-color: #7dd3fc;
+  transition: all 0.05s ease-in-out;
+  border-radius: 10px;
 }
