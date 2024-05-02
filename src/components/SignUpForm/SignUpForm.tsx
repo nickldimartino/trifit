@@ -129,7 +129,7 @@ export default class SignUpForm extends Component<
             </div>
             <div className="mt-5">
               <button
-                className="mb-2 border-2 border-black bg-orange-300 text-white w-3/4 rounded-md hover:bg-transparent hover:bg-orange-400 font-semibold"
+                className="mb-2 border-2 border-black bg-orange-300 text-white w-3/4 rounded-md hover:bg-orange-400 font-semibold"
                 type="submit"
                 disabled={disable}
               >

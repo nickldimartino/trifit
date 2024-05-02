@@ -40,14 +40,14 @@ export default function LoginForm({ setUser }: { setUser: Function }) {
   // render the Login Form
   return (
     <div className="flex justify-center items-center flex-col w-3/4 h-1/2">
-      <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full shadow-lg bg-sky-300 rounded-lg">
+      <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full shadow-lg bg-frenchblue rounded-lg">
         <form className="p-0 w-3/4" autoComplete="off" onSubmit={handleSubmit}>
-          <h1 className="text-2xl block text-center font-semibold">
-            <i className="fa-solid fa-user text-orange-300"></i> Login
+          <h1 className="text-2xl block text-center text-white font-semibold">
+            <i className="fa-solid fa-user"></i> Login
           </h1>
           <hr className="mt-1" />
           <div>
-            <label className="text-left block text-base mt-2">Email</label>
+            <label className="text-left block text-base mt-2 text-white font-semibold">Email</label>
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               type="text"
@@ -60,7 +60,7 @@ export default function LoginForm({ setUser }: { setUser: Function }) {
             />
           </div>
           <div className="mt-3">
-            <label className="text-left block text-base mt-2">Password</label>
+            <label className="text-left block text-base mt-2 text-white font-semibold">Password</label>
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               type="password"
@@ -73,7 +73,7 @@ export default function LoginForm({ setUser }: { setUser: Function }) {
             />
           </div>
           <div className="mt-5">
-            <button className="mb-2 border-2 border-black bg-orange-300 text-white w-3/4 rounded-md hover:bg-transparent hover:bg-orange-400 font-semibold">
+            <button className="mb-2 border-2 border-black bg-citrine text-black w-3/4 rounded-md hover:bg-orange-400 font-semibold">
               <i className="fa-solid fa-right-to-bracket"></i>Login
             </button>
           </div>

@@ -23,7 +23,7 @@ export default function AuthPage({ setUser }: { setUser: Function }) {
       )}
       <div>
         <h3
-          className="bg-sky-300 p-2 rounded-xl border-2 border-black text-white"
+          className="bg-yellowgreen p-2 rounded-xl border-2 border-black text-black"
           onClick={() => setShowLogin(!showLogin)}
         >
           {showLogin ? "SIGN UP" : "LOG IN"}

@@ -10,7 +10,7 @@ export default function HomePage({ user }: { user: UserDataType }) {
   return (
     <div className="flex flex-col justify-center items-center">
       <Logo />
-      <h1 className="bg-sky-300 w-full h-10 flex justify-center items-center text-2xl font-semibold">
+      <h1 className="bg-frenchblue w-full h-10 flex justify-center items-center text-2xl font-semibold text-white">
         Welcome {user.name}!
       </h1>
     </div>
