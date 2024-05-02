@@ -23,7 +23,7 @@ export default function AddExerciseToWorkout({
   const { id } = useParams();
 
   // map each workout to a Workout Form
-  const workoutItems = workouts.map((w: any, idx: number) => (
+  const workoutItems: JSX.Element[] = workouts.map((w: any, idx: number) => (
     <WorkoutForm
       id={w._id}
       key={idx}

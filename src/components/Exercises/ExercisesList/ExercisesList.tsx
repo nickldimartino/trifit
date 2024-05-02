@@ -4,6 +4,7 @@ import ExerciseForm from "../ExerciseForm/ExerciseForm";
 
 // Types
 import { ExerciseType, UserDataType } from "../../../types";
+import React from "react";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function ExercisesList({
@@ -18,7 +19,7 @@ export default function ExercisesList({
   user: UserDataType;
 }) {
   // map the exercises to their own Exercise Form
-  const exercisesItems = exercises.map((e: any, idx: number) => (
+  const exercisesItems: JSX.Element[] = exercises.map((e: any, idx: number) => (
     <ExerciseForm
       id={e._id}
       key={idx}

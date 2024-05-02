@@ -18,7 +18,7 @@ export default function FoodsList({
   user: UserDataType;
 }) {
   // maps each food to a new Food Form
-  const foodItems = foods.map((f: any, idx: number) => (
+  const foodItems: JSX.Element[] = foods.map((f: any, idx: number) => (
     <FoodForm
       id={f._id}
       key={idx}

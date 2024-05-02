@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import * as usersService from "../../utilities/users-service";
 
 /*------------------------------------- Functions --------------------------------------*/
-export default function LoginForm({ setUser }: { setUser: any }) {
+export default function LoginForm({ setUser }: { setUser: Function }) {
   // credentials state
   const [credentials, setCredentials] = useState({
     email: "",

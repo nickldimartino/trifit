@@ -14,10 +14,10 @@ import {
 
 // Internal
 import NewBodyStatForm from "../../components/BodyStats/NewBodyStatForm";
-import * as bodyStatsServices from "../../utilities/bodyStats-service";
+import * as bodyStatsService from "../../utilities/bodyStats-service";
 
 // Types
-import { BodyStatType, UserDataType } from "../../types";
+import { BodyStarCoordinates, BodyStatType, ScatterPlotData } from "../../types";
 
 // Register the ChartJS elements
 ChartJS.register(
@@ -42,15 +42,15 @@ export default function BodyStatsPage() {
 
   // map through the body stats and push each one as x,y coords to the scatterplot data
   bodyStats.forEach((b: any) => {
-    let obj = {
+    let bodystat: BodyStarCoordinates = {
       x: b.calories,
       y: b.weight,
     };
-    scatter.push(obj);
+    scatter.push(bodystat);
   });
 
   // data for the chart
-  let data = {
+  let data: ScatterPlotData = {
     datasets: [
       {
         labels: "Weight Over Time",
@@ -82,7 +82,7 @@ export default function BodyStatsPage() {
   // get the body stats
   async function getBodyStats() {
     // get the body stats from the database
-    let newBodyStatSet = await bodyStatsServices.getBodyStatData();
+    let newBodyStatSet = await bodyStatsService.getBodyStatData();
 
     // set the body stats state to the retrieved body stats
     setBodyStats(newBodyStatSet);
@@ -91,7 +91,7 @@ export default function BodyStatsPage() {
   // add a body stat
   async function addBodyStat(bodyStat: BodyStatType) {
     // add the body stat to the database
-    await bodyStatsServices.createBodyStatData(bodyStat);
+    await bodyStatsService.createBodyStatData(bodyStat);
 
     // set the body stats state with the new body stat
     setNewBodyStats([...newBodyStats, bodyStat]);

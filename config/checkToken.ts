@@ -1,7 +1,7 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
 import { NextFunction, Request, Response } from "express";
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 /*----------------------------------- Type Declaration ---------------------------------*/
 declare global {
@@ -9,6 +9,11 @@ declare global {
     interface Request {
       user?: Record<string, any> | null;
       exp?: Record<string, any> | null;
+    }
+  }
+  namespace NodeJS {
+    export interface ProcessEnv {
+      SECRET: string;
     }
   }
 }

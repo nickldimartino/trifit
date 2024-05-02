@@ -7,11 +7,8 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import Logo from "../../components/Logo/Logo";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
-// Types
-import { UserType } from "../../types";
-
 /*------------------------------------- Functions --------------------------------------*/
-export default function AuthPage({ setUser = (user: UserType) => {} }) {
+export default function AuthPage({ setUser }: { setUser: Function}) {
   // show login state
   const [showLogin, setShowLogin] = useState(true);
 

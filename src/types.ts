@@ -75,3 +75,45 @@ export interface BodyStatType {
   calories: number;
   weight: number;
 }
+
+// Body Stats Coordinates for Scatter Plot
+export interface BodyStarCoordinates {
+  x: number;
+  y: number;
+}
+
+// Data for the Body Stats Scatter PLot
+export interface ScatterPlotData {
+  datasets: {
+    labels: string;
+    data: Object[];
+    backgroundColor: string;
+    borderColor: string;
+    pointBorderColor: string;
+  }[];
+}
+
+// Request Object
+export interface requestObjType {
+  body?: string;
+  headers?: {
+    [key: string]: string;
+  };
+  method: string;
+}
+
+export interface SignUpFormProps {
+  setUser: Function;
+}
+
+export interface SignUpFormState {
+  name: string;
+  email: string;
+  password: string;
+  confirm: string;
+  isAdmin: string;
+  workouts: ExerciseType[];
+  mealPlans: FoodType[];
+  bodyStats: BodyStatType[];
+  error: string;
+}

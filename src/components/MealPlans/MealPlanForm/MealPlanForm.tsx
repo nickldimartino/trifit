@@ -32,7 +32,7 @@ export default function MealPlanForm({
 }) {
   // get the current URL path and set a flag to determine the location for element rendering
   const location = useLocation();
-  const isMealPlanPage = location.pathname === "/mealplans" ? true : false;
+  const isMealPlanPage: boolean = location.pathname === "/mealplans" ? true : false;
 
   // render the Meal Plan Form
   return (

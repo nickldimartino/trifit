@@ -19,7 +19,7 @@ export default function WorkoutsPage({
   addExerciseToWorkout,
   deleteWorkout,
 }: {
-  workouts: any;
+  workouts: WorkoutType[];
   setWorkouts: Function;
   editWorkout: Function;
   user: UserDataType;

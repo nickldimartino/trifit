@@ -24,7 +24,7 @@ export default function WorkoutForm({
 }) {
   // get the current URL path and set a flag to rendering elements
   const location = useLocation();
-  const isWorkoutPage = location.pathname === "/workouts" ? true : false;
+  const isWorkoutPage: boolean = location.pathname === "/workouts" ? true : false;
 
   // render the Workout Form
   return (

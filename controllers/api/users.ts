@@ -17,6 +17,12 @@ declare global {
       SECRET: string;
     }
   }
+
+  namespace Express {
+    interface Request {
+      exp?: Record<string, any> | null;
+    }
+  }
 }
 
 /*----------------------------------- Module Exports -----------------------------------*/
@@ -28,7 +34,7 @@ module.exports = {
 
 /*------------------------------------- Functions --------------------------------------*/
 // Check the user token
-export function checkToken(req: any, res: any) {
+export function checkToken(req: Request, res: Response) {
   res.json(req.exp);
 }
 

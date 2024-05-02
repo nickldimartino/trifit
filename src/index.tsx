@@ -10,7 +10,7 @@ import App from "./pages/App/App";
 
 /*---------------------------------- Root HTML Element ---------------------------------*/
 // Create the root element
-const root = ReactDOM.createRoot(
+const root: ReactDOM.Root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 

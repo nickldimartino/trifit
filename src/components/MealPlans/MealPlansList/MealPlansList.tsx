@@ -20,7 +20,7 @@ export default function MealPlanList({
   addFoodToMealPlan: Function;
 }) {
   // map the meal plans to their own Meal Plan Form
-  const mealPlanItems = mealPlans.map((m: any, idx: number) => (
+  const mealPlanItems: JSX.Element[] = mealPlans.map((m: any, idx: number) => (
     <MealPlanForm
       id={m._id}
       key={idx}

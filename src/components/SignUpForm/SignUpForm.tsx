@@ -6,27 +6,13 @@ import React, { Component } from "react";
 import { signUp } from "../../utilities/users-service";
 
 // Types
-import { BodyStatType, ExerciseType, FoodType } from "../../types";
-
-/*---------------------------------- Type Declarations ---------------------------------*/
-interface myProps {
-  setUser: any;
-}
-
-interface myState {
-  name: string;
-  email: string;
-  password: string;
-  confirm: string;
-  isAdmin: string;
-  workouts: ExerciseType[];
-  mealPlans: FoodType[];
-  bodyStats: BodyStatType[];
-  error: string;
-}
+import { SignUpFormProps, SignUpFormState } from "../../types";
 
 /*------------------------------------- Functions --------------------------------------*/
-export default class SignUpForm extends Component<myProps, myState> {
+export default class SignUpForm extends Component<
+  SignUpFormProps,
+  SignUpFormState
+> {
   // state variables
   state = {
     name: "",
@@ -79,7 +65,8 @@ export default class SignUpForm extends Component<myProps, myState> {
   };
   // render the Sign Up Form
   render() {
-    const disable = this.state.password !== this.state.confirm;
+    // set flag to determine if password was equal to confirm password
+    const disable: boolean = this.state.password !== this.state.confirm;
     return (
       <div>
         <div className="form-container">

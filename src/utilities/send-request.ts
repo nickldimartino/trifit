@@ -2,14 +2,8 @@
 // Internal
 import { getToken } from "./users-service";
 
-/*---------------------------------- Type Declarations ---------------------------------*/
-interface requestObjType {
-  body?: string;
-  headers?: {
-    [key: string]: string;
-  };
-  method: string;
-}
+// Types
+import { requestObjType } from "../types";
 
 /*------------------------------------- Functions --------------------------------------*/
 // Send a request to the backend

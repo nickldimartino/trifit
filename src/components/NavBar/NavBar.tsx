@@ -6,16 +6,11 @@ import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import * as userService from "../../utilities/users-service";
 
-// Types
-import { UserType } from "../../types";
-
 /*------------------------------------- Functions --------------------------------------*/
 export default function NavBar({
-  user,
   setUser,
   isActive,
 }: {
-  user: UserType;
   setUser: any;
   isActive: boolean;
 }) {
@@ -29,7 +24,7 @@ export default function NavBar({
 
   // get the current URL and set a flag to rendering elements
   const location = useLocation();
-  const isHome = location.pathname === "/" ? true : false;
+  const isHome: boolean = location.pathname === "/" ? true : false;
 
   // render the Nav Bar
   return (

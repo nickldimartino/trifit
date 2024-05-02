@@ -24,14 +24,14 @@ export default function WorkoutDetailsPage({
   const { id } = useParams();
 
   // variables for workouts and exercises
-  let thisWorkout;
+  let thisWorkout: any;
   let thisWorkoutsExercises: ExerciseType[] = [];
 
   // save the navigation
   const navigate = useNavigate();
 
   // find the workout that is equal to the URL path
-  for (let w = 0; w < workouts.length; w++) {
+  for (let w: number = 0; w < workouts.length; w++) {
     if (workouts[w]._id === id) {
       thisWorkout = workouts[w];
       break;
@@ -57,7 +57,7 @@ export default function WorkoutDetailsPage({
   }
 
   // map this workouts exercises to their own Exercise Form
-  const exercisesItems = thisWorkoutsExercises.map((e: any, idx: number) => (
+  const exercisesItems: JSX.Element[] = thisWorkoutsExercises.map((e: any, idx: number) => (
     <ExerciseForm
       id={e._id}
       key={idx}

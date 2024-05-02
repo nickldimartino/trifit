@@ -73,6 +73,7 @@ export async function update(req: Request, res: Response) {
     mealPlan.name = req.body.name;
     mealPlan.totalCalories = req.body.totalCalories;
     mealPlan.totalProtein = req.body.totalProtein;
+    mealPlan.totalCarbohydrates = req.body.totalCarbohydrates;
     mealPlan.totalFat = req.body.totalFat;
 
     // save the meal plan
@@ -103,7 +104,7 @@ export async function deleteMealPlan(req: Request, res: Response) {
     const user = await UserSchema.findById(req.user?._id);
 
     // remove the deleted meal plan from the user's meal plans
-    user.mealPlans.remove(mealPlan._id);
+    if (user) user.mealPlans.remove(mealPlan._id);
 
     // save the user
     await user.save();

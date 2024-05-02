@@ -32,7 +32,7 @@ export async function create(req: Request, res: Response) {
     const user = await UserSchema.findById(req.user?._id);
 
     // add the created body stat to the user's body stats
-    user.bodyStats.push(bodyStat);
+    if (user) user.bodyStats.push(bodyStat);
 
     // save the user
     await user.save();

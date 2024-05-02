@@ -24,8 +24,8 @@ import WorkoutDetailsPage from "../Workouts/WorkoutDetailsPage/WorkoutDetailsPag
 import WorkoutsPage from "../Workouts/WorkoutsPage/WorkoutsPage";
 import * as exercisesService from "../../utilities/exercises-service";
 import * as foodsService from "../../utilities/foods-service";
-import * as workoutsService from "../../utilities/workouts-service";
 import * as mealPlansService from "../../utilities/mealPlans-services";
+import * as workoutsService from "../../utilities/workouts-service";
 import { getUser } from "../../utilities/users-service";
 
 // Types
@@ -119,7 +119,7 @@ export default function App() {
   }
 
   // save the current URL to a flag for conditional rendering
-  const isActive = location.pathname === "/";
+  const isActive: boolean = location.pathname === "/";
 
   // render the app components
   return (
@@ -129,7 +129,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage user={user} />} />
           </Routes>
-          <NavBar user={user} setUser={setUser} isActive={isActive} />
+          <NavBar setUser={setUser} isActive={isActive} />
           <Routes>
             <Route
               path="/exercises"

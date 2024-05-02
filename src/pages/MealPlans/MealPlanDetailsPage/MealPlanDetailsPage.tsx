@@ -24,14 +24,14 @@ export default function MealPlanDetailsPage({
   const { id } = useParams();
 
   // variables to store the current meal plan and its foods
-  let thisMealPlan;
+  let thisMealPlan: any;
   let thisMealPlanFoods: FoodType[] = [];
 
   // save the navigation
   const navigate = useNavigate();
 
   // find the current meal plan using the URL path id
-  for (let w = 0; w < mealPlans.length; w++) {
+  for (let w: number = 0; w < mealPlans.length; w++) {
     if (mealPlans[w]._id === id) {
       thisMealPlan = mealPlans[w];
       break;
@@ -57,7 +57,7 @@ export default function MealPlanDetailsPage({
   }
 
   // map the foods in the meal plan to their own Food Form
-  const foodItems = thisMealPlanFoods.map((f: any, idx: number) => (
+  const foodItems: JSX.Element[] = thisMealPlanFoods.map((f: any, idx: number) => (
     <FoodForm
       id={f._id}
       key={idx}

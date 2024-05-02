@@ -98,7 +98,7 @@ export async function deleteWorkout(req: Request, res: Response) {
     const user = await UserSchema.findById(req.user?._id);
 
     // remove the deleted workout from the user's meal plans
-    user.workouts.remove(workout._id);
+    if (user) user.workouts.remove(workout._id);
 
     // save the user
     await user.save();
