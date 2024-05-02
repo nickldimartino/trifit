@@ -48,9 +48,12 @@ export default function MealPlanPage({
   }
 
   // render the page once when the state chanegs
-  useEffect(() => {
-    getMealPlans();
-  }, [newMealPlan]);
+  useEffect(
+    () => {
+      getMealPlans();
+    }, // eslint-disable-next-line
+    [newMealPlan]
+  );
 
   // render the New Meal Plan Form and Meal Plan list
   return (

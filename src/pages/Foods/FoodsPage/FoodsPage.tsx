@@ -56,9 +56,12 @@ export default function FoodsPage({
   }
 
   // render the page once on state change
-  useEffect(() => {
-    getFoods();
-  }, [newFood]);
+  useEffect(
+    () => {
+      getFoods();
+    }, // eslint-disable-next-line
+    [newFood]
+  );
 
   // render the New Food Form and the Food List
   return (

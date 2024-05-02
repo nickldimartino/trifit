@@ -82,16 +82,6 @@ export default function EditMealPlanPage({
           />
         </label>
         <label>
-          Foods
-          <input
-            name="foods"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.foods}
-            autoComplete="off"
-          />
-        </label>
-        <label>
           Total Calories
           <input
             name="totalCalories"

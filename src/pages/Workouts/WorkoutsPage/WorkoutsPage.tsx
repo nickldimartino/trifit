@@ -48,9 +48,12 @@ export default function WorkoutsPage({
   }
 
   // render the page once on a state change
-  useEffect(() => {
-    getWorkouts();
-  }, [newWorkout]);
+  useEffect(
+    () => {
+      getWorkouts();
+    }, // eslint-disable-next-line
+    [newWorkout]
+  );
 
   // render the New Workout Form and Workout List
   return (

@@ -56,9 +56,12 @@ export default function ExercisesPage({
   }
 
   // render the page once on state change
-  useEffect(() => {
-    getExercises();
-  }, [newExercise]);
+  useEffect(
+    () => {
+      getExercises();
+    }, // eslint-disable-next-line
+    [newExercise]
+  );
 
   // render the Exercises Page
   return (

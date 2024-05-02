@@ -58,7 +58,7 @@ export default function NewWorkoutForm({
             autoComplete="off"
           />
         </label>
-        <button type="submit">Add Food</button>
+        <button type="submit">Add Workout</button>
       </form>
     </>
   );

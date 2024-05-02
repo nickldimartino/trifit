@@ -72,16 +72,6 @@ export default function EditWorkoutPage({
             autoComplete="off"
           />
         </label>
-        <label>
-          Exercises
-          <input
-            name="exercises"
-            type="text"
-            onChange={handleOnChange}
-            value={newWorkout.exercises}
-            autoComplete="off"
-          />
-        </label>
         <button type="submit">Confirm Edit</button>
       </form>
     </>

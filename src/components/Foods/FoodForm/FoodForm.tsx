@@ -1,7 +1,7 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
 import { Types } from "mongoose";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Types
 import { UserDataType } from "../../../types";
@@ -30,6 +30,10 @@ export default function FoodForm({
   addFoodToMealPlan: Function;
   user: UserDataType;
 }) {
+  // save the URL path
+  const location = useLocation();
+  const isFoodsPage: boolean = location.pathname === "/foods" ? true : false;
+
   // renders the Food Form
   return (
     <div>
@@ -37,12 +41,12 @@ export default function FoodForm({
         {name} &nbsp; {type} &nbsp; {calories} &nbsp; {protein} &nbsp;{" "}
         {carbohydrates} &nbsp; {fat}
       </p>
-      <Link to={{ pathname: `/mealplans/display/${id}` }}>
-        Add to Meal Plan
-      </Link>{" "}
       &nbsp;
-      {user.isAdmin === "true" ? (
+      {user.isAdmin === "true" && isFoodsPage ? (
         <>
+          <Link to={{ pathname: `/mealplans/display/${id}` }}>
+            Add to Meal Plan
+          </Link>{" "}
           <Link
             to={{
               pathname: `/foods/edit/${id}/${name}/${type}/${calories}/${protein}/${carbohydrates}/${fat}`,
@@ -51,6 +55,10 @@ export default function FoodForm({
             Edit
           </Link>
           <button onClick={() => deleteFood(id)}>Delete</button>
+        </>
+      ) : user.isAdmin === "true" && !isFoodsPage ? (
+        <>
+          <button onClick={() => deleteFood(id)}>Remove</button>
         </>
       ) : (
         <></>

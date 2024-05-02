@@ -1,7 +1,7 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
 import { Types } from "mongoose";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Types
 import { UserDataType } from "../../../types";
@@ -28,16 +28,21 @@ export default function ExerciseForm({
   deleteExercise: Function;
   user: UserDataType;
 }) {
+  // save the URL path
+  const location = useLocation();
+  const isExercisePage: boolean =
+    location.pathname === "/exercises" ? true : false;
+
   // render the Exercise Form
   return (
     <div>
       <p>
         {name} &nbsp; {type} &nbsp; {muscle} &nbsp; {grip} &nbsp; {width} &nbsp;{" "}
       </p>
-      <Link to={{ pathname: `/workouts/display/${id}` }}>Add to Workout</Link>{" "}
       &nbsp;
-      {user.isAdmin === "true" ? (
+      {user.isAdmin === "true" && isExercisePage ? (
         <>
+          <Link to={{ pathname: `/workouts/display/${id}` }}>Add to Workout</Link>{" "}
           <Link
             to={{
               pathname: `/exercises/edit/${id}/${name}/${type}/${muscle}/${grip}/${width}`,
@@ -46,6 +51,10 @@ export default function ExerciseForm({
             Edit
           </Link>
           <button onClick={() => deleteExercise(id)}>Delete</button>
+        </>
+      ) : user.isAdmin === "true" && !isExercisePage ? (
+        <>
+          <button onClick={() => deleteExercise(id)}>Remove</button>
         </>
       ) : (
         <></>
