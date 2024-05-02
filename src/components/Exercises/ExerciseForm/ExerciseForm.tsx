@@ -35,7 +35,7 @@ export default function ExerciseForm({
 
   // render the Exercise Form
   return (
-    <div>
+    <div className="bg-caramel m-1 w-3/4 rounded-lg shadow-sm">
       <p>
         {name} &nbsp; {type} &nbsp; {muscle} &nbsp; {grip} &nbsp; {width} &nbsp;{" "}
       </p>

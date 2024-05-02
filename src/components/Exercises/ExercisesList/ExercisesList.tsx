@@ -36,9 +36,9 @@ export default function ExercisesList({
 
   // render the Exercises
   return (
-    <>
-      <h1>Exercises List</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">Exercises List</h1>
       {exercisesItems}
-    </>
+    </div>
   );
 }

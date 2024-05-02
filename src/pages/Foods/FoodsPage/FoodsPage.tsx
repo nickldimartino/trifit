@@ -66,23 +66,26 @@ export default function FoodsPage({
   // render the New Food Form and the Food List
   return (
     <>
-      <h1>Food Page Page</h1>
-      <div>Filter</div>
-      {user.isAdmin === "true" ? (
-        <NewFoodForm addNewFood={addNewFood} />
-      ) : (
-        <hr />
-      )}
-      <div className="list-picture">
-        <div>
-          <FoodsList
-            foods={foods}
-            addFoodToMealPlan={addFoodToMealPlan}
-            deleteFood={deleteFood}
-            user={user}
-          />
+      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Foods Page</h1>
+      <div className="flex flex-col">
+        {user.isAdmin === "true" ? (
+          <div className="flex justify-center mb-5">
+            <NewFoodForm addNewFood={addNewFood} />
+          </div>
+        ) : (
+          <hr />
+        )}
+        <div className="grid grid-cols-2">
+          <div>
+            <FoodsList
+              foods={foods}
+              addFoodToMealPlan={addFoodToMealPlan}
+              deleteFood={deleteFood}
+              user={user}
+            />
+          </div>
+          <FoodsPicture />
         </div>
-        <FoodsPicture />
       </div>
     </>
   );

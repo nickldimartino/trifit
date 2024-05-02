@@ -36,7 +36,7 @@ export default function FoodForm({
 
   // renders the Food Form
   return (
-    <div>
+    <div className="bg-yellowgreen m-1 w-3/4 rounded-lg shadow-sm">
       <p>
         {name} &nbsp; {type} &nbsp; {calories} &nbsp; {protein} &nbsp;{" "}
         {carbohydrates} &nbsp; {fat}

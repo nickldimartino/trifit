@@ -35,9 +35,9 @@ export default function FoodsList({
   ));
   // renders the Food Form items
   return (
-    <>
-      <h1>Foods List</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">Foods List</h1>
       {foodItems}
-    </>
+    </div>
   );
 }

@@ -21,14 +21,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--website-bg-color);
-  /* padding: 2vmin; */
   height: 100vh;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
 
 #root {
   height: 100%;
@@ -36,18 +35,4 @@ code {
 
 .scroll-y {
   overflow-y: scroll;
-}
-
-p.error-message {
-  text-align: center;
-}
-
-button:disabled,
-form:invalid button[type="submit"] {
-  cursor: not-allowed;
-}
-
-.list-picture {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }

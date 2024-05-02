@@ -66,23 +66,26 @@ export default function ExercisesPage({
   // render the Exercises Page
   return (
     <>
-      <h1>Exercises Page</h1>
-      <div>Filter</div>
-      {user.isAdmin === "true" ? (
-        <NewExerciseForm addNewExercise={addNewExercise} />
-      ) : (
-        <hr />
-      )}
-      <div className="list-picture">
-        <div>
-          <ExercisesList
-            exercises={exercises}
-            addExerciseToWorkout={addExerciseToWorkout}
-            deleteExercise={deleteExercise}
-            user={user}
-          />
+      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Exercises Page</h1>
+      <div className="flex flex-col">
+        {user.isAdmin === "true" ? (
+          <div className="flex justify-center mb-5">
+            <NewExerciseForm addNewExercise={addNewExercise} />
+          </div>
+        ) : (
+          <hr />
+        )}
+        <div className="grid grid-cols-2">
+          <div>
+            <ExercisesList
+              exercises={exercises}
+              addExerciseToWorkout={addExerciseToWorkout}
+              deleteExercise={deleteExercise}
+              user={user}
+            />
+          </div>
+          <ExercisesPicture />
         </div>
-        <ExercisesPicture />
       </div>
     </>
   );
