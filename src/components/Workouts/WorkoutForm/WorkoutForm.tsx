@@ -28,7 +28,7 @@ export default function WorkoutForm({
 
   // render the Workout Form
   return (
-    <div>
+    <div className="bg-caramel m-1 w-3/4 rounded-lg shadow-sm">
       <p>{name}</p>
       <Link to={{ pathname: `/workouts/${id}` }}>Workout Details</Link>
       {!isWorkoutPage ? (

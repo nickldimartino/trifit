@@ -50,63 +50,73 @@ export default function NewMealPlanForm({
   }
   // render the Meal Plan Form
   return (
-    <>
-      <h1>New Meal Plan Form</h1>
-      <form onSubmit={handleAddMealPlan}>
-        <label>
-          Name
-          <input
-            name="name"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.name}
-            placeholder="Meal Plan Name"
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Calories
-          <input
-            name="totalCalories"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalCalories}
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Protein
-          <input
-            name="totalProtein"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalProtein}
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Carbohydrates
-          <input
-            name="totalCarbohydrates"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalCarbohydrates}
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Fat
-          <input
-            name="totalFat"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalFat}
-            autoComplete="off"
-          />
-        </label>
-        <button type="submit">Add Meal Plan</button>
-      </form>
-    </>
+    <div className="flex justify-center items-center w-1/2">
+      <div className="flex justify-center items-center flex-col min-w-1/2 w-3/5 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
+        <h1 className="text-2xl block text-center text-black font-semibold">
+          <i className="fa-solid fa-user"></i> Add a Workout
+        </h1>
+        <hr className="mt-1" />
+        <form onSubmit={handleAddMealPlan}>
+          <label className="text-left block text-base mt-2 text-black font-semibold">
+            Name
+            <input
+              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+              name="name"
+              type="text"
+              onChange={handleOnChange}
+              value={newMealPlan.name}
+              placeholder="Meal Plan Name"
+              required
+              autoComplete="off"
+            />
+          </label>
+          <label className="text-left block text-base mt-2 text-black font-semibold">
+            Total Calories
+            <input
+              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+              name="totalCalories"
+              type="text"
+              onChange={handleOnChange}
+              value={newMealPlan.totalCalories}
+              autoComplete="off"
+            />
+          </label>
+          <label className="text-left block text-base mt-2 text-black font-semibold">
+            Total Protein
+            <input
+              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+              name="totalProtein"
+              type="text"
+              onChange={handleOnChange}
+              value={newMealPlan.totalProtein}
+              autoComplete="off"
+            />
+          </label>
+          <label className="text-left block text-base mt-2 text-black font-semibold">
+            Total Carbohydrates
+            <input
+              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+              name="totalCarbohydrates"
+              type="text"
+              onChange={handleOnChange}
+              value={newMealPlan.totalCarbohydrates}
+              autoComplete="off"
+            />
+          </label>
+          <label className="text-left block text-base mt-2 text-black font-semibold">
+            Total Fat
+            <input
+              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+              name="totalFat"
+              type="text"
+              onChange={handleOnChange}
+              value={newMealPlan.totalFat}
+              autoComplete="off"
+            />
+          </label>
+          <button type="submit">Add Meal Plan</button>
+        </form>
+      </div>
+    </div>
   );
 }

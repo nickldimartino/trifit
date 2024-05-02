@@ -58,14 +58,17 @@ export default function WorkoutsPage({
   // render the New Workout Form and Workout List
   return (
     <>
-      <h1>Workouts Page</h1>
-      <div>Filter</div>
-      <NewWorkoutForm addNewWorkout={addNewWorkout} />
-      <WorkoutsList
-        workouts={workouts}
-        deleteWorkout={deleteWorkout}
-        addExerciseToWorkout={addExerciseToWorkout}
-      />
+      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Workouts Page</h1>
+      <div className="flex justify-center mb-5">
+        <NewWorkoutForm addNewWorkout={addNewWorkout} />
+      </div>
+      <div>
+        <WorkoutsList
+          workouts={workouts}
+          deleteWorkout={deleteWorkout}
+          addExerciseToWorkout={addExerciseToWorkout}
+        />
+      </div>
     </>
   );
 }
