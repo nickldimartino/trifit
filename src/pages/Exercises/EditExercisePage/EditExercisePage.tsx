@@ -76,6 +76,7 @@ export default function EditExercisePage({
             value={newExercise.name}
             placeholder={name}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -87,6 +88,7 @@ export default function EditExercisePage({
             value={newExercise.type}
             placeholder={type}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -98,6 +100,7 @@ export default function EditExercisePage({
             value={newExercise.muscle}
             placeholder={muscle}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -109,6 +112,7 @@ export default function EditExercisePage({
             value={newExercise.grip}
             placeholder={grip}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -120,6 +124,7 @@ export default function EditExercisePage({
             value={newExercise.width}
             placeholder={width}
             required
+            autoComplete="off"
           />
         </label>
         <button type="submit">Confirm Edit</button>

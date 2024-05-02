@@ -56,6 +56,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
             value={newFood.name}
             placeholder="Food Name"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -67,6 +68,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
             value={newFood.type}
             placeholder="Food Type"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -78,6 +80,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
             value={newFood.calories}
             placeholder="Calories"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -89,6 +92,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
             value={newFood.protein}
             placeholder="Protein"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -100,6 +104,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
             value={newFood.carbohydrates}
             placeholder="Carbohydrates"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -111,6 +116,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
             value={newFood.fat}
             placeholder="Fat"
             required
+            autoComplete="off"
           />
         </label>
         <button type="submit">Add Food</button>

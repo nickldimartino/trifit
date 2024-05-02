@@ -78,6 +78,7 @@ export default function EditMealPlanPage({
             value={newMealPlan.name}
             placeholder="Meal Plan Name"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -87,6 +88,7 @@ export default function EditMealPlanPage({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.foods}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -96,6 +98,7 @@ export default function EditMealPlanPage({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalCalories}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -105,6 +108,7 @@ export default function EditMealPlanPage({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalProtein}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -114,6 +118,7 @@ export default function EditMealPlanPage({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalCarbohydrates}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -123,6 +128,7 @@ export default function EditMealPlanPage({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalFat}
+            autoComplete="off"
           />
         </label>
         <button type="submit">Edit Meal Plan</button>

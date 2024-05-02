@@ -61,6 +61,7 @@ export default function NewExerciseForm({
             value={newExercise.name}
             placeholder="Exercise Name"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -72,6 +73,7 @@ export default function NewExerciseForm({
             value={newExercise.type}
             placeholder="Exercise Type"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -83,6 +85,7 @@ export default function NewExerciseForm({
             value={newExercise.muscle}
             placeholder="Main Muscle"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -94,6 +97,7 @@ export default function NewExerciseForm({
             value={newExercise.grip}
             placeholder="Hand Grip"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -105,6 +109,7 @@ export default function NewExerciseForm({
             value={newExercise.width}
             placeholder="Hand Width"
             required
+            autoComplete="off"
           />
         </label>
         <button type="submit">Add Exercise</button>

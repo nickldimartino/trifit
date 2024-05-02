@@ -62,6 +62,7 @@ export default function NewMealPlanForm({
             value={newMealPlan.name}
             placeholder="Meal Plan Name"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -71,6 +72,7 @@ export default function NewMealPlanForm({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalCalories}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -80,6 +82,7 @@ export default function NewMealPlanForm({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalProtein}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -89,6 +92,7 @@ export default function NewMealPlanForm({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalCarbohydrates}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -98,6 +102,7 @@ export default function NewMealPlanForm({
             type="text"
             onChange={handleOnChange}
             value={newMealPlan.totalFat}
+            autoComplete="off"
           />
         </label>
         <button type="submit">Add Meal Plan</button>

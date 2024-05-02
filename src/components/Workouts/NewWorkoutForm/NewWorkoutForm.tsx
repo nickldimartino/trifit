@@ -55,6 +55,7 @@ export default function NewWorkoutForm({
             value={newWorkout.name}
             placeholder="Workout Name"
             required
+            autoComplete="off"
           />
         </label>
         <button type="submit">Add Food</button>

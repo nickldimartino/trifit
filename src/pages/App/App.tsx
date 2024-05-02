@@ -124,13 +124,126 @@ export default function App() {
   // render the app components
   return (
     <main className="App">
-      {user ? (
+      {user && isActive ? (
         <>
+          <HomePage user={user} />
           <Routes>
-            <Route path="/" element={<HomePage user={user} />} />
+            <Route
+              path="/"
+              element={<NavBar setUser={setUser} isActive={isActive} />}
+            />
+            <Route
+              path="/exercises"
+              element={
+                <ExercisesPage
+                  exercises={exercises}
+                  setExercises={setExercises}
+                  user={user}
+                  addExerciseToWorkout={addExerciseToWorkout}
+                />
+              }
+            />
+            <Route
+              path="/exercises/edit/:id/:name/:type/:muscle/:grip/:width"
+              element={<EditExercisePage editExercise={editExercise} />}
+            />
+            <Route
+              path="/workouts"
+              element={
+                <WorkoutsPage
+                  workouts={workouts}
+                  setWorkouts={setWorkouts}
+                  user={user}
+                  editWorkout={editWorkout}
+                  addExerciseToWorkout={addExerciseToWorkout}
+                  deleteWorkout={deleteWorkout}
+                />
+              }
+            />
+            <Route
+              path="/workouts/edit/:id/:name/"
+              element={<EditWorkoutPage editWorkout={editWorkout} />}
+            />
+            <Route
+              path="/workouts/display/:id/"
+              element={
+                <AddExerciseToWorkout
+                  workouts={workouts}
+                  deleteWorkout={deleteWorkout}
+                  addExerciseToWorkout={addExerciseToWorkout}
+                />
+              }
+            />
+            <Route
+              path="/workouts/:id"
+              element={
+                <WorkoutDetailsPage
+                  exercises={exercises}
+                  workouts={workouts}
+                  user={user}
+                />
+              }
+            />
+            <Route
+              path="/foods"
+              element={
+                <FoodsPage
+                  foods={foods}
+                  setFoods={setFoods}
+                  user={user}
+                  addFoodToMealPlan={addFoodToMealPlan}
+                />
+              }
+            />
+            <Route
+              path="/foods/edit/:id/:name/:type/:calories/:protein/:carbohydrates/:fat"
+              element={<EditFoodPage editFood={editFood} />}
+            />
+            <Route
+              path="/mealplans"
+              element={
+                <MealPlansPage
+                  mealPlans={mealPlans}
+                  setMealPlans={setMealPlans}
+                  user={user}
+                  editMealPlan={editMealPlan}
+                  addFoodToMealPlan={addFoodToMealPlan}
+                  deleteMealPlan={deleteMealPlan}
+                />
+              }
+            />
+            <Route
+              path="/mealplans/edit/:id/:name/:totalCalories/:totalProtein/:totalCarbohydrates/:totalFat"
+              element={<EditMealPlanPage editMealPlan={editMealPlan} />}
+            />
+            <Route
+              path="/mealplans/display/:id/"
+              element={
+                <AddFoodToMealPlan
+                  mealPlans={mealPlans}
+                  deleteMealPlan={deleteMealPlan}
+                  addFoodToMealPlan={addFoodToMealPlan}
+                />
+              }
+            />
+            <Route
+              path="/mealplans/:id"
+              element={
+                <MealPlanDetailsPage
+                  foods={foods}
+                  mealPlans={mealPlans}
+                  user={user}
+                />
+              }
+            />
+            <Route path="/bodystats" element={<BodyStatsPage />} />
           </Routes>
+        </>
+      ) : user && !isActive ? (
+        <>
           <NavBar setUser={setUser} isActive={isActive} />
           <Routes>
+            <Route path="/" element={<HomePage user={user} />} />
             <Route
               path="/exercises"
               element={

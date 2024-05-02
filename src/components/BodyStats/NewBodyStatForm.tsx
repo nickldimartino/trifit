@@ -55,6 +55,7 @@ export default function NewBodyStatForm({
             value={newBodyStat.calories}
             placeholder="Calories"
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -65,6 +66,7 @@ export default function NewBodyStatForm({
             onChange={handleOnChange}
             value={newBodyStat.weight}
             required
+            autoComplete="off"
           />
         </label>
         <button type="submit">Add Stats</button>

@@ -71,6 +71,7 @@ export default function EditFoodPage({ editFood }: { editFood: Function }) {
             value={newFood.name}
             placeholder={name}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -82,6 +83,7 @@ export default function EditFoodPage({ editFood }: { editFood: Function }) {
             value={newFood.type}
             placeholder={type}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -93,6 +95,7 @@ export default function EditFoodPage({ editFood }: { editFood: Function }) {
             value={newFood.calories}
             placeholder={calories}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -104,6 +107,7 @@ export default function EditFoodPage({ editFood }: { editFood: Function }) {
             value={newFood.protein}
             placeholder={protein}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -115,6 +119,7 @@ export default function EditFoodPage({ editFood }: { editFood: Function }) {
             value={newFood.carbohydrates}
             placeholder={carbohydrates}
             required
+            autoComplete="off"
           />
         </label>
         <label>
@@ -126,6 +131,7 @@ export default function EditFoodPage({ editFood }: { editFood: Function }) {
             value={newFood.fat}
             placeholder={fat}
             required
+            autoComplete="off"
           />
         </label>
         <button type="submit">Confirm Edit</button>
