@@ -9,7 +9,7 @@ import { UserDataType } from "../../types";
 export default function HomePage({ user }: { user: UserDataType }) {
   return (
     <>
-      <img src={bigLogo} alt="" className="w-100 h-60"/>
+      <img src={bigLogo} alt="" className="w-100 h-60" />
     </>
   );
 }

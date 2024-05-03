@@ -42,11 +42,17 @@ export default function MealPlanList({
         <h1>Your Meal Plans</h1>
         <hr />
         <div className="grid grid-cols-5 font-semibold text-md bg-citrine text-black rounded-b-lg">
-          <div className="flex justify-center items-center border rounded-bl-lg">Name</div>
-          <div className="flex justify-center items-center border">Calories</div>
+          <div className="flex justify-center items-center border rounded-bl-lg">
+            Name
+          </div>
+          <div className="flex justify-center items-center border">
+            Calories
+          </div>
           <div className="flex justify-center items-center border">Protein</div>
           <div className="flex justify-center items-center border">Carbs</div>
-          <div className="flex justify-center items-center border rounded-br-lg">Fat</div>
+          <div className="flex justify-center items-center border rounded-br-lg">
+            Fat
+          </div>
         </div>
       </div>
       {mealPlanItems}

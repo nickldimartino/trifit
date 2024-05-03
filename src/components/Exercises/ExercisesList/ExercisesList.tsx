@@ -40,9 +40,15 @@ export default function ExercisesList({
         <h1>Exercises</h1>
         <hr />
         <div className="grid grid-cols-5 font-semibold text-md bg-citrine text-black rounded-b-lg">
-          <div className="flex justify-center items-center border rounded-bl-lg">Name</div>
-          <div className="flex justify-center items-center border">Equipment Type</div>
-          <div className="flex justify-center items-center border">Muscle Groups</div>
+          <div className="flex justify-center items-center border rounded-bl-lg">
+            Name
+          </div>
+          <div className="flex justify-center items-center border">
+            Equipment Type
+          </div>
+          <div className="flex justify-center items-center border">
+            Muscle Groups
+          </div>
           <div className="flex justify-center items-center border">
             Hand/Foot Placement
           </div>

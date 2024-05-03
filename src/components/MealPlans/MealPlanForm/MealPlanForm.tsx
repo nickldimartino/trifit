@@ -32,7 +32,8 @@ export default function MealPlanForm({
 }) {
   // get the current URL path and set a flag to determine the location for element rendering
   const location = useLocation();
-  const isMealPlanPage: boolean = location.pathname === "/mealplans" ? true : false;
+  const isMealPlanPage: boolean =
+    location.pathname === "/mealplans" ? true : false;
 
   // render the Meal Plan Form
   return (
@@ -45,28 +46,43 @@ export default function MealPlanForm({
         <div>{totalFat}g</div>
       </div>
       <div className="rounded-b-lg grid grid-cols-3 bg-eggplant">
-      <Link className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold" to={{ pathname: `/mealplans/${id}` }}>Details</Link>
-      {!isMealPlanPage ? (
-        <button className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold" onClick={() => addFoodToMealPlan(id, foodId)}>Add</button>
-      ) : (
-        <></>
-      )}
-      {isMealPlanPage ? (
-        <>
-          <Link
-            to={{
-              pathname: `/mealplans/edit/${id}/${name}/${totalCalories}/${totalProtein}/${totalCarbohydrates}/${totalFat}`,
-            }}
+        <Link
+          className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+          to={{ pathname: `/mealplans/${id}` }}
+        >
+          Details
+        </Link>
+        {!isMealPlanPage ? (
+          <button
             className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+            onClick={() => addFoodToMealPlan(id, foodId)}
           >
-            Edit
-          </Link>
-          <button className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold" onClick={() => deleteMealPlan(id)}>Delete</button>
-        </>
-      ) : (
-        <></>
-      )}
-    </div>
+            Add
+          </button>
+        ) : (
+          <></>
+        )}
+        {isMealPlanPage ? (
+          <>
+            <Link
+              to={{
+                pathname: `/mealplans/edit/${id}/${name}/${totalCalories}/${totalProtein}/${totalCarbohydrates}/${totalFat}`,
+              }}
+              className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+            >
+              Edit
+            </Link>
+            <button
+              className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+              onClick={() => deleteMealPlan(id)}
+            >
+              Delete
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 }

@@ -12,17 +12,23 @@
 </div>
 
 ## 📝 Description
-Description
+
+Welcome to TriFit! The Personal Fitness Journal where you can view a list of exercises and foods that can be added to workouts and meal plans. Customize your own workouts on the You Workouts page. Create Meal Plans for yourself that show to number of calories, protein, carbohydrates, and fat for each food and the entire meal plan. You can even keep track of the number of calories you eat a day compared to your weight on a responsive scatter plot.
 
 ## 🖼️ Screenshots
 
 <details>
- <summary> 📊 App Navigation</summary>
+ <summary> 📊 App Web Pages</summary>
  
  | Description | Screenshot |
  |------------ | ------------|
  | <h3 align="center">Sign Up</h3> | <img src="" width="500">
  | <h3 align="center">Home Page</h3> | <img src="" width="500">
+ | <h3 align="center">Exercises Page</h3> | <img src="" width="500">
+ | <h3 align="center">Your Workouts Page</h3> | <img src="" width="500">
+ | <h3 align="center">Foods Page</h3> | <img src="" width="500">
+ | <h3 align="center">Your Meal Plans Page</h3> | <img src="" width="500">
+ | <h3 align="center">Body Stats Page</h3> | <img src="" width="500">
  
 </details>
 
@@ -55,36 +61,45 @@ Description
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
 ## ⚛️ Getting Started
+
 ### 📲 Instructions
 
 <details>
 <summary>How to Navigate the App</summary>
 
-1. Game is set for two players. Click the "Computer Player" button if you wish to play against to the computer.
- 
-2. Place your boats using the rules in the top-left of the screen.
+1. Sign up for an account or Log in using a previous account.
 
-3. Take turns guessing the other player's ships.  The first person to hit all other their opponent's boats (17 squares) wins!  Select "New Game" to play again.
+2. There are five pages to visit: Exercises, Your Workouts, Foods, Your Meal Plans, and Your Body.
 
-4. The theme of the game, audio, and board switch delay can be modified.
+3. The Exercises Page displays a list of exercises that can be added to Workouts.
+
+4. The Your Workouts Page displays a user's created Workouts and provides the option to add, edit, or delete a Workout with details of each one.
+
+5. The Foods Page displays a list of foods that can be added to Meal Plans.
+
+6. The Your Meal Plans Page displays a user's created Meal Plans and provides the option to add, edit, or delete a Meal Plan with details of each one.
+
+7. The Your Body Page displays a user's history off added Weight vs Calories data points on a scatter plot.
 </details>
 
 ### 🔗 Links
-
 
 <details>
 <summary>Heroku Link</summary>
 
 <a href="">Coming soon...</a>
+
 </details>
 
 <details>
 <summary>Trello Board</summary>
 
 <a href="https://trello.com/b/8ONPeZBF/trifit">https://trello.com/b/8ONPeZBF/trifit</a>
+
 </details>
 
 ## ⏭️ Next Steps
 
 - [ ] Find and fix possible bugs
 - [ ] Refactor code
+- [ ] Add a rep and set counter for each exercise

@@ -76,25 +76,25 @@ export default function BodyStatsPage() {
         max: 4000,
         scaleLabel: {
           display: true,
-          labelString: "Calories (kcal)"
+          labelString: "Calories (kcal)",
         },
         title: {
           display: true,
-          text: "Calories (kcal)"
-        }
+          text: "Calories (kcal)",
+        },
       },
       y: {
         min: 100,
         max: 250,
         scaleLabel: {
           display: true,
-          labelString: "Weight (lbs)"
+          labelString: "Weight (lbs)",
         },
         title: {
           display: true,
-          text: "Weight (lbs)"
-        }
-      }
+          text: "Weight (lbs)",
+        },
+      },
     },
     plugins: {
       legend: {
@@ -103,7 +103,7 @@ export default function BodyStatsPage() {
       title: {
         display: true,
         position: "top",
-        text: "Calories (kcal) vs Weight (lbs)"
+        text: "Calories (kcal) vs Weight (lbs)",
       },
     },
   };

@@ -3,7 +3,6 @@
 import { Link, useLocation } from "react-router-dom";
 
 // Internal
-import "./NavBar.css";
 import * as userService from "../../utilities/users-service";
 import Logo from "../Logo/Logo";
 

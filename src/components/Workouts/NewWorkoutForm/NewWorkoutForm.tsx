@@ -50,10 +50,10 @@ export default function NewWorkoutForm({
         </h1>
         <hr className="mt-1" />
         <form onSubmit={handleAddWorkout}>
-        <label className="text-left block text-base mt-2 text-black font-semibold">
+          <label className="text-left block text-base mt-2 text-black font-semibold">
             Name
             <input
-            className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               name="name"
               type="text"
               onChange={handleOnChange}
