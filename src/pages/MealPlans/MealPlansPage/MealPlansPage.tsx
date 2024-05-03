@@ -56,17 +56,17 @@ export default function MealPlanPage({
 
   // render the New Meal Plan Form and Meal Plan list
   return (
-    <>
-      <div className="flex flex-col mt-10">
-        <div className="flex justify-center mb-5">
-          <NewMealPlanForm addNewMealPlan={addNewMealPlan} />
-        </div>
+    <div className="flex justify-around mt-10">
+      <div className="w-3/4">
         <MealPlanList
           mealPlans={mealPlans}
           deleteMealPlan={deleteMealPlan}
           addFoodToMealPlan={addFoodToMealPlan}
         />
       </div>
-    </>
+      <div className="flex justify-center mb-5 w-3/4">
+        <NewMealPlanForm addNewMealPlan={addNewMealPlan} />
+      </div>
+    </div>
   );
 }

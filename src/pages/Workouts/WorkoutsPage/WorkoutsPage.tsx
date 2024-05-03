@@ -56,17 +56,17 @@ export default function WorkoutsPage({
 
   // render the New Workout Form and Workout List
   return (
-    <>
-      <div className="flex justify-center mb-5 mt-10">
-        <NewWorkoutForm addNewWorkout={addNewWorkout} />
-      </div>
-      <div>
+    <div className="flex justify-around mt-10">
+      <div className="w-3/4">
         <WorkoutsList
           workouts={workouts}
           deleteWorkout={deleteWorkout}
           addExerciseToWorkout={addExerciseToWorkout}
         />
       </div>
-    </>
+      <div className="flex justify-center mb-5 w-3/4">
+        <NewWorkoutForm addNewWorkout={addNewWorkout} />
+      </div>
+    </div>
   );
 }

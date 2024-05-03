@@ -50,8 +50,8 @@ export default function NewMealPlanForm({
   }
   // render the Meal Plan Form
   return (
-    <div className="flex justify-center items-center w-1/2">
-      <div className="flex justify-center items-center flex-col w-3/5 p-2 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
+    <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center flex-col p-2 bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
         <h1 className="text-2xl block text-center text-black font-semibold">
           <i className="fa-solid fa-user"></i> Add a Meal Plan
         </h1>
@@ -65,7 +65,7 @@ export default function NewMealPlanForm({
               type="text"
               onChange={handleOnChange}
               value={newMealPlan.name}
-              placeholder="Meal Plan Name"
+              placeholder="Enter a name..."
               required
               autoComplete="off"
             />
@@ -116,7 +116,7 @@ export default function NewMealPlanForm({
           </label>
           <div className="mt-5">
             <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-frenchblue font-semibold">
-              <i className="fa-solid fa-right-to-bracket"></i>Add Food
+              <i className="fa-solid fa-right-to-bracket"></i>Add
             </button>
           </div>
         </form>

@@ -33,6 +33,6 @@ body {
   height: 100%;
 }
 
-.scroll-y {
+html {
   overflow-y: scroll;
 }

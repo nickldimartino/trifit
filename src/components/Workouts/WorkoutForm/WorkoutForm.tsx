@@ -29,7 +29,7 @@ export default function WorkoutForm({
 
   // render the Workout Form
   return (
-    <div className="bg-caramel m-1 w-1/4 rounded-lg shadow-sm">
+    <div className="bg-caramel m-1 w-5/6 rounded-lg shadow-sm">
       <div className="flex justify-around font-semibold text-md">
         <div>{name}</div>
       </div>
@@ -38,7 +38,7 @@ export default function WorkoutForm({
           className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
           to={{ pathname: `/workouts/${id}` }}
         >
-          Workout Details
+          Details
         </Link>
         {!isWorkoutPage ? (
           <button
@@ -50,7 +50,6 @@ export default function WorkoutForm({
         ) : (
           <></>
         )}
-        &nbsp; &nbsp;
         {isWorkoutPage ? (
           <>
             <Link

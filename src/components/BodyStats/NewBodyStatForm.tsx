@@ -58,7 +58,6 @@ export default function NewBodyStatForm({
               type="text"
               onChange={handleOnChange}
               value={newBodyStat.calories}
-              placeholder="Calories"
               required
               autoComplete="off"
             />
@@ -77,7 +76,7 @@ export default function NewBodyStatForm({
           </label>
           <div className="mt-5">
             <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-frenchblue font-semibold">
-              <i className="fa-solid fa-right-to-bracket"></i>Add Body Stat
+              <i className="fa-solid fa-right-to-bracket"></i>Add
             </button>
           </div>
         </form>

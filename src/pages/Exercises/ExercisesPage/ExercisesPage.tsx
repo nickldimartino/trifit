@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 // Internal
 import ExercisesList from "../../../components/Exercises/ExercisesList/ExercisesList";
-import ExercisesPicture from "../../../components/Exercises/ExercisesPicture/ExercisesPicture";
 import NewExerciseForm from "../../../components/Exercises/NewExerciseForm/NewExerciseForm";
 import * as exercisesService from "../../../utilities/exercises-service";
 
@@ -65,25 +64,22 @@ export default function ExercisesPage({
   // render the Exercises Page
   return (
     <>
-      <div className="flex flex-col mt-10">
+      <div className="flex justify-around mt-10">
+        <div className="w-3/4">
+          <ExercisesList
+            exercises={exercises}
+            addExerciseToWorkout={addExerciseToWorkout}
+            deleteExercise={deleteExercise}
+            user={user}
+          />
+        </div>
         {user.isAdmin === "true" ? (
-          <div className="flex justify-center mb-5">
+          <div className="flex justify-center mb-5 w-3/4">
             <NewExerciseForm addNewExercise={addNewExercise} />
           </div>
         ) : (
-          <hr />
+          <></>
         )}
-        <div className="grid grid-cols-2">
-          <div>
-            <ExercisesList
-              exercises={exercises}
-              addExerciseToWorkout={addExerciseToWorkout}
-              deleteExercise={deleteExercise}
-              user={user}
-            />
-          </div>
-          <ExercisesPicture />
-        </div>
       </div>
     </>
   );

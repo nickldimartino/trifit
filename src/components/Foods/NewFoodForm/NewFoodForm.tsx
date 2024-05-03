@@ -44,8 +44,8 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
 
   // render the New Food form
   return (
-    <div className="flex justify-center items-center w-3/4">
-      <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
+    <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center flex-col p-2 bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
         <h1 className="text-2xl block text-center text-black font-semibold">
           <i className="fa-solid fa-user"></i> Add a Food
         </h1>
@@ -59,7 +59,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
               type="text"
               onChange={handleOnChange}
               value={newFood.name}
-              placeholder="Food Name"
+              placeholder="Enter a name..."
               required
               autoComplete="off"
             />
@@ -72,7 +72,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
               type="text"
               onChange={handleOnChange}
               value={newFood.type}
-              placeholder="Food Type"
+              placeholder="Enter a type..."
               required
               autoComplete="off"
             />
@@ -85,7 +85,6 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
               type="number"
               onChange={handleOnChange}
               value={newFood.calories}
-              placeholder="Calories"
               required
               autoComplete="off"
             />
@@ -98,7 +97,6 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
               type="number"
               onChange={handleOnChange}
               value={newFood.protein}
-              placeholder="Protein"
               required
               autoComplete="off"
             />
@@ -111,7 +109,6 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
               type="number"
               onChange={handleOnChange}
               value={newFood.carbohydrates}
-              placeholder="Carbohydrates"
               required
               autoComplete="off"
             />
@@ -124,14 +121,13 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
               type="number"
               onChange={handleOnChange}
               value={newFood.fat}
-              placeholder="Fat"
               required
               autoComplete="off"
             />
           </label>
           <div className="mt-5">
             <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-frenchblue font-semibold">
-              <i className="fa-solid fa-right-to-bracket"></i>Add Food
+              <i className="fa-solid fa-right-to-bracket"></i>Add
             </button>
           </div>
         </form>

@@ -37,7 +37,7 @@ export default function ExercisesList({
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">
-        <h1>Exercises List</h1>
+        <h1>Exercises</h1>
         <hr />
         <div className="flex justify-around font-semibold text-md bg-citrine text-black rounded-b-lg">
           <div>Name</div>

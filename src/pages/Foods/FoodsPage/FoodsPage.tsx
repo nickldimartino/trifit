@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 // Internal
 import FoodsList from "../../../components/Foods/FoodsList/FoodsList";
-import FoodsPicture from "../../../components/Foods/FoodsPicture/FoodsPicture";
 import NewFoodForm from "../../../components/Foods/NewFoodForm/NewFoodForm";
 import * as foodsService from "../../../utilities/foods-service";
 
@@ -65,25 +64,22 @@ export default function FoodsPage({
   // render the New Food Form and the Food List
   return (
     <>
-      <div className="flex flex-col mt-10">
+      <div className="flex justify-around mt-10">
+        <div className="w-3/4">
+          <FoodsList
+            foods={foods}
+            addFoodToMealPlan={addFoodToMealPlan}
+            deleteFood={deleteFood}
+            user={user}
+          />
+        </div>
         {user.isAdmin === "true" ? (
-          <div className="flex justify-center mb-5">
+          <div className="flex justify-center mb-5 w-3/4">
             <NewFoodForm addNewFood={addNewFood} />
           </div>
         ) : (
-          <hr />
+          <></>
         )}
-        <div className="grid grid-cols-2">
-          <div>
-            <FoodsList
-              foods={foods}
-              addFoodToMealPlan={addFoodToMealPlan}
-              deleteFood={deleteFood}
-              user={user}
-            />
-          </div>
-          <FoodsPicture />
-        </div>
       </div>
     </>
   );

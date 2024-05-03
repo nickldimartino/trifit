@@ -43,8 +43,8 @@ export default function NewWorkoutForm({
 
   // renders the New Workout Form
   return (
-    <div className="flex justify-center items-center w-1/2">
-      <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-caramel shadow-lg rounded-lg border-2 border-black">
+    <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center flex-col p-2 bg-caramel shadow-lg rounded-lg border-2 border-black">
         <h1 className="text-2xl block text-center text-black font-semibold">
           <i className="fa-solid fa-user"></i> Add a Workout
         </h1>
@@ -58,14 +58,14 @@ export default function NewWorkoutForm({
               type="text"
               onChange={handleOnChange}
               value={newWorkout.name}
-              placeholder="Workout Name"
+              placeholder="Enter a name..."
               required
               autoComplete="off"
             />
           </label>
           <div className="mt-5">
             <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-frenchblue font-semibold">
-              <i className="fa-solid fa-right-to-bracket"></i>Add Workout
+              <i className="fa-solid fa-right-to-bracket"></i>Add
             </button>
           </div>
         </form>
