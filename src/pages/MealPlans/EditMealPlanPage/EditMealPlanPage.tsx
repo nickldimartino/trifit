@@ -69,7 +69,7 @@ export default function EditMealPlanPage({
     <div className="flex flex-col justify-center items-center">
       <h1 className="font-semibold text-4xl mt-7 mb-5 ">Edit the Meal Plan</h1>
       <div className="flex justify-center items-center w-3/5 mb-5">
-        <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
+        <div className="flex justify-center items-center flex-col p-2 bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
           <form onSubmit={handleEditMealPlan}>
             <label className="text-left block text-base mt-2 text-black font-semibold">
               Name
