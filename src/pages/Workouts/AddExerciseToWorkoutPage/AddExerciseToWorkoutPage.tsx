@@ -37,9 +37,11 @@ export default function AddExerciseToWorkout({
 
   // render the Workout Forms
   return (
-    <>
-      <h1>Add Exercise to Workout</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">
+        Add Exercise to Workout
+      </h1>
       {workoutItems}
-    </>
+    </div>
   );
 }

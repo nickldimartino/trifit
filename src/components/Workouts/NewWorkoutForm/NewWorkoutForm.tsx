@@ -58,7 +58,7 @@ export default function NewWorkoutForm({
               type="text"
               onChange={handleOnChange}
               value={newWorkout.name}
-              placeholder="Workout Name..."
+              placeholder="Workout Name"
               required
               autoComplete="off"
             />

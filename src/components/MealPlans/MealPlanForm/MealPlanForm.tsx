@@ -36,7 +36,7 @@ export default function MealPlanForm({
 
   // render the Meal Plan Form
   return (
-    <div>
+    <div className="bg-yellowgreen m-1 w-3/4 rounded-lg shadow-sm">
       <p>
         {name} &nbsp; {totalCalories} &nbsp; {totalProtein} &nbsp;{" "}
         {totalCarbohydrates} &nbsp; {totalFat} &nbsp;

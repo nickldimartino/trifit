@@ -64,71 +64,84 @@ export default function EditExercisePage({
 
   // render the Edit Exercise Page
   return (
-    <>
-      <h1>Edit Exercise Page</h1>
-      <form onSubmit={handleEditExercise}>
-        <label>
-          Name
-          <input
-            name="name"
-            type="text"
-            onChange={handleOnChange}
-            value={newExercise.name}
-            placeholder={name}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Type
-          <input
-            name="type"
-            type="text"
-            onChange={handleOnChange}
-            value={newExercise.type}
-            placeholder={type}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Muscle
-          <input
-            name="muscle"
-            type="text"
-            onChange={handleOnChange}
-            value={newExercise.muscle}
-            placeholder={muscle}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Grip
-          <input
-            name="grip"
-            type="text"
-            onChange={handleOnChange}
-            value={newExercise.grip}
-            placeholder={grip}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Width
-          <input
-            name="width"
-            type="text"
-            onChange={handleOnChange}
-            value={newExercise.width}
-            placeholder={width}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <button type="submit">Confirm Edit</button>
-      </form>
-    </>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">Edit the Exercise</h1>
+      <div className="flex justify-center items-center w-1/2 mb-5">
+        <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-caramel shadow-lg rounded-lg border-2 border-black">
+          <form onSubmit={handleEditExercise}>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Name
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="name"
+                type="text"
+                onChange={handleOnChange}
+                value={newExercise.name}
+                placeholder={name}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Type
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="type"
+                type="text"
+                onChange={handleOnChange}
+                value={newExercise.type}
+                placeholder={type}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Muscle
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="muscle"
+                type="text"
+                onChange={handleOnChange}
+                value={newExercise.muscle}
+                placeholder={muscle}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Grip
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="grip"
+                type="text"
+                onChange={handleOnChange}
+                value={newExercise.grip}
+                placeholder={grip}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Width
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="width"
+                type="text"
+                onChange={handleOnChange}
+                value={newExercise.width}
+                placeholder={width}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <div className="mt-5">
+              <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-orange-400 font-semibold">
+                <i className="fa-solid fa-right-to-bracket"></i>Confirm Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

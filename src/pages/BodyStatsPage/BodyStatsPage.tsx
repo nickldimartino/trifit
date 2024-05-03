@@ -17,7 +17,11 @@ import NewBodyStatForm from "../../components/BodyStats/NewBodyStatForm";
 import * as bodyStatsService from "../../utilities/bodyStats-service";
 
 // Types
-import { BodyStarCoordinates, BodyStatType, ScatterPlotData } from "../../types";
+import {
+  BodyStarCoordinates,
+  BodyStatType,
+  ScatterPlotData,
+} from "../../types";
 
 // Register the ChartJS elements
 ChartJS.register(
@@ -53,9 +57,9 @@ export default function BodyStatsPage() {
   let data: ScatterPlotData = {
     datasets: [
       {
-        labels: "Weight Over Time",
+        labels: "Weight vs Calories",
         data: scatter,
-        backgroundColor: "#EA5455",
+        backgroundColor: "#E4CC37",
         borderColor: "black",
         pointBorderColor: "black",
       },
@@ -105,13 +109,16 @@ export default function BodyStatsPage() {
   // render the Body Stats Page
   return (
     <>
-      <h1>Body Stats Page</h1>
-      <div
-        style={{ width: "600px", height: "300px", backgroundColor: "white" }}
-      >
-        <Scatter data={data} options={options}></Scatter>
+      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Body Stats Page</h1>
+      <div className="grid grid-cols-2">
+        <NewBodyStatForm addBodyStat={addBodyStat} />
+        <div
+          style={{ width: "600px", height: "300px", backgroundColor: "white" }}
+          className="mr-10"
+        >
+          <Scatter data={data} options={options} className=" border-2 border-black rounded-lg"></Scatter>
+        </div>
       </div>
-      <NewBodyStatForm addBodyStat={addBodyStat} />
     </>
   );
 }

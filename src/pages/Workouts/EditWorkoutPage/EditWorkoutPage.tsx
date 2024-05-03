@@ -58,23 +58,32 @@ export default function EditWorkoutPage({
 
   // render the Edit Workout Page
   return (
-    <>
-      <h1>Edit Workout Page</h1>
-      <form onSubmit={handleEditWorkout}>
-        <label>
-          Name
-          <input
-            name="name"
-            type="text"
-            onChange={handleOnChange}
-            value={newWorkout.name}
-            placeholder={name}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <button type="submit">Confirm Edit</button>
-      </form>
-    </>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">Edit the Workout</h1>
+      <div className="flex justify-center items-center w-1/2 mb-5">
+        <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-caramel shadow-lg rounded-lg border-2 border-black">
+          <form onSubmit={handleEditWorkout}>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Name
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="name"
+                type="text"
+                onChange={handleOnChange}
+                value={newWorkout.name}
+                placeholder={name}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <div className="mt-5">
+              <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-orange-400 font-semibold">
+                <i className="fa-solid fa-right-to-bracket"></i>Confirm Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -59,83 +59,97 @@ export default function EditFoodPage({ editFood }: { editFood: Function }) {
 
   // render the Edit Food Page
   return (
-    <>
-      <h1>Edit Food Page</h1>
-      <form onSubmit={handleEditFood}>
-        <label>
-          Name
-          <input
-            name="name"
-            type="text"
-            onChange={handleOnChange}
-            value={newFood.name}
-            placeholder={name}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Type
-          <input
-            name="type"
-            type="text"
-            onChange={handleOnChange}
-            value={newFood.type}
-            placeholder={type}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Calories
-          <input
-            name="calories"
-            type="text"
-            onChange={handleOnChange}
-            value={newFood.calories}
-            placeholder={calories}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Protein
-          <input
-            name="protein"
-            type="text"
-            onChange={handleOnChange}
-            value={newFood.protein}
-            placeholder={protein}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Carbohydrates
-          <input
-            name="carbohydrates"
-            type="text"
-            onChange={handleOnChange}
-            value={newFood.carbohydrates}
-            placeholder={carbohydrates}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Fat
-          <input
-            name="fat"
-            type="text"
-            onChange={handleOnChange}
-            value={newFood.fat}
-            placeholder={fat}
-            required
-            autoComplete="off"
-          />
-        </label>
-        <button type="submit">Confirm Edit</button>
-      </form>
-    </>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">Edit the Food</h1>
+      <div className="flex justify-center items-center w-3/5 mb-5">
+        <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
+          <form onSubmit={handleEditFood}>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Name
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="name"
+                type="text"
+                onChange={handleOnChange}
+                value={newFood.name}
+                placeholder={name}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Type
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="type"
+                type="text"
+                onChange={handleOnChange}
+                value={newFood.type}
+                placeholder={type}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Calories
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="calories"
+                type="text"
+                onChange={handleOnChange}
+                value={newFood.calories}
+                placeholder={calories}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Protein
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="protein"
+                type="text"
+                onChange={handleOnChange}
+                value={newFood.protein}
+                placeholder={protein}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Carbohydrates
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="carbohydrates"
+                type="text"
+                onChange={handleOnChange}
+                value={newFood.carbohydrates}
+                placeholder={carbohydrates}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Fat
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="fat"
+                type="text"
+                onChange={handleOnChange}
+                value={newFood.fat}
+                placeholder={fat}
+                required
+                autoComplete="off"
+              />
+            </label>
+            <div className="mt-5">
+              <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-orange-400 font-semibold">
+                <i className="fa-solid fa-right-to-bracket"></i>Confirm Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

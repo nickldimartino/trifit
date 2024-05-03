@@ -47,7 +47,7 @@ export default function NewFoodForm({ addNewFood }: { addNewFood: Function }) {
     <div className="flex justify-center items-center w-3/5">
       <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
         <h1 className="text-2xl block text-center text-black font-semibold">
-          <i className="fa-solid fa-user"></i> Add an Food
+          <i className="fa-solid fa-user"></i> Add a Food
         </h1>
         <hr className="mt-1" />
         <form onSubmit={handleAddFood}>

@@ -57,27 +57,30 @@ export default function WorkoutDetailsPage({
   }
 
   // map this workouts exercises to their own Exercise Form
-  const exercisesItems: JSX.Element[] = thisWorkoutsExercises.map((e: any, idx: number) => (
-    <ExerciseForm
-      id={e._id}
-      key={idx}
-      name={e.name}
-      type={e.type}
-      muscle={e.muscle}
-      grip={e.grip}
-      width={e.width}
-      addExerciseToWorkout={() => {}}
-      deleteExercise={removeExerciseFromWorkout}
-      user={user}
-    />
-  ));
+  const exercisesItems: JSX.Element[] = thisWorkoutsExercises.map(
+    (e: any, idx: number) => (
+      <ExerciseForm
+        id={e._id}
+        key={idx}
+        name={e.name}
+        type={e.type}
+        muscle={e.muscle}
+        grip={e.grip}
+        width={e.width}
+        addExerciseToWorkout={() => {}}
+        deleteExercise={removeExerciseFromWorkout}
+        user={user}
+      />
+    )
+  );
 
   // render the Workout Details Page
   return (
-    <>
-      <h1>Workout Details Page</h1>
-      <h3>{thisWorkout.name}</h3>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">
+        {thisWorkout.name} Workout Details
+      </h1>
       {exercisesItems}
-    </>
+    </div>
   );
 }

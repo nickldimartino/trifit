@@ -41,9 +41,11 @@ export default function AddFoodToMealPlan({
 
   // render the Meal Plan Forms
   return (
-    <>
-      <h1>Add Food to Meal Plan</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">
+        Add Food to Meal Plan
+      </h1>
       {mealPlanItems}
-    </>
+    </div>
   );
 }

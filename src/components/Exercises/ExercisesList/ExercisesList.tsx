@@ -4,7 +4,6 @@ import ExerciseForm from "../ExerciseForm/ExerciseForm";
 
 // Types
 import { ExerciseType, UserDataType } from "../../../types";
-import React from "react";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function ExercisesList({

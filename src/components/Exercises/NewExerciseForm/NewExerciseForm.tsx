@@ -64,7 +64,7 @@ export default function NewExerciseForm({
               type="text"
               onChange={handleOnChange}
               value={newExercise.name}
-              placeholder="Exercise Name..."
+              placeholder="Exercise Name"
               required
               autoComplete="off"
             />
@@ -77,7 +77,7 @@ export default function NewExerciseForm({
               type="text"
               onChange={handleOnChange}
               value={newExercise.type}
-              placeholder="Exercise Type..."
+              placeholder="Exercise Type"
               required
               autoComplete="off"
             />
@@ -90,7 +90,7 @@ export default function NewExerciseForm({
               type="text"
               onChange={handleOnChange}
               value={newExercise.muscle}
-              placeholder="Main Muscle..."
+              placeholder="Main Muscle"
               required
               autoComplete="off"
             />
@@ -103,7 +103,7 @@ export default function NewExerciseForm({
               type="text"
               onChange={handleOnChange}
               value={newExercise.grip}
-              placeholder="Hand Grip..."
+              placeholder="Hand Grip"
               required
               autoComplete="off"
             />
@@ -116,7 +116,7 @@ export default function NewExerciseForm({
               type="text"
               onChange={handleOnChange}
               value={newExercise.width}
-              placeholder="Hand Width..."
+              placeholder="Hand Width"
               required
               autoComplete="off"
             />

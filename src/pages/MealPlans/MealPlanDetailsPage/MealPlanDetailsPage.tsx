@@ -77,14 +77,16 @@ export default function MealPlanDetailsPage({
 
   // renders the Meal Plan Details Page
   return (
-    <>
-      <h1>Meal Plan Details Page</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">
+        {thisMealPlan.name} Meal Plan Details
+      </h1>
       <h3>
         {thisMealPlan.name} | {thisMealPlan.totalCalories} |{" "}
         {thisMealPlan.totalProtein} | {thisMealPlan.totalCarbohydrates} |{" "}
         {thisMealPlan.totalFat}
       </h3>
       {foodItems}
-    </>
+    </div>
   );
 }

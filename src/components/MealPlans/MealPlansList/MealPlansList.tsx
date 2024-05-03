@@ -38,9 +38,9 @@ export default function MealPlanList({
 
   // render the Meal Plan Forms
   return (
-    <>
-      <h1>Meal Plan List</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">Meal Plans List</h1>
       {mealPlanItems}
-    </>
+    </div>
   );
 }

@@ -66,63 +66,76 @@ export default function EditMealPlanPage({
 
   // render the Edit Meal Plan Page
   return (
-    <>
-      <h1>Edit Meal Plan Page</h1>
-      <form onSubmit={handleEditMealPlan}>
-        <label>
-          Name
-          <input
-            name="name"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.name}
-            placeholder="Meal Plan Name"
-            required
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Calories
-          <input
-            name="totalCalories"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalCalories}
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Protein
-          <input
-            name="totalProtein"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalProtein}
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Carbohydrates
-          <input
-            name="totalCarbohydrates"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalCarbohydrates}
-            autoComplete="off"
-          />
-        </label>
-        <label>
-          Total Fat
-          <input
-            name="totalFat"
-            type="text"
-            onChange={handleOnChange}
-            value={newMealPlan.totalFat}
-            autoComplete="off"
-          />
-        </label>
-        <button type="submit">Confirm Edit</button>
-      </form>
-    </>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-semibold text-4xl mt-7 mb-5 ">Edit the Meal Plan</h1>
+      <div className="flex justify-center items-center w-3/5 mb-5">
+        <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
+          <form onSubmit={handleEditMealPlan}>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Name
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="name"
+                type="text"
+                onChange={handleOnChange}
+                value={newMealPlan.name}
+                placeholder="Meal Plan Name"
+                required
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Total Calories
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="totalCalories"
+                type="text"
+                onChange={handleOnChange}
+                value={newMealPlan.totalCalories}
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Total Protein
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="totalProtein"
+                type="text"
+                onChange={handleOnChange}
+                value={newMealPlan.totalProtein}
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Total Carbohydrates
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="totalCarbohydrates"
+                type="text"
+                onChange={handleOnChange}
+                value={newMealPlan.totalCarbohydrates}
+                autoComplete="off"
+              />
+            </label>
+            <label className="text-left block text-base mt-2 text-black font-semibold">
+              Total Fat
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                name="totalFat"
+                type="text"
+                onChange={handleOnChange}
+                value={newMealPlan.totalFat}
+                autoComplete="off"
+              />
+            </label>
+            <div className="mt-5">
+              <button className="mb-2 border-2 border-black bg-celestialblue text-white w-3/4 rounded-md hover:bg-orange-400 font-semibold">
+                <i className="fa-solid fa-right-to-bracket"></i>Confirm Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
