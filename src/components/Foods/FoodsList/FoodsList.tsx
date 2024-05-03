@@ -36,7 +36,18 @@ export default function FoodsList({
   // renders the Food Form items
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">Foods List</h1>
+      <div className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">
+        <h1>Foods List</h1>
+        <hr />
+        <div className="flex justify-around font-semibold text-md bg-citrine text-black rounded-b-lg">
+          <div>Name</div>
+          <div>Type</div>
+          <div>Calories</div>
+          <div>Protein</div>
+          <div>Carbs</div>
+          <div>Fat</div>
+        </div>
+      </div>
       {foodItems}
     </div>
   );

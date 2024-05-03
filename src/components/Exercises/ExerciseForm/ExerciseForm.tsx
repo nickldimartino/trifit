@@ -35,7 +35,7 @@ export default function ExerciseForm({
 
   // render the Exercise Form
   return (
-    <div className="bg-caramel m-1 w-9/12 rounded-lg shadow-sm">
+    <div className="bg-caramel m-1 w-5/6 rounded-lg shadow-sm">
       <div className="flex justify-around font-semibold text-md">
         <div>{name}</div>
         <div>{type}</div>

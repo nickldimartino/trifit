@@ -18,7 +18,8 @@ module.exports = {
         citrine: "#E4CC37",
         caramel: "#E18335",
         auburn: "#A62639",
-        eggplant: "#5E4B56"
+        eggplant: "#5E4B56",
+        cordovan: "#9c3848"
       },
     },
   },

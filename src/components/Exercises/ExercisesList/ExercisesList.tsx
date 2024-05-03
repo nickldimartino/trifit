@@ -36,7 +36,17 @@ export default function ExercisesList({
   // render the Exercises
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">Exercises List</h1>
+      <div className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">
+        <h1>Exercises List</h1>
+        <hr />
+        <div className="flex justify-around font-semibold text-md bg-citrine text-black rounded-b-lg">
+          <div>Name</div>
+          <div>Type</div>
+          <div>Muscle</div>
+          <div>Hand/Foot Placement</div>
+          <div>Width</div>
+        </div>
+      </div>
       {exercisesItems}
     </div>
   );

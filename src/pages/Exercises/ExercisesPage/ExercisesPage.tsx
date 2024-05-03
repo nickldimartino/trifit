@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 // Internal
 import ExercisesList from "../../../components/Exercises/ExercisesList/ExercisesList";
 import ExercisesPicture from "../../../components/Exercises/ExercisesPicture/ExercisesPicture";
-import Logo from "../../../components/Logo/Logo";
 import NewExerciseForm from "../../../components/Exercises/NewExerciseForm/NewExerciseForm";
 import * as exercisesService from "../../../utilities/exercises-service";
 
@@ -66,7 +65,7 @@ export default function ExercisesPage({
   // render the Exercises Page
   return (
     <>
-      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Exercises Page</h1>
+      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Exercises</h1>
       <div className="flex flex-col">
         {user.isAdmin === "true" ? (
           <div className="flex justify-center mb-5">

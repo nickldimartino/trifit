@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 // Internal
-import Logo from "../../../components/Logo/Logo";
 import MealPlanList from "../../../components/MealPlans/MealPlansList/MealPlansList";
 import NewMealPlanForm from "../../../components/MealPlans/NewMealPlanForm/NewMealPlanForm";
 import * as mealPlansService from "../../../utilities/mealPlans-services";

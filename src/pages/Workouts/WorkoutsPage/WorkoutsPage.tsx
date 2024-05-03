@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 // Internal
-import Logo from "../../../components/Logo/Logo";
 import NewWorkoutForm from "../../../components/Workouts/NewWorkoutForm/NewWorkoutForm";
 import WorkoutsList from "../../../components/Workouts/WorkoutsList/WorkoutsList";
 import * as workoutsService from "../../../utilities/workouts-service";

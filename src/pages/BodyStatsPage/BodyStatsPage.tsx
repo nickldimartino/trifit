@@ -109,7 +109,7 @@ export default function BodyStatsPage() {
   // render the Body Stats Page
   return (
     <>
-      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Body Stats Page</h1>
+      <h1 className="font-semibold text-4xl mt-7 mb-10 ">You Body Stats</h1>
       <div className="grid grid-cols-2">
         <NewBodyStatForm addBodyStat={addBodyStat} />
         <div

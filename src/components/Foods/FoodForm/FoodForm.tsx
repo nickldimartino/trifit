@@ -36,14 +36,14 @@ export default function FoodForm({
 
   // renders the Food Form
   return (
-    <div className="bg-yellowgreen m-1 w-9/12 rounded-lg shadow-sm">
+    <div className="bg-yellowgreen m-1 w-5/6 rounded-lg shadow-sm">
       <div className="flex justify-around font-semibold text-md">
         <div>{name}</div>
         <div>{type}</div>
-        <div>{calories}</div>
-        <div>{protein}</div>
-        <div>{carbohydrates}</div>
-        <div>{fat}</div>
+        <div>{calories}kcal</div>
+        <div>{protein}g</div>
+        <div>{carbohydrates}g</div>
+        <div>{fat}g</div>
       </div>
       <div className="rounded-b-lg flex justify-around bg-eggplant">
         {isFoodsPage ? (

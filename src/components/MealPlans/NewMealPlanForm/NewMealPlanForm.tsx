@@ -51,7 +51,7 @@ export default function NewMealPlanForm({
   // render the Meal Plan Form
   return (
     <div className="flex justify-center items-center w-1/2">
-      <div className="flex justify-center items-center flex-col min-w-1/2 w-3/5 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
+      <div className="flex justify-center items-center flex-col w-3/5 p-2 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black">
         <h1 className="text-2xl block text-center text-black font-semibold">
           <i className="fa-solid fa-user"></i> Add a Meal Plan
         </h1>
@@ -71,7 +71,7 @@ export default function NewMealPlanForm({
             />
           </label>
           <label className="text-left block text-base mt-2 text-black font-semibold">
-            Total Calories
+            Total Calories (kcal)
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               name="totalCalories"
@@ -82,7 +82,7 @@ export default function NewMealPlanForm({
             />
           </label>
           <label className="text-left block text-base mt-2 text-black font-semibold">
-            Total Protein
+            Total Protein (grams)
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               name="totalProtein"
@@ -93,7 +93,7 @@ export default function NewMealPlanForm({
             />
           </label>
           <label className="text-left block text-base mt-2 text-black font-semibold">
-            Total Carbohydrates
+            Total Carbohydrates (grams)
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               name="totalCarbohydrates"
@@ -104,7 +104,7 @@ export default function NewMealPlanForm({
             />
           </label>
           <label className="text-left block text-base mt-2 text-black font-semibold">
-            Total Fat
+            Total Fat (grams)
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               name="totalFat"

@@ -4,7 +4,6 @@ import { Types } from "mongoose";
 import { useEffect, useState } from "react";
 
 // Internal
-import Logo from "../../../components/Logo/Logo";
 import FoodsList from "../../../components/Foods/FoodsList/FoodsList";
 import FoodsPicture from "../../../components/Foods/FoodsPicture/FoodsPicture";
 import NewFoodForm from "../../../components/Foods/NewFoodForm/NewFoodForm";
