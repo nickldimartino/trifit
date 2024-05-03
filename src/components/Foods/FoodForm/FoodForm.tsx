@@ -36,39 +36,58 @@ export default function FoodForm({
 
   // renders the Food Form
   return (
-    <div className="bg-yellowgreen m-1 w-3/4 rounded-lg shadow-sm">
-      <p>
-        {name} &nbsp; {type} &nbsp; {calories} &nbsp; {protein} &nbsp;{" "}
-        {carbohydrates} &nbsp; {fat}
-      </p>
-      &nbsp;
-      {isFoodsPage ? (
-        <>
-          <Link to={{ pathname: `/mealplans/display/${id}` }}>
-            Add to Meal Plan
-          </Link>{" "}
-          {user.isAdmin === "true" ? (
-            <>
-              <Link
-                to={{
-                  pathname: `/foods/edit/${id}/${name}/${type}/${calories}/${protein}/${carbohydrates}/${fat}`,
-                }}
-              >
-                Edit
-              </Link>
-              <button onClick={() => deleteFood(id)}>Delete</button>
-            </>
-          ) : (
-            <></>
-          )}
-        </>
-      ) : user.isAdmin === "true" && !isFoodsPage ? (
-        <>
-          <button onClick={() => deleteFood(id)}>Remove</button>
-        </>
-      ) : (
-        <></>
-      )}
+    <div className="bg-yellowgreen m-1 w-9/12 rounded-lg shadow-sm">
+      <div className="flex justify-around font-semibold text-md">
+        <div>{name}</div>
+        <div>{type}</div>
+        <div>{calories}</div>
+        <div>{protein}</div>
+        <div>{carbohydrates}</div>
+        <div>{fat}</div>
+      </div>
+      <div className="rounded-b-lg flex justify-around bg-eggplant">
+        {isFoodsPage ? (
+          <>
+            <Link
+              className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+              to={{ pathname: `/mealplans/display/${id}` }}
+            >
+              Add to Meal Plan
+            </Link>{" "}
+            {user.isAdmin === "true" ? (
+              <>
+                <Link
+                  to={{
+                    pathname: `/foods/edit/${id}/${name}/${type}/${calories}/${protein}/${carbohydrates}/${fat}`,
+                  }}
+                  className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+                >
+                  Edit
+                </Link>
+                <button
+                  className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+                  onClick={() => deleteFood(id)}
+                >
+                  Delete
+                </button>
+              </>
+            ) : (
+              <></>
+            )}
+          </>
+        ) : user.isAdmin === "true" && !isFoodsPage ? (
+          <>
+            <button
+              className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+              onClick={() => deleteFood(id)}
+            >
+              Remove
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 }

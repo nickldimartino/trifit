@@ -34,7 +34,7 @@ export default function WorkoutList({
   // render the Workout Forms
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">Workouts List</h1>
+      <h1 className="bg-celestialblue w-2/5 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">Workouts List</h1>
       {workoutItems}
     </div>
   );

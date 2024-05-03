@@ -16,7 +16,9 @@ module.exports = {
         frenchblue: "#0072BB",
         yellowgreen: "#8FC93A",
         citrine: "#E4CC37",
-        caramel: "#E18335"
+        caramel: "#E18335",
+        auburn: "#A62639",
+        eggplant: "#5E4B56"
       },
     },
   },

@@ -81,11 +81,24 @@ export default function MealPlanDetailsPage({
       <h1 className="font-semibold text-4xl mt-7 mb-5 ">
         {thisMealPlan.name} Meal Plan Details
       </h1>
-      <h3>
-        {thisMealPlan.name} | {thisMealPlan.totalCalories} |{" "}
-        {thisMealPlan.totalProtein} | {thisMealPlan.totalCarbohydrates} |{" "}
-        {thisMealPlan.totalFat}
-      </h3>
+      <div className="flex justify-center items-center flex-col w-1/5 min-h-3/4 h-full bg-yellowgreen shadow-lg rounded-lg border-2 border-black mb-6">
+        <div>
+          <span className="font-semibold">Total Calories:</span>{" "}
+          {thisMealPlan.totalCalories}
+        </div>
+        <div>
+          <span className="font-semibold">Total Protein:</span>{" "}
+          {thisMealPlan.totalProtein}
+        </div>
+        <div>
+          <span className="font-semibold">Total Carbohydrates:</span>{" "}
+          {thisMealPlan.totalCarbohydrates}
+        </div>
+        <div>
+          <span className="font-semibold">Total Fat:</span>{" "}
+          {thisMealPlan.totalFat}
+        </div>
+      </div>
       {foodItems}
     </div>
   );

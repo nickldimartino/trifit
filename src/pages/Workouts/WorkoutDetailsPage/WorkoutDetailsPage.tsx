@@ -80,7 +80,7 @@ export default function WorkoutDetailsPage({
       <h1 className="font-semibold text-4xl mt-7 mb-5 ">
         {thisWorkout.name} Workout Details
       </h1>
-      {exercisesItems}
+      <div className="w-9/12 flex justify-center">{exercisesItems}</div>
     </div>
   );
 }

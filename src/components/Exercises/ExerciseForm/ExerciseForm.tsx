@@ -35,38 +35,57 @@ export default function ExerciseForm({
 
   // render the Exercise Form
   return (
-    <div className="bg-caramel m-1 w-3/4 rounded-lg shadow-sm">
-      <p>
-        {name} &nbsp; {type} &nbsp; {muscle} &nbsp; {grip} &nbsp; {width} &nbsp;{" "}
-      </p>
-      &nbsp;
-      {isExercisePage ? (
-        <>
-          <Link to={{ pathname: `/workouts/display/${id}` }}>
-            Add to Workout
-          </Link>{" "}
-          {user.isAdmin === "true" ? (
-            <>
-              <Link
-                to={{
-                  pathname: `/exercises/edit/${id}/${name}/${type}/${muscle}/${grip}/${width}`,
-                }}
-              >
-                Edit
-              </Link>
-              <button onClick={() => deleteExercise(id)}>Delete</button>
-            </>
-          ) : (
-            <></>
-          )}
-        </>
-      ) : user.isAdmin === "true" && !isExercisePage ? (
-        <>
-          <button onClick={() => deleteExercise(id)}>Remove</button>
-        </>
-      ) : (
-        <></>
-      )}
+    <div className="bg-caramel m-1 w-9/12 rounded-lg shadow-sm">
+      <div className="flex justify-around font-semibold text-md">
+        <div>{name}</div>
+        <div>{type}</div>
+        <div>{muscle}</div>
+        <div>{grip}</div>
+        <div>{width}</div>
+      </div>
+      <div className="rounded-b-lg flex justify-around bg-eggplant">
+        {isExercisePage ? (
+          <>
+            <Link
+              className="m-1 px-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+              to={{ pathname: `/workouts/display/${id}` }}
+            >
+              Add to Workout
+            </Link>{" "}
+            {user.isAdmin === "true" ? (
+              <>
+                <Link
+                  to={{
+                    pathname: `/exercises/edit/${id}/${name}/${type}/${muscle}/${grip}/${width}`,
+                  }}
+                  className="m-1 px-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+                >
+                  Edit
+                </Link>
+                <button
+                  className="m-1 px-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+                  onClick={() => deleteExercise(id)}
+                >
+                  Delete
+                </button>
+              </>
+            ) : (
+              <></>
+            )}
+          </>
+        ) : user.isAdmin === "true" && !isExercisePage ? (
+          <>
+            <button
+              className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+              onClick={() => deleteExercise(id)}
+            >
+              Remove
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 }

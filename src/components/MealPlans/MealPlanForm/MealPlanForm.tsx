@@ -36,14 +36,18 @@ export default function MealPlanForm({
 
   // render the Meal Plan Form
   return (
-    <div className="bg-yellowgreen m-1 w-3/4 rounded-lg shadow-sm">
-      <p>
-        {name} &nbsp; {totalCalories} &nbsp; {totalProtein} &nbsp;{" "}
-        {totalCarbohydrates} &nbsp; {totalFat} &nbsp;
-      </p>
-      <Link to={{ pathname: `/mealplans/${id}` }}>Meal Plan Details</Link>
+    <div className="bg-yellowgreen m-1 w-1/4 rounded-lg shadow-sm">
+      <div className="flex justify-around font-semibold text-md">
+        <div>{name}</div>
+        <div>{totalCalories}</div>
+        <div>{totalProtein}</div>
+        <div>{totalCarbohydrates}</div>
+        <div>{totalFat}</div>
+      </div>
+      <div className="rounded-b-lg flex justify-around bg-eggplant">
+      <Link className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold" to={{ pathname: `/mealplans/${id}` }}>Meal Plan Details</Link>
       {!isMealPlanPage ? (
-        <button onClick={() => addFoodToMealPlan(id, foodId)}>Add</button>
+        <button className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold" onClick={() => addFoodToMealPlan(id, foodId)}>Add</button>
       ) : (
         <></>
       )}
@@ -54,14 +58,16 @@ export default function MealPlanForm({
             to={{
               pathname: `/mealplans/edit/${id}/${name}/${totalCalories}/${totalProtein}/${totalCarbohydrates}/${totalFat}`,
             }}
+            className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
           >
             Edit
           </Link>
-          <button onClick={() => deleteMealPlan(id)}>Delete</button>
+          <button className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold" onClick={() => deleteMealPlan(id)}>Delete</button>
         </>
       ) : (
         <></>
       )}
+    </div>
     </div>
   );
 }
