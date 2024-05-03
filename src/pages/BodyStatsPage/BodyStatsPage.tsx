@@ -10,6 +10,7 @@ import {
   PointElement,
   Legend,
   Tooltip,
+  Title,
 } from "chart.js";
 
 // Internal
@@ -30,7 +31,8 @@ ChartJS.register(
   LinearScale,
   PointElement,
   Legend,
-  Tooltip
+  Tooltip,
+  Title
 );
 
 /*------------------------------------- Functions --------------------------------------*/
@@ -68,17 +70,40 @@ export default function BodyStatsPage() {
 
   // options for the chart
   let options: any = {
-    plugins: {
-      legend: true,
-    },
     scales: {
       x: {
         min: 0,
         max: 4000,
+        scaleLabel: {
+          display: true,
+          labelString: "Calories (kcal)"
+        },
+        title: {
+          display: true,
+          text: "Calories (kcal)"
+        }
       },
       y: {
         min: 100,
         max: 250,
+        scaleLabel: {
+          display: true,
+          labelString: "Weight (lbs)"
+        },
+        title: {
+          display: true,
+          text: "Weight (lbs)"
+        }
+      }
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: true,
+        position: "top",
+        text: "Calories (kcal) vs Weight (lbs)"
       },
     },
   };
@@ -115,7 +140,11 @@ export default function BodyStatsPage() {
           style={{ width: "600px", height: "300px", backgroundColor: "white" }}
           className="mr-10"
         >
-          <Scatter data={data} options={options} className=" border-2 border-black rounded-lg"></Scatter>
+          <Scatter
+            data={data}
+            options={options}
+            className=" border-2 border-black rounded-sm shadow-lg"
+          ></Scatter>
         </div>
       </div>
     </>
