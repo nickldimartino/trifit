@@ -47,30 +47,34 @@ export default function LoginForm({ setUser }: { setUser: Function }) {
           </h1>
           <hr className="mt-1" />
           <div>
-            <label className="text-left block text-base mt-2 text-white font-semibold">Email</label>
-            <input
-              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-              type="text"
-              name="email"
-              value={credentials.email}
-              onChange={handleChange}
-              required
-              placeholder="Enter email..."
-              autoComplete="off"
-            />
+            <label className="text-left block text-base mt-2 text-white font-semibold">
+              Email
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none text-black focus:ring-0 focus:border-gray-600"
+                type="text"
+                name="email"
+                value={credentials.email}
+                onChange={handleChange}
+                required
+                placeholder="Enter email..."
+                autoComplete="off"
+              />
+            </label>
           </div>
           <div className="mt-3">
-            <label className="text-left block text-base mt-2 text-white font-semibold">Password</label>
-            <input
-              className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-              type="password"
-              name="password"
-              value={credentials.password}
-              onChange={handleChange}
-              required
-              placeholder="Enter password..."
-              autoComplete="off"
-            />
+            <label className="text-left block text-base mt-2 text-white font-semibold">
+              Password
+              <input
+                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black"
+                type="password"
+                name="password"
+                value={credentials.password}
+                onChange={handleChange}
+                required
+                placeholder="Enter password..."
+                autoComplete="off"
+              />
+            </label>
           </div>
           <div className="mt-5">
             <button className="mb-2 border-2 border-black bg-citrine text-black w-3/4 rounded-md hover:bg-orange-400 font-semibold">

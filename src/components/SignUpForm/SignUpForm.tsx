@@ -80,52 +80,64 @@ export default class SignUpForm extends Component<
             </h1>
             <hr className="mt-1" />
             <div>
-              <label className="text-left block text-base mt-2 text-white">Name</label>
-              <input
-                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                type="text"
-                name="name"
-                value={this.state.name}
-                onChange={this.handleChange}
-                required
-                placeholder="Enter your name..."
-              />
+              <label className="text-left block text-base mt-2 text-white">
+                Name
+                <input
+                  className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black"
+                  type="text"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  required
+                  placeholder="Enter your name..."
+                  autoComplete="off"
+                />
+              </label>
             </div>
             <div className="mt-3">
-              <label className="text-left block text-base mt-2 text-white">Email</label>
-              <input
-                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                type="email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-                required
-                placeholder="Enter your email..."
-              />
+              <label className="text-left block text-base mt-2 text-white">
+                Email
+                <input
+                  className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black"
+                  type="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  required
+                  placeholder="Enter your email..."
+                  autoComplete="off"
+                />
+              </label>
             </div>
             <div className="mt-3">
-              <label className="text-left block text-base mt-2 text-white">Password</label>
-              <input
-                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-                required
-                placeholder="Enter a password..."
-              />
+              <label className="text-left block text-base mt-2 text-white">
+                Password
+                <input
+                  className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black"
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  required
+                  placeholder="Enter a password..."
+                  autoComplete="off"
+                />
+              </label>
             </div>
             <div>
-              <label className="text-left block text-base mt-2 text-white">Confirm</label>
-              <input
-                className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                type="password"
-                name="confirm"
-                value={this.state.confirm}
-                onChange={this.handleChange}
-                required
-                placeholder="Confirm your password..."
-              />
+              <label className="text-left block text-base mt-2 text-white">
+                Confirm
+                <input
+                  className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 text-black"
+                  type="password"
+                  name="confirm"
+                  value={this.state.confirm}
+                  onChange={this.handleChange}
+                  required
+                  placeholder="Confirm your password..."
+                  autoComplete="off"
+                />
+              </label>
             </div>
             <div className="mt-5">
               <button
@@ -138,9 +150,7 @@ export default class SignUpForm extends Component<
             </div>
           </form>
         </div>
-        <p className="text-red-500 mt-1 mb-1">
-          &nbsp;{this.state.error}
-        </p>
+        <p className="text-red-500 mt-1 mb-1">&nbsp;{this.state.error}</p>
       </div>
     );
   }
