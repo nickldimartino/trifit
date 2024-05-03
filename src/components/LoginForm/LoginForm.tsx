@@ -40,7 +40,7 @@ export default function LoginForm({ setUser }: { setUser: Function }) {
   // render the Login Form
   return (
     <div className="flex justify-center items-center flex-col w-3/4 h-1/2">
-      <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full shadow-lg bg-frenchblue rounded-lg">
+      <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full shadow-lg bg-frenchblue rounded-lg border-2 border-black">
         <form className="p-0 w-3/4" autoComplete="off" onSubmit={handleSubmit}>
           <h1 className="text-2xl block text-center text-white font-semibold">
             <i className="fa-solid fa-user"></i> Login
@@ -79,7 +79,7 @@ export default function LoginForm({ setUser }: { setUser: Function }) {
           </div>
         </form>
       </div>
-      <p className="text-red-500 mt-3 mb-2 error-message">&nbsp;{error}</p>
+      <p className="text-red-500 mt-1 mb-1">&nbsp;{error}</p>
     </div>
   );
 }

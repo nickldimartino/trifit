@@ -14,7 +14,7 @@ export default function AuthPage({ setUser }: { setUser: Function }) {
 
   // render the Login Form or Sign Up Form
   return (
-    <main className="flex justify-center items-center flex-col h-screen bg-grey-300">
+    <main className="flex justify-center items-center flex-col h-screen bg-slate-100">
       <Logo />
       {showLogin ? (
         <LoginForm setUser={setUser} />
@@ -23,10 +23,10 @@ export default function AuthPage({ setUser }: { setUser: Function }) {
       )}
       <div>
         <h3
-          className="bg-yellowgreen p-2 rounded-xl border-2 border-black text-black"
+          className="bg-yellowgreen p-2 mb-1 rounded-xl border-2 border-black text-black"
           onClick={() => setShowLogin(!showLogin)}
         >
-          {showLogin ? "SIGN UP" : "LOG IN"}
+          {showLogin ? "Sign Up" : "Log In"}
         </h3>
       </div>
     </main>

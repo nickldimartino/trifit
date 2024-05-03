@@ -3,16 +3,14 @@
 import { Link } from "react-router-dom";
 
 // Internal
-// import './Logo.css';
+import smallLogo from "../../public/imgs/smallLogo.png";
 
 /*------------------------------------- Functions --------------------------------------*/
 export default function Logo() {
   return (
-    <div className="mt-2 flex justify-center items-center">
+    <div className=" flex justify-center items-center">
       <Link to={{ pathname: "/" }}>
-        <div className="flex justify-center items-center bg-orange-500 w-16 h-16 text-center rounded-full border-2 border-black mb-3 ">
-          TriFit
-        </div>
+        <img src={smallLogo} alt="TriFit" className="w-20 h-20 mb-3 mt-2 bg-slate-100 rounded-full"/>
       </Link>
     </div>
   );

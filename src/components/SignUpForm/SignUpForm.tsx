@@ -69,18 +69,18 @@ export default class SignUpForm extends Component<
     const disable: boolean = this.state.password !== this.state.confirm;
     return (
       <div className="flex justify-center items-center flex-col w-3/4 h-3/4">
-        <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full shadow-lg bg-sky-300 rounded-lg">
+        <div className="flex justify-center items-center flex-col min-w-1/2 w-1/2 min-h-3/4 h-full shadow-lg bg-frenchblue rounded-lg border-2 border-black">
           <form
             className="p-0 w-3/4"
             autoComplete="off"
             onSubmit={this.handleSubmit}
           >
-            <h1 className="text-2xl block text-center font-semibold">
-              <i className="fa-solid fa-user text-orange-300"></i> Signup
+            <h1 className="text-2xl block text-center font-semibold text-white">
+              <i className="fa-solid fa-user"></i> Signup
             </h1>
             <hr className="mt-1" />
             <div>
-              <label className="text-left block text-base mt-2">Name</label>
+              <label className="text-left block text-base mt-2 text-white">Name</label>
               <input
                 className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
                 type="text"
@@ -92,7 +92,7 @@ export default class SignUpForm extends Component<
               />
             </div>
             <div className="mt-3">
-              <label className="text-left block text-base mt-2">Email</label>
+              <label className="text-left block text-base mt-2 text-white">Email</label>
               <input
                 className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
                 type="email"
@@ -104,7 +104,7 @@ export default class SignUpForm extends Component<
               />
             </div>
             <div className="mt-3">
-              <label className="text-left block text-base mt-2">Password</label>
+              <label className="text-left block text-base mt-2 text-white">Password</label>
               <input
                 className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
                 type="password"
@@ -116,7 +116,7 @@ export default class SignUpForm extends Component<
               />
             </div>
             <div>
-              <label className="text-left block text-base mt-2">Confirm</label>
+              <label className="text-left block text-base mt-2 text-white">Confirm</label>
               <input
                 className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
                 type="password"
@@ -129,7 +129,7 @@ export default class SignUpForm extends Component<
             </div>
             <div className="mt-5">
               <button
-                className="mb-2 border-2 border-black bg-orange-300 text-white w-3/4 rounded-md hover:bg-orange-400 font-semibold"
+                className="mb-2 border-2 border-black bg-citrine w-3/4 rounded-md hover:bg-orange-400 font-semibold"
                 type="submit"
                 disabled={disable}
               >
@@ -138,7 +138,7 @@ export default class SignUpForm extends Component<
             </div>
           </form>
         </div>
-        <p className="text-red-500 mt-3 mb-2 error-message">
+        <p className="text-red-500 mt-1 mb-1">
           &nbsp;{this.state.error}
         </p>
       </div>
