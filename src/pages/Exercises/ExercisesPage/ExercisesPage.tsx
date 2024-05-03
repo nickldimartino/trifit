@@ -65,8 +65,7 @@ export default function ExercisesPage({
   // render the Exercises Page
   return (
     <>
-      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Exercises</h1>
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-10">
         {user.isAdmin === "true" ? (
           <div className="flex justify-center mb-5">
             <NewExerciseForm addNewExercise={addNewExercise} />

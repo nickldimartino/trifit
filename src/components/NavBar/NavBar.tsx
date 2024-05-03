@@ -57,7 +57,7 @@ export default function NavBar({
             <div className="my-4">
               <Link
                 to="/exercises"
-                className={`hover:text-white hover:bg-frenchblue rounded-md py-1 px-5 hover:ease-in-out text-2xl ${exercisesColor}`}
+                className={`hover:text-white hover:bg-caramel rounded-md py-1 px-5 hover:ease-in-out text-2xl hover:shadow-md ${exercisesColor}`}
               >
                 Exercises
               </Link>
@@ -65,7 +65,7 @@ export default function NavBar({
             <div className="my-4">
               <Link
                 to="/workouts"
-                className={`hover:text-white hover:bg-frenchblue rounded-md py-1 px-5 ease-in-out text-2xl ${workoutsColor}`}
+                className={`hover:text-white hover:bg-caramel rounded-md py-1 px-5 ease-in-out text-2xl hover:shadow-md ${workoutsColor}`}
               >
                 Your Workouts
               </Link>
@@ -73,7 +73,7 @@ export default function NavBar({
             <div className="my-4">
               <Link
                 to="/foods"
-                className={`hover:text-white hover:bg-frenchblue rounded-md py-1 px-5 ease-in-out text-2xl ${foodsColor}`}
+                className={`hover:text-white hover:bg-yellowgreen rounded-md py-1 px-5 ease-in-out text-2xl hover:shadow-md ${foodsColor}`}
               >
                 Foods
               </Link>
@@ -81,7 +81,7 @@ export default function NavBar({
             <div className="my-4">
               <Link
                 to="/mealplans"
-                className={`hover:text-white hover:bg-frenchblue rounded-md py-1 px-5 ease-in-out text-2xl ${mealPlansColor}`}
+                className={`hover:text-white hover:bg-yellowgreen rounded-md py-1 px-5 ease-in-out text-2xl hover:shadow-md ${mealPlansColor}`}
               >
                 Your Meal Plans
               </Link>
@@ -89,7 +89,7 @@ export default function NavBar({
             <div className="my-4">
               <Link
                 to="/bodystats"
-                className={`hover:text-white hover:bg-frenchblue rounded-md py-1 px-5 ease-in-out text-2xl ${bodyStatsColor}`}
+                className={`hover:text-white hover:bg-citrine rounded-md py-1 px-5 ease-in-out text-2xl hover:shadow-md ${bodyStatsColor}`}
               >
                 Your Body
               </Link>
@@ -98,7 +98,7 @@ export default function NavBar({
               <Link
                 to=""
                 onClick={handleLogOut}
-                className="hover:text-white hover:bg-frenchblue rounded-md py-1 px-5 ease-in-out text-2xl"
+                className="hover:text-white hover:bg-frenchblue rounded-md py-1 px-5 ease-in-out text-2xl hover:shadow-xl"
               >
                 Log Out
               </Link>

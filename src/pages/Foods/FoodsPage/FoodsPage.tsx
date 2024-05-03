@@ -65,8 +65,7 @@ export default function FoodsPage({
   // render the New Food Form and the Food List
   return (
     <>
-      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Foods Page</h1>
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-10">
         {user.isAdmin === "true" ? (
           <div className="flex justify-center mb-5">
             <NewFoodForm addNewFood={addNewFood} />

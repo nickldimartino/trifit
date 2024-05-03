@@ -109,8 +109,7 @@ export default function BodyStatsPage() {
   // render the Body Stats Page
   return (
     <>
-      <h1 className="font-semibold text-4xl mt-7 mb-10 ">You Body Stats</h1>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 mt-10">
         <NewBodyStatForm addBodyStat={addBodyStat} />
         <div
           style={{ width: "600px", height: "300px", backgroundColor: "white" }}

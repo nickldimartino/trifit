@@ -57,8 +57,7 @@ export default function MealPlanPage({
   // render the New Meal Plan Form and Meal Plan list
   return (
     <>
-      <h1 className="font-semibold text-4xl mt-7 mb-10 ">Meal Plans Page</h1>
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-10">
         <div className="flex justify-center mb-5">
           <NewMealPlanForm addNewMealPlan={addNewMealPlan} />
         </div>
