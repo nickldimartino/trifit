@@ -33,7 +33,7 @@ export default function WorkoutForm({
       <div className="flex justify-around font-semibold text-md">
         <div>{name}</div>
       </div>
-      <div className="rounded-b-lg flex justify-around bg-eggplant">
+      <div className="rounded-b-lg grid grid-cols-3 bg-eggplant">
         <Link
           className="m-1 px-1 border-2 border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
           to={{ pathname: `/workouts/${id}` }}

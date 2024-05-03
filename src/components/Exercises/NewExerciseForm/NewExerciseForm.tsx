@@ -83,7 +83,7 @@ export default function NewExerciseForm({
             />
           </label>
           <label className="text-left block text-base mt-2 text-black font-semibold">
-            Muscle
+            Main Muscle Groups Worked
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               name="muscle"
@@ -109,7 +109,7 @@ export default function NewExerciseForm({
             />
           </label>
           <label className="text-left block text-base mt-2 text-black font-semibold">
-            Width
+            Hand/Foot Width
             <input
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
               name="width"

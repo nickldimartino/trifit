@@ -36,18 +36,18 @@ export default function ExerciseForm({
   // render the Exercise Form
   return (
     <div className="bg-caramel m-1 w-5/6 rounded-lg shadow-sm">
-      <div className="flex justify-around font-semibold text-md">
+      <div className="grid grid-cols-5 font-semibold text-md">
         <div>{name}</div>
         <div>{type}</div>
         <div>{muscle}</div>
         <div>{grip}</div>
         <div>{width}</div>
       </div>
-      <div className="rounded-b-lg flex justify-around bg-eggplant">
+      <div className="rounded-b-lg grid grid-cols-3 bg-eggplant">
         {isExercisePage ? (
           <>
             <Link
-              className="m-1 px-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+              className="m-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
               to={{ pathname: `/workouts/display/${id}` }}
             >
               Add to Workout
@@ -58,12 +58,12 @@ export default function ExerciseForm({
                   to={{
                     pathname: `/exercises/edit/${id}/${name}/${type}/${muscle}/${grip}/${width}`,
                   }}
-                  className="m-1 px-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+                  className="m-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
                 >
                   Edit
                 </Link>
                 <button
-                  className="m-1 px-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
+                  className="m-1 border border-black bg-celestialblue text-white rounded-md hover:bg-frenchblue font-semibold"
                   onClick={() => deleteExercise(id)}
                 >
                   Delete

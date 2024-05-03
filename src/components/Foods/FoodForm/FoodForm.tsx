@@ -37,7 +37,7 @@ export default function FoodForm({
   // renders the Food Form
   return (
     <div className="bg-yellowgreen m-1 w-5/6 rounded-lg shadow-sm">
-      <div className="flex justify-around font-semibold text-md">
+      <div className="grid grid-cols-6 font-semibold text-md">
         <div>{name}</div>
         <div>{type}</div>
         <div>{calories}kcal</div>
@@ -45,7 +45,7 @@ export default function FoodForm({
         <div>{carbohydrates}g</div>
         <div>{fat}g</div>
       </div>
-      <div className="rounded-b-lg flex justify-around bg-eggplant">
+      <div className="grid grid-cols-3 rounded-b-lg bg-eggplant">
         {isFoodsPage ? (
           <>
             <Link

@@ -39,13 +39,13 @@ export default function FoodsList({
       <div className="bg-celestialblue w-5/6 rounded-lg text-white font-semibold mb-2 shadow-lg border-2 border-black">
         <h1>Foods</h1>
         <hr />
-        <div className="flex justify-around font-semibold text-md bg-citrine text-black rounded-b-lg">
-          <div>Name</div>
-          <div>Type</div>
-          <div>Calories</div>
-          <div>Protein</div>
-          <div>Carbs</div>
-          <div>Fat</div>
+        <div className="grid grid-cols-6 font-semibold text-md bg-citrine text-black rounded-b-lg">
+          <div className="flex justify-center items-center border rounded-bl-lg">Name</div>
+          <div className="flex justify-center items-center border">Type</div>
+          <div className="flex justify-center items-center border">Calories</div>
+          <div className="flex justify-center items-center border">Protein</div>
+          <div className="flex justify-center items-center border">Carbs</div>
+          <div className="flex justify-center items-center border rounded-br-lg">Fat</div>
         </div>
       </div>
       {foodItems}
