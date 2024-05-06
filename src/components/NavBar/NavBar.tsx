@@ -1,6 +1,7 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
 import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // Internal
 import * as userService from "../../utilities/users-service";
@@ -51,7 +52,12 @@ export default function NavBar({
     <div>
       {isActive ? (
         <>
-          <nav className="flex flex-col items-center h-full">
+          <motion.nav
+            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 400 }}
+            transition={{ duration: 1.4 }}
+            className="flex flex-col items-center h-full"
+          >
             {!isHome ? <Logo /> : <></>}
             <div className="my-4">
               <Link
@@ -102,7 +108,7 @@ export default function NavBar({
                 Log Out
               </Link>
             </div>
-          </nav>
+          </motion.nav>
         </>
       ) : (
         <>

@@ -1,6 +1,7 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // Internal
 import bigLogo from "../../public/imgs/bigLogo.png";
+import { motion } from "framer-motion";
 
 // Types
 import { UserDataType } from "../../types";
@@ -9,7 +10,14 @@ import { UserDataType } from "../../types";
 export default function HomePage({ user }: { user: UserDataType }) {
   return (
     <>
-      <img src={bigLogo} alt="" className="w-100 h-60" />
+      <motion.img
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -400 }}
+        transition={{ duration: 1.4 }}
+        src={bigLogo}
+        alt=""
+        className="w-100 h-60"
+      />
     </>
   );
 }
