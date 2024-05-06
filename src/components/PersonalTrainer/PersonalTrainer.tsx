@@ -8,18 +8,14 @@ import * as personalTrainerService from "../../utilities/personalTrainer-service
 /*------------------------------------- Functions --------------------------------------*/
 export default function PersonalTrainer() {
   // new question state
-  const [newQuestion, setNewQuestion] = useState({
-    question: "",
-  });
+  const [newQuestion, setNewQuestion] = useState<string>("");
 
   // new answer state
-  const [newAnswer, setNewAnswer] = useState({
-    answer: "",
-  });
+  const [newAnswer, setNewAnswer] = useState<string>("");
 
+  // getter function for the newAnswer
   function getAnswer() {
-    // console.log(newAnswer.answer)
-    return newAnswer.answer;
+    return newAnswer;
   }
 
   // send and receive a request to the server
@@ -37,29 +33,28 @@ export default function PersonalTrainer() {
     evt.preventDefault();
 
     // send the question to the api call
-    askQuestion(newQuestion.question);
+    askQuestion(newQuestion);
 
     // reset the question value
-    setNewQuestion({
-      question: "",
-    });
+    setNewQuestion("");
   }
 
   // handles the user inputs form while typing
   function handleOnChange(evt: React.ChangeEvent<any>) {
     // adds keystrokes to the input box value
-    const newQuestionData = {
-      ...newQuestion,
-      [evt.target.name]: evt.target.value,
-    };
+    const newQuestionData = evt.target.value;
 
-    // sets the new body stat state
+    // sets the new question
     setNewQuestion(newQuestionData);
   }
 
-  useEffect(() => {
-    getAnswer();
-  });
+  // renders the page when a new answer is received
+  useEffect(
+    () => {
+      getAnswer();
+    }, // eslint-disable-next-line
+    []
+  );
 
   // render the add body stat form
   return (
@@ -77,7 +72,7 @@ export default function PersonalTrainer() {
               name="question"
               type="text"
               onChange={handleOnChange}
-              value={newQuestion.question}
+              value={newQuestion}
               required
               autoComplete="off"
             />
@@ -88,7 +83,9 @@ export default function PersonalTrainer() {
             </button>
           </div>
         </form>
-        <div>{newAnswer.answer}</div>
+        <div className="border border-black bg-white w-11/12 p-2 mb-2">
+          {newAnswer}
+        </div>
       </div>
     </div>
   );
