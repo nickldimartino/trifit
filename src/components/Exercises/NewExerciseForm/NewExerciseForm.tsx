@@ -51,7 +51,7 @@ export default function NewExerciseForm({
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-center flex-col p-2 bg-caramel shadow-lg rounded-lg border-2 border-black">
-        <h1 className="text-2xl block text-center text-black font-semibold">
+        <h1 data-testid="new-exercise-header" className="text-2xl block text-center text-black font-semibold">
           <i className="fa-solid fa-user"></i> Add an Exercise
         </h1>
         <hr className="mt-1" />
