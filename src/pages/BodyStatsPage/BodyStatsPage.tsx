@@ -15,6 +15,7 @@ import {
 
 // Internal
 import NewBodyStatForm from "../../components/BodyStats/NewBodyStatForm";
+import PersonalTrainer from "../../components/PersonalTrainer/PersonalTrainer";
 import * as bodyStatsService from "../../utilities/bodyStats-service";
 
 // Types
@@ -147,6 +148,7 @@ export default function BodyStatsPage() {
           ></Scatter>
         </div>
       </div>
+      <PersonalTrainer />
     </>
   );
 }
