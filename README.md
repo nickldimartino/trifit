@@ -25,13 +25,16 @@ Welcome to TriFit! The Personal Fitness Journal where you can view a list of exe
  
  | Description | Screenshot |
  |------------ | ------------|
- | <h3 align="center">Sign Up</h3> | <img src="" width="500">
- | <h3 align="center">Home Page</h3> | <img src="" width="500">
- | <h3 align="center">Exercises Page</h3> | <img src="" width="500">
- | <h3 align="center">Your Workouts Page</h3> | <img src="" width="500">
- | <h3 align="center">Foods Page</h3> | <img src="" width="500">
- | <h3 align="center">Your Meal Plans Page</h3> | <img src="" width="500">
- | <h3 align="center">Body Stats Page</h3> | <img src="" width="500">
+ | <h3 align="center">Sign Up</h3> | <img src="./src/public/readme/signup-page.png" width="500">
+ | <h3 align="center">Log In</h3> | <img src="./src/public/readme/login-page.png" width="500">
+ | <h3 align="center">Home Page</h3> | <img src="./src/public/readme/front-page.png" width="500">
+ | <h3 align="center">Exercises Page</h3> | <img src="./src/public/readme/exercises-page.png" width="500">
+ | <h3 align="center">Workouts Page</h3> | <img src="./src/public/readme/workouts-page.png" width="500">
+ | <h3 align="center">Foods Page</h3> | <img src="./src/public/readme/foods-page.png" width="500">
+ | <h3 align="center">Meal Plans Page</h3> | <img src="./src/public/readme/mealplans-page.png" width="500">
+ | <h3 align="center">Body Stats Page</h3> | <img src="./src/public/readme/bodystats-page.png" width="500">
+ | <h3 align="center">Personal Trainer</h3> | <img src="./src/public/readme/personal-trainer.png" width="500">
+
  
 </details>
 
@@ -53,7 +56,6 @@ Welcome to TriFit! The Personal Fitness Journal where you can view a list of exe
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
-![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
 ![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
@@ -83,6 +85,8 @@ Welcome to TriFit! The Personal Fitness Journal where you can view a list of exe
 6. The Your Meal Plans Page displays a user's created Meal Plans and provides the option to add, edit, or delete a Meal Plan with details of each one.
 
 7. The Your Body Page displays a user's history off added Weight vs Calories data points on a scatter plot.
+
+8. On the Your Body Page, an AI Personal Trainer chatbot is available for fitness and nutrition questions.
 </details>
 
 ### 🔗 Links
