@@ -127,7 +127,7 @@ export default function App() {
       {user && isActive ? (
         <>
           <div className="flex justify-around items-center mt-20">
-            <HomePage user={user} />
+            <HomePage />
             <Routes>
               <Route
                 path="/"
@@ -245,7 +245,7 @@ export default function App() {
         <>
           <NavBar setUser={setUser} isActive={isActive} />
           <Routes>
-            <Route path="/" element={<HomePage user={user} />} />
+            <Route path="/" element={<HomePage />} />
             <Route
               path="/exercises"
               element={
