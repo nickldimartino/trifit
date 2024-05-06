@@ -1,40 +1,52 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
 import { Request, Response } from "express";
-const Groq = require("groq-sdk");
+var { ChatPromptTemplate } = require("@langchain/core/prompts");
+var OpenAI = require("openai");
+var { ChatGroq } = require("@langchain/groq");
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
   read,
 };
 
-// -------------------- API Key --------------------
-// for use in the Groq Chatbot
-const groq = new Groq({
+/*-------------------------------------- API Keys --------------------------------------*/
+// for use in the OpenAI Chatbot
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const model = new ChatGroq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
 /*------------------------------------- Functions --------------------------------------*/
-// Retrieve all the body stats for the current user
+// Retrieve a prompt from the Groq AI API
 export async function read(req: Request, res: Response) {
-  console.log("hi");
   try {
-    // get the user inputted text
+    // save the user inputted text
     const userPrompt: string = req.body.question;
+    const userSystem = "personal fitness trainer";
+
+    // create the prompt template
+    const prompt = ChatPromptTemplate.fromMessages([
+      ["system", `You are a ${userSystem}`],
+      ["human", "{input}"],
+    ]);
+
+    // set up the Large-Language Model (LLM)
+    const chain = prompt.pipe(model);
 
     // generate the response
-    const response: string = await groq.chat.completions.create({
-      messages: [
-        {
-          role: "personal fitness trainer",
-          content: userPrompt,
-        },
-      ],
-      model: "mixtral-8x7b-32768",
+    const response = await chain.invoke({
+      input: userPrompt,
     });
 
-    // respond with the user's body stats
-    res.json(response);
+    // save the AI response
+    const langchainResponse = response.content;
+
+    // respond with an answer the the user's question
+    res.json(langchainResponse);
   } catch (err) {
     res.status(400).json(err);
   }

@@ -1,6 +1,6 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Internal
 import * as personalTrainerService from "../../utilities/personalTrainer-service";
@@ -16,6 +16,11 @@ export default function PersonalTrainer() {
   const [newAnswer, setNewAnswer] = useState({
     answer: "",
   });
+
+  function getAnswer() {
+    // console.log(newAnswer.answer)
+    return newAnswer.answer;
+  }
 
   // send and receive a request to the server
   async function askQuestion(question: string) {
@@ -51,6 +56,10 @@ export default function PersonalTrainer() {
     // sets the new body stat state
     setNewQuestion(newQuestionData);
   }
+
+  useEffect(() => {
+    getAnswer();
+  });
 
   // render the add body stat form
   return (

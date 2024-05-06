@@ -11,8 +11,8 @@ const router = express.Router();
 
 /*---------------------------------------- Routes --------------------------------------*/
 // all routes start with /personaltrainer
-// GET route to show the body stats
-router.get("/read", ensureLoggedIn, read);
+// GET route to read an API call
+router.post("/read", ensureLoggedIn, read);
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = router;
