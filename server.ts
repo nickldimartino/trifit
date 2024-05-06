@@ -42,7 +42,10 @@ app.use("/foods", require("./routes/foods/foods"));
 app.use("/workouts", require("./routes/workouts/workouts"));
 app.use("/mealplans", require("./routes/mealPlans/mealPlans"));
 app.use("/bodystats", require("./routes/bodystats/bodystats"));
-app.use("/personaltrainer", require("./routes/personalTrainer/personalTrainer"));
+app.use(
+  "/personaltrainer",
+  require("./routes/personalTrainer/personalTrainer")
+);
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

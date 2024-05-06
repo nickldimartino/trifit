@@ -1,9 +1,8 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
 import { Request, Response } from "express";
-var { ChatPromptTemplate } = require("@langchain/core/prompts");
-var OpenAI = require("openai");
-var { ChatGroq } = require("@langchain/groq");
+import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { ChatGroq } from "@langchain/groq";
 
 /*----------------------------------- Module Exports -----------------------------------*/
 module.exports = {
@@ -11,11 +10,7 @@ module.exports = {
 };
 
 /*-------------------------------------- API Keys --------------------------------------*/
-// for use in the OpenAI Chatbot
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
+// Groq API Key
 const model = new ChatGroq({
   apiKey: process.env.GROQ_API_KEY,
 });

@@ -37,7 +37,7 @@ export default function ExerciseForm({
   return (
     <div className="bg-caramel m-1 w-5/6 rounded-lg shadow-sm">
       <div className="grid grid-cols-5 font-semibold text-md">
-        <div data-testid="exercise-name" >{name}</div>
+        <div data-testid="exercise-name">{name}</div>
         <div>{type}</div>
         <div>{muscle}</div>
         <div>{grip}</div>

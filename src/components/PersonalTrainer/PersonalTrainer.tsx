@@ -59,7 +59,7 @@ export default function PersonalTrainer() {
   // render the add body stat form
   return (
     <div className="flex justify-center items-center w-full h-5/6 mt-7">
-      <div className="flex justify-center items-center flex-col w-1/2 bg-citrine shadow-lg rounded-lg border-2 border-black">
+      <div className="flex justify-center items-center flex-col w-1/2 bg-citrine shadow-lg rounded-lg border-2 border-black mb-5">
         <h1 className="text-2xl block text-center text-black font-semibold">
           <i className="fa-solid fa-user"></i> Ask the Personal Trainer
         </h1>
@@ -83,9 +83,13 @@ export default function PersonalTrainer() {
             </button>
           </div>
         </form>
-        <div className="border border-black bg-white w-11/12 p-2 mb-2">
-          {newAnswer}
-        </div>
+        {newAnswer !== "" ? (
+          <div className="border border-black bg-white w-11/12 p-2 mb-2">
+            {newAnswer}
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

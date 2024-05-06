@@ -8,7 +8,7 @@ declare global {
   namespace NodeJS {
     export interface ProcessEnv {
       DATABASE_URL: string;
-      GROQ_API_KEY: string
+      GROQ_API_KEY: string;
     }
   }
 }

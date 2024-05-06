@@ -1,8 +1,12 @@
+/*----------------------------------- Module Imports -----------------------------------*/
+// External
 import { render } from "@testing-library/react";
-import ExerciseList from "./ExercisesList";
-import { Types } from "mongoose";
 import { BrowserRouter } from "react-router-dom";
 
+// Internal
+import ExerciseList from "./ExercisesList";
+
+/*-------------------------------------- Variables -------------------------------------*/
 const tempUser = {
   name: "temp name",
   email: "temp@mail.com",
@@ -13,6 +17,7 @@ const tempUser = {
   bodyStats: [],
 };
 
+/*--------------------------------------- Tests ----------------------------------------*/
 describe(ExerciseList, () => {
   it("exercise list displays correct exercise label", () => {
     const { getByTestId } = render(
