@@ -43,9 +43,9 @@
     "serve-favicon": "^2.5.0"
   },
   "scripts": {
-    "start": "react-scripts start node build/server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build tsc ts-node",
-    "postinstall": "nnpm run build",
+    "postinstall": "npm run build",
     "test": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject",
     "nodemon": "nodemon --exec ts-node server.ts"
