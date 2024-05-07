@@ -1,1 +1,1 @@
-web: ts-node server.js
+worker: npm start
