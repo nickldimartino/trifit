@@ -27,5 +27,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": ["client", "node_modules", "public"]
 }

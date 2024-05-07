@@ -38,7 +38,7 @@ export default function FoodForm({
   return (
     <div className="bg-yellowgreen m-1 w-5/6 rounded-lg shadow-sm">
       <div className="grid grid-cols-6 font-semibold text-md">
-        <div>{name}</div>
+        <div data-testid="food-name">{name}</div>
         <div>{type}</div>
         <div>{calories}kcal</div>
         <div>{protein}g</div>
