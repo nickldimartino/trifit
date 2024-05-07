@@ -23,7 +23,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "outDir": "dist"
+    "outDir": "./build"
   },
   "include": [
     "src"

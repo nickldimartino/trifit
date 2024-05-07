@@ -43,7 +43,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
+    "postinstall": "tsc",
     "build": "react-scripts build tsc ts-node",
     "test": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject",
