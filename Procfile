@@ -1,1 +1,1 @@
-worker: npm start
+web: nodemon --exec ts-node server.ts
