@@ -1,9 +1,13 @@
 /*----------------------------------- Module Imports -----------------------------------*/
 // External
-import express, { Request, Response } from "express";
-import logger from "morgan";
-import path from "path";
-import favicon from "serve-favicon";
+// import express, { Request, Response } from "express";
+const express = require('express');
+// import logger from "morgan";
+const logger = require('morgan');
+// import path from "path";
+const path = require('path');
+// import favicon from "serve-favicon";
+const favicon = require('serve-favicon');
 
 // Allow use of the .env file
 require("dotenv").config();
@@ -49,6 +53,6 @@ app.use(
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
-app.get("/*", function (req: Request, res: Response) {
+app.get("/*", function (req: any, res: any) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
