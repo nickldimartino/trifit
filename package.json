@@ -1,6 +1,10 @@
 {
   "name": "trifit",
   "version": "0.1.0",
+  "engines": {
+    "node": "20.11.0",
+    "npm": "10.7.0"
+  },
   "private": true,
   "dependencies": {
     "@langchain/groq": "^0.0.9",
