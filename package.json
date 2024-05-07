@@ -43,8 +43,9 @@
     "serve-favicon": "^2.5.0"
   },
   "scripts": {
-    "build": "react-scripts build tsc npm install",
-    "start": "react-scripts start && TG_ALLOW_MIXED=ALLOW node build/index.js",
+    "start": "react-scripts start",
+    "postinstall": "tsc",
+    "build": "react-scripts build tsc ts-node",
     "test": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject",
     "nodemon": "nodemon --exec ts-node server.ts"

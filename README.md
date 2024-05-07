@@ -1,7 +1,5 @@
 # <h1 align="center">TriFit</h1>
 
-#### <h3 align="center"><a href="">Heroku Link Coming Soon...</a></h3>
-
 <div align="center">
  <a href="https://nickldimartino.github.io/portfolio/" target="_blank">
       <img src="https://img.shields.io/badge/My%20Portfolio-16a34a">
@@ -90,13 +88,6 @@ Welcome to TriFit! The Personal Fitness Journal where you can view a list of exe
 </details>
 
 ### 🔗 Links
-
-<details>
-<summary>Heroku Link</summary>
-
-<a href="">Coming soon...</a>
-
-</details>
 
 <details>
 <summary>Trello Board</summary>
