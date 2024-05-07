@@ -44,7 +44,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build tsc ts-node",
     "test": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject",
     "nodemon": "nodemon --exec ts-node server.ts"
